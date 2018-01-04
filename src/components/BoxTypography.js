@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ti from './components/ti';
 
 class BoxTypography extends Component {
 
@@ -11,7 +12,6 @@ class BoxTypography extends Component {
            </div>
 
            <div className="boxBody">
-            
 
              <div className="field">
                 <h4>font-size</h4>
@@ -36,7 +36,6 @@ class BoxTypography extends Component {
               <div className="field">
                 <h4>text-position</h4>
 
-            
             <select value={this.props.textPosition} onChange={this.props.changeTextPosition}>
             
               <option value="flex-start">top</option>
@@ -47,6 +46,7 @@ class BoxTypography extends Component {
 
             </div>
 
+            <ti name="font-color" value={this.props.fontColorTitle} onChange={this.props.changeFontColorTitle}/>
 
             <div className="field">
                 <h4>font-color</h4>
