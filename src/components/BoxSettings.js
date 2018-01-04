@@ -11,13 +11,8 @@ class BoxSettings extends Component {
           </div>
           <div className="boxBody">
            
-            <div className="field">
-                <h4>background-color</h4>
-                <input value={this.props.bg} onChange={this.props.changeBg}/>
-            </div>
-
-
-
+    
+                {this.props.children}
          </div>
         </div>
     );

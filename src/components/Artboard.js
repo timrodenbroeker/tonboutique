@@ -3,7 +3,6 @@ import ReactSVG from 'react-svg';
 
 class Artboard extends Component {
 
-
   render() {
 
   	const css = ".example path {fill:" + this.props.svgFill + ";}";
@@ -12,11 +11,8 @@ class Artboard extends Component {
     	<section id="canvas">
             <div className="cover parent" style={this.props.coverStyle}>
 
-
           <style>{css}</style>
                 <div className="child coverImage">
-
-              
 
                 <ReactSVG
                     path={"svg/" + this.props.svg + ".svg"} 
@@ -26,8 +22,6 @@ class Artboard extends Component {
                     evalScript="always"
                     style={{width: this.props.svgWidth, fill: this.props.svgFill}}
                   />
-
-
 
                 </div>
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ti extends Component {
+class TextInput extends Component {
 
 
   render() {
@@ -15,4 +15,4 @@ class ti extends Component {
   }
 }
 
-export default ti;
+export default TextInput;

@@ -7,7 +7,8 @@ import BoxData from './components/BoxData';
 import BoxGraphic from './components/BoxGraphic';
 import BoxTypography from './components/BoxTypography';
 import BoxSettings from './components/BoxSettings';
-
+import TextInput from './components/input/TextInput';
+import SelectInput from './components/input/SelectInput';
 
 class App extends Component {
 
@@ -30,8 +31,7 @@ class App extends Component {
       fontColorTitle: "white",
       textPosition: "top",
       bg: "blue",
-      graphix: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
-
+      arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
     }
 
 
@@ -210,74 +210,62 @@ changeSvgWidth(event){
       <div className="App">
           <section id="controlsLeft">
 
-            <BoxData 
-
-              name={this.state.name} 
-              changeName={this.changeName} 
-
-              title={this.state.title} 
-              changeTitle={this.changeTitle}
-
-              subline={this.state.subline} 
-              changeSubline={this.changeSubline}
-              />
-
-            <BoxTypography 
-              fontSize={this.state.fontSize} 
-              changeFontSize={this.changeFontSize} 
-
-              fontFamily={this.state.fontFamily} 
-              changeFontFamily={this.changeFontFamily} 
+            <BoxData>
               
-              textPosition={this.state.textPosition} 
-              changeTextPosition={this.changeTextPosition} 
-              
-              textPosition={this.state.textPosition} 
-              changeTextPosition={this.changeTextPosition} 
+          <TextInput name="Artist" value={this.state.name} onChange={this.changeName}/>
 
-              fontColorTitle={this.state.fontColorTitle} 
-              changeFontColorTitle={this.changeFontColorTitle} 
+          <TextInput name="Title" value={this.state.title} onChange={this.changeTitle}/>
 
-              fontColorArtist={this.state.fontColorArtist} 
-              changeFontColorArtist={this.changeFontColorArtist} 
+          <TextInput name="Subline" value={this.state.subline} onChange={this.changeSubline}/>
 
-              fontWeightArtist={this.state.fontWeightArtist} 
-              changeFontWeightArtist={this.changeFontWeightArtist} 
+            </BoxData>
 
-              fontAlignArtist={this.state.fontAlignArtist} 
-              changeFontAlignArtist={this.changeFontAlignArtist} 
+            <BoxTypography> 
 
-              fontWeightTitle={this.state.fontWeightTitle} 
-              changeFontWeightTitle={this.changeFontWeightTitle} 
+               <TextInput name="Font-Size" value={this.state.fontSize} onChange={this.changeFontSize}/>
 
-              fontAlignTitle={this.state.fontAlignTitle} 
-              changeFontAlignTitle={this.changeFontAlignTitle} 
-              />
+               <SelectInput name="Font-Weight" options={["normal","bold"]} value={this.state.fontWeightArtist} onChange={this.changeFontWeightArtist}/>
 
-            
+               <SelectInput name="Font-Family" options={["Roboto","Times","Courier"]} value={this.state.fontFamily} onChange={this.changeFontFamily}/>
+
+               <SelectInput name="text-position" options={["flex-start","center","flex-end"]} value={this.state.textPosition} onChange={this.changeTextPosition}/>
+
+                <TextInput name="Artist Color" value={this.state.fontColorArtist} onChange={this.changeFontColorArtist}/>
+
+                <TextInput name="Title Color" value={this.state.fontColorTitle} onChange={this.changeFontColorTitle}/>
+
+                <SelectInput name="Align-Artist" options={["left","center","right"]} value={this.state.fontAlignArtist} onChange={this.changeFontAlignArtist}/>  
+
+                <SelectInput name="Title-Weight" options={["normal","bold"]} value={this.state.fontWeightTitle} onChange={this.changeFontWeightTitle}/>  
+
+                <SelectInput name="Align-Title" options={["left","center","right"]} value={this.state.fontAlignTitle} onChange={this.hangeFontAlignTitle}/>  
+
+            </BoxTypography>
 
           </section>
 
             <section id="controlsRight">
 
 
-            <BoxGraphic 
+            <BoxGraphic>
+              
+     
+           <SelectInput name="File" options={this.state.arr} value={this.state.svg} onChange={this.changeSvg}/>
 
-              graphix={this.state.graphix} 
-              svg={this.state.svg} 
-              changeSvg={this.changeSvg}
+          <TextInput name="Fill-color" value={this.state.svgFill} onChange={this.changeSvgFill}/>
 
-              svgFill={this.state.svgFill}
-              changeSvgFill={this.changeSvgFill}
-              />
+          <TextInput name="Svg-Size" value={this.state.svgWidth} onChange={this.changeSvgWidth}/>           
+
+              
+              </BoxGraphic>
 
 
-          <BoxSettings 
-              bg={this.state.bg} 
-              changeBg={this.changeBg} 
-          />
-            
-           
+          <BoxSettings>
+
+          <TextInput name="Background" value={this.state.bg} onChange={this.changeBg}/>
+
+           </BoxSettings>
+
           </section>
 
           <Artboard 
@@ -291,8 +279,6 @@ changeSvgWidth(event){
             name={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
-
-
             />
 
           <section id="imageBrowser">

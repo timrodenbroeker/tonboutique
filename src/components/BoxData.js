@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import TextInput from './input/TextInput';
+import SelectInput from './input/SelectInput';
+
 
 class BoxData extends Component {
 
@@ -10,21 +13,7 @@ class BoxData extends Component {
             <h3>Data</h3>
           </div>
           <div className="boxBody">
-            <div className="field">
-                <h4>artist</h4>
-                <input value={this.props.name} onChange={this.props.changeName}/>
-            </div>
-
-
-            <div className="field">
-                <h4>title</h4>
-                <input value={this.props.title} onChange={this.props.changeTitle}/>
-            </div>
-
-            <div className="field">
-                <h4>subline</h4>
-                <input value={this.props.subline} onChange={this.props.changeSubline}/>
-            </div>
+          {this.props.children}
          </div>
         </div>
     );
