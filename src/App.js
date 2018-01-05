@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
-import Input from './Input';
-import Artboard from './components/Artboard';
-import BoxData from './components/BoxData';
-import BoxGraphic from './components/BoxGraphic';
-import BoxTypography from './components/BoxTypography';
-import BoxSettings from './components/BoxSettings';
+import Cover from './components/Cover';
+import UiBox from './components/UiBox';
+import ColorBox from './components/ColorBox';
 import TextInput from './components/input/TextInput';
 import SelectInput from './components/input/SelectInput';
 
@@ -31,7 +28,10 @@ class App extends Component {
       fontColorTitle: "white",
       textPosition: "top",
       bg: "blue",
-      arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14]
+      arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+      colors: ["#03214E","#050C31","#DC332C","#023859"],
+      colorBoxVisible: true,
+      availableFonts: ["Roboto","Times","Courier"]
     }
 
 
@@ -210,7 +210,7 @@ changeSvgWidth(event){
       <div className="App">
           <section id="controlsLeft">
 
-            <BoxData>
+            <UiBox name="Text">
               
           <TextInput name="Artist" value={this.state.name} onChange={this.changeName}/>
 
@@ -218,9 +218,9 @@ changeSvgWidth(event){
 
           <TextInput name="Subline" value={this.state.subline} onChange={this.changeSubline}/>
 
-            </BoxData>
+            </UiBox>
 
-            <BoxTypography> 
+            <UiBox name="Typography"> 
 
                <TextInput name="Font-Size" value={this.state.fontSize} onChange={this.changeFontSize}/>
 
@@ -240,14 +240,14 @@ changeSvgWidth(event){
 
                 <SelectInput name="Align-Title" options={["left","center","right"]} value={this.state.fontAlignTitle} onChange={this.hangeFontAlignTitle}/>  
 
-            </BoxTypography>
+            </UiBox>
 
           </section>
 
             <section id="controlsRight">
 
 
-            <BoxGraphic>
+            <UiBox name="Graphic">
               
      
            <SelectInput name="File" options={this.state.arr} value={this.state.svg} onChange={this.changeSvg}/>
@@ -257,18 +257,18 @@ changeSvgWidth(event){
           <TextInput name="Svg-Size" value={this.state.svgWidth} onChange={this.changeSvgWidth}/>           
 
               
-              </BoxGraphic>
+              </UiBox>
 
 
-          <BoxSettings>
+          <UiBox name="Settings">
 
           <TextInput name="Background" value={this.state.bg} onChange={this.changeBg}/>
 
-           </BoxSettings>
+           </UiBox>
 
           </section>
 
-          <Artboard 
+          <Cover 
             coverStyle={coverStyle} 
             textContainerStyles={textContainerStyles} 
             typoStyleArtist={typoStyleArtist} 
@@ -281,13 +281,9 @@ changeSvgWidth(event){
             subline={this.state.subline}
             />
 
-          <section id="imageBrowser">
+          
 
-            <div className="close">
-            close
-            </div>
-
-          </section>
+          <ColorBox colors={this.state.colors}/>
 
       </div>
     );

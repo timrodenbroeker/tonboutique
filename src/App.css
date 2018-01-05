@@ -255,3 +255,27 @@ svg {
   justify-content: center;
   align-items: flex-end;
 }
+
+.colorBox {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+
+}
+
+.colorBox div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  cursor: pointer;
+}
+
+.colorBox div:hover div {
+  color: white;
+}

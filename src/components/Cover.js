@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactSVG from 'react-svg';
 
-class Artboard extends Component {
+class Cover extends Component {
 
   render() {
 
@@ -45,4 +45,4 @@ class Artboard extends Component {
   }
 }
 
-export default Artboard;
+export default Cover;
