@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Color from './Color';
 
-class ColorBox extends Component {
+class ModalColors extends Component {
 
   render() {
 
@@ -19,4 +19,4 @@ class ColorBox extends Component {
   }
 }
 
-export default ColorBox;
+export default ModalColors;

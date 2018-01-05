@@ -3,7 +3,8 @@ import './normalize.css';
 import './App.css';
 import Cover from './components/Cover';
 import UiBox from './components/UiBox';
-import ColorBox from './components/ColorBox';
+import ModalColors from './components/ModalColors';
+import ModalColorsTrigger from './components/ModalColorsTrigger';
 import TextInput from './components/input/TextInput';
 import SelectInput from './components/input/SelectInput';
 
@@ -29,12 +30,10 @@ class App extends Component {
       textPosition: "top",
       bg: "blue",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-      colors: ["#03214E","#050C31","#DC332C","#023859"],
-      colorBoxVisible: true,
+      colors: ["#03214E","#050C31","#DC332C","#023859","#ff0000","#111111","#f1f1f1"],
+      ModalColorsActive: true,
       availableFonts: ["Roboto","Times","Courier"]
     }
-
-
 
 
     this.changeName = this.changeName.bind(this);
@@ -76,7 +75,6 @@ class App extends Component {
 
 
     changeTitle(event){
-        console.log("the title has been changed!");
     this.setState({
       title: event.target.value
     });
@@ -205,7 +203,6 @@ changeSvgWidth(event){
 
 
 
-
     return (
       <div className="App">
           <section id="controlsLeft">
@@ -279,13 +276,12 @@ changeSvgWidth(event){
             name={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
-            />
+          />
 
+          <ModalColors name="background" target={this.state.bg} colors={this.state.colors}/>
           
-
-          <ColorBox colors={this.state.colors}/>
-
       </div>
+
     );
   }
 }
