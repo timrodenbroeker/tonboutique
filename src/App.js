@@ -31,7 +31,7 @@ class App extends Component {
       bg: "blue",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       colors: ["#03214E","#050C31","#DC332C","#023859","#ff0000","#111111","#f1f1f1"],
-      ModalColorsActive: true,
+      ModalColorsCollapsed: true,
       availableFonts: ["Roboto","Times","Courier"]
     }
 
@@ -171,6 +171,13 @@ changeSvgWidth(event){
     });
   }   
 
+toggleModalColors(event){
+  this.setState({
+      ModalColorsCollapsed: !this.state.ModalColorsCollapsed
+
+  });
+}
+
 
   render() {
 
@@ -261,6 +268,8 @@ changeSvgWidth(event){
 
           <TextInput name="Background" value={this.state.bg} onChange={this.changeBg}/>
 
+          <button onClick={this.toggleModalColors}>clickme!!!</button>
+
            </UiBox>
 
           </section>
@@ -278,7 +287,7 @@ changeSvgWidth(event){
             subline={this.state.subline}
           />
 
-          <ModalColors name="background" target={this.state.bg} colors={this.state.colors}/>
+          <ModalColors visibility={this.state.ModalColorsCollapsed} name="background" target={this.state.bg} colors={this.state.colors}/>
           
       </div>
 
