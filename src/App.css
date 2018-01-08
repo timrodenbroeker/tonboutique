@@ -256,18 +256,27 @@ svg {
   align-items: flex-end;
 }
 
-.colorBox {
-  position: fixed;
-  display: flex;
-  top: 0;
+.ModalColorsWrapper {
+  display: none;
+    top: 0;
   left: 0;
-  z-index: 1000;
+  position: fixed; 
+     z-index: 1000;
+       width: 100%;
+  height: 100vh;
+}
+
+.ModalColors {
+
+  display: flex;
+
   width: 100%;
   height: 100vh;
 
-}
 
-.colorBox div {
+}
+  
+.ModalColors div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -276,6 +285,6 @@ svg {
   cursor: pointer;
 }
 
-.colorBox div:hover div {
+.ModalColors div:hover div {
   color: white;
 }
