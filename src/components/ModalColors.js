@@ -12,8 +12,10 @@ class ModalColors extends Component {
 
 
     return (
-		<div target={this.props.target} className="colorBox">
+		<div target={this.props.target} className="ModalColorsWrapper">
+      <div className="ModalColors">
     		{Data.map(MakeItem)}
+        </div>
 		</div>
     );
   }
