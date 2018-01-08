@@ -3,10 +3,15 @@ html,body,* {
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+
+}
+
 .App {
   display: flex;
   justify-content: flex-start;
-  background: white;
+  background: #eeeeee;
+    perspective: 100vw;
 }
 
 .cover.parent { 
@@ -17,11 +22,9 @@ html,body,* {
   position:fixed;
   left:0;
   top:0;
-  width: 25%;
-  max-width: 250px;
-  min-width: 150px;
+  width: 330px;
   height: 100vh;
-
+  background: white;
   padding: 15px;
   z-index: 100;
 
@@ -29,15 +32,14 @@ html,body,* {
 
 
 #controlsRight {
-  width: 25%;
-  max-width: 250px;
-  min-width: 150px;
+
+  width: 330px;
   z-index: 100;
   position:fixed;
   right:0;
   top:0;
   height: 100vh;
-
+background: white;
   padding: 15px;
 
 }
@@ -51,14 +53,17 @@ html,body,* {
 }
 
 .cover {
-  width: 550px;
-  height: 550px;
+
+  width: 660px;
+  height: 660px;
   overflow: hidden;
   -webkit-transition: all 200ms ease; /* Firefox */
 -moz-transition: all 200ms ease; /* WebKit */
 -o-transition: all 200ms ease; /* Opera */
 transition: all 200ms ease; /* Standard */
+
 }
+
 
 
 h1 {
@@ -69,8 +74,8 @@ h1 {
 
 h4 {
   font-size: 11px;
-  text-transform: uppercase;
-  font-weight: normal;
+
+  font-weight: bold;
   margin: 0 0 5px 0;
   color: black;
 }
@@ -142,8 +147,8 @@ select:focus {
 }
 
 .coverImage {
-    width: 550px;
-  height: 550px;
+    width: 660px;
+  height: 660px;
 }
 
 .cover img {
@@ -194,8 +199,8 @@ h3 {
 
 #textContainer {
   display: flex;
-    width: 550px;
-  height: 550px;
+    width: 660px;
+  height: 660px;
   padding: 15px;
 }
 
@@ -226,8 +231,8 @@ width: 100%;
 }
 
 .svgWrapper {
-  width: 550px;
-  height: 550px;
+  width: 660px;
+  height: 660px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,16 +266,18 @@ svg {
   align-items: flex-end;
 }
 
-<<<<<<< HEAD
+
 .ModalColors {
   position: fixed;
   display: none;
   top: 0;
-=======
+
+}
+
 .ModalColorsWrapper {
   display: none;
     top: 0;
->>>>>>> be5d9f96fa3eddba1b15519d38290e05f28b851f
+
   left: 0;
   position: fixed; 
      z-index: 1000;
@@ -286,11 +293,9 @@ svg {
   height: 100vh;
 
 
-<<<<<<< HEAD
-=======
+
 }
-  
->>>>>>> be5d9f96fa3eddba1b15519d38290e05f28b851f
+
 .ModalColors div {
   display: flex;
   justify-content: center;
@@ -302,4 +307,8 @@ svg {
 
 .ModalColors div:hover div {
   color: white;
+}
+
+option {
+  background: red;
 }

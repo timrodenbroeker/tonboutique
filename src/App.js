@@ -7,6 +7,8 @@ import ModalColors from './components/ModalColors';
 import ModalColorsTrigger from './components/ModalColorsTrigger';
 import TextInput from './components/input/TextInput';
 import SelectInput from './components/input/SelectInput';
+import RangeSlider from './components/RangeSlider';
+import Slider from 'react-rangeslider';
 
 class App extends Component {
 
@@ -32,7 +34,10 @@ class App extends Component {
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       colors: ["#03214E","#050C31","#DC332C","#023859","#ff0000","#111111","#f1f1f1"],
       ModalColorsCollapsed: true,
-      availableFonts: ["Roboto","Times","Courier"]
+      availableFonts: ["Roboto","Times","Courier"],
+
+      viewRotationY: 0,
+      viewScale: 1
     }
 
 
@@ -52,6 +57,9 @@ class App extends Component {
     this.changeSvg = this.changeSvg.bind(this);
     this.changeSvgWidth = this.changeSvgWidth.bind(this);
     this.changeSvgFill = this.changeSvgFill.bind(this);
+
+    this.changeViewRotationY = this.changeViewRotationY.bind(this);
+    this.changeViewScale = this.changeViewScale.bind(this);
 
   }
 
@@ -179,10 +187,24 @@ toggleModalColors(event){
 }
 
 
+changeViewScale(event){
+    this.setState({
+      viewScale: event.target.value
+    });
+  }   
+
+changeViewRotationY(event){
+    this.setState({
+      viewRotationY: event.target.value
+    });
+  }     
+
+
   render() {
 
     const coverStyle = {
-      backgroundColor:this.state.bg
+      backgroundColor:this.state.bg,
+      transform: "scale("+this.state.viewScale+") rotateY("+this.state.viewRotationY+"deg)"
     }
 
     const typoStyleArtist = {
@@ -271,6 +293,33 @@ toggleModalColors(event){
           <button onClick={this.toggleModalColors}>clickme!!!</button>
 
            </UiBox>
+
+
+
+           <UiBox name="View">
+
+            <TextInput name="scale" value={this.state.viewScale} onChange={this.changeViewScale}/>
+
+            <TextInput name="rotation" value={this.state.viewRotationY} onChange={this.changeViewRotationY}/>
+
+          <RangeSlider
+            min={Number}
+            max={Number}
+            step={Number}
+            value={Number}
+            orientation={String}
+            reverse={Boolean}
+            tooltip={Boolean}
+            labels={Object}
+            handleLabel={String}
+            format={Function}
+            onChangeStart={Function}
+            onChange={Function}
+            onChangeComplete={Function}
+          />
+
+           </UiBox>
+
 
           </section>
 
