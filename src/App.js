@@ -4,11 +4,10 @@ import './App.css';
 import Cover from './components/Cover';
 import UiBox from './components/UiBox';
 import ModalColors from './components/ModalColors';
+import Modal from './components/Modal';
 import ModalColorsTrigger from './components/ModalColorsTrigger';
 import TextInput from './components/input/TextInput';
 import SelectInput from './components/input/SelectInput';
-import RangeSlider from './components/RangeSlider';
-import Slider from 'react-rangeslider';
 
 class App extends Component {
 
@@ -36,6 +35,7 @@ class App extends Component {
       ModalColorsCollapsed: true,
       availableFonts: ["Roboto","Times","Courier"],
 
+      isOpen: false,
       viewRotationY: 0,
       viewScale: 1
     }
@@ -199,6 +199,11 @@ changeViewRotationY(event){
     });
   }     
 
+ toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   render() {
 
@@ -290,7 +295,11 @@ changeViewRotationY(event){
 
           <TextInput name="Background" value={this.state.bg} onChange={this.changeBg}/>
 
-          <button onClick={this.toggleModalColors}>clickme!!!</button>
+         <button onClick={this.toggleModal}>
+          Open the modal
+        </button>
+
+        
 
            </UiBox>
 
@@ -302,21 +311,10 @@ changeViewRotationY(event){
 
             <TextInput name="rotation" value={this.state.viewRotationY} onChange={this.changeViewRotationY}/>
 
-          <RangeSlider
-            min={Number}
-            max={Number}
-            step={Number}
-            value={Number}
-            orientation={String}
-            reverse={Boolean}
-            tooltip={Boolean}
-            labels={Object}
-            handleLabel={String}
-            format={Function}
-            onChangeStart={Function}
-            onChange={Function}
-            onChangeComplete={Function}
-          />
+       <Modal show={this.state.isOpen}
+          onClose={this.toggleModal}>
+          Here's some content for the modal
+        </Modal>
 
            </UiBox>
 
