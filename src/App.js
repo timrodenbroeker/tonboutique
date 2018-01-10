@@ -3,11 +3,13 @@ import './normalize.css';
 import './App.css';
 import Cover from './components/Cover';
 import UiBox from './components/UiBox';
-import ModalColors from './components/ModalColors';
-import Modal from './components/Modal';
-import ModalColorsTrigger from './components/ModalColorsTrigger';
+import RangeSlider from './components/input/RangeSlider';
+import ColorPicker from './components/input/ColorPicker';
+import ColorPickerTrigger from './components/input/ColorPickerTrigger';
 import TextInput from './components/input/TextInput';
+import TextArea from './components/input/TextArea';
 import SelectInput from './components/input/SelectInput';
+import Color from './components/input/Color';
 
 class App extends Component {
 
@@ -17,23 +19,26 @@ class App extends Component {
       name: "Maxon",
       title: "Flash",
       subline: "Including a remix by Alexander Franz",
+      
       svg: 1,
-      svgFill: "red",
+      svgFill: "#111111",
       svgWidth: 444,
+      svgRotation: 0,
+
       fontSize: 40,
-      fontFamily: "Roboto",
-      fontColorArtist: "white",
-      fontWeightArtist: "normal",
+      fontSizeMin: 10,
+      fontSizeMax: 200,
+      fontFamily: "PlexSans",
+      fontWeight: "normal",
       fontAlignArtist: "left",
       fontAlignTitle: "right",
-      fontWeightTitle: "normal",
-      fontColorTitle: "white",
+      fontColor: "#111111",
       textPosition: "top",
-      bg: "blue",
+      bg: "#f45844",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       colors: ["#03214E","#050C31","#DC332C","#023859","#ff0000","#111111","#f1f1f1"],
       ModalColorsCollapsed: true,
-      availableFonts: ["Roboto","Times","Courier"],
+      availableFonts: ["PlexMono","PlexSerif","PlexSans"],
 
       isOpen: false,
       viewRotationY: 0,
@@ -46,17 +51,18 @@ class App extends Component {
     this.changeSubline = this.changeSubline.bind(this);
     this.changeFontSize = this.changeFontSize.bind(this);
     this.changeFontFamily = this.changeFontFamily.bind(this);
-    this.changeFontColorArtist = this.changeFontColorArtist.bind(this);
+
     this.changeFontAlignArtist = this.changeFontAlignArtist.bind(this);
-    this.changeFontWeightArtist = this.changeFontWeightArtist.bind(this);
-    this.changeFontWeightTitle = this.changeFontWeightTitle.bind(this);
+    this.changeFontWeight = this.changeFontWeight.bind(this);
     this.changeFontAlignTitle = this.changeFontAlignTitle.bind(this);
-    this.changeFontColorTitle = this.changeFontColorTitle.bind(this);
+    this.changeFontColor = this.changeFontColor.bind(this);
     this.changeTextPosition = this.changeTextPosition.bind(this);
     this.changeBg = this.changeBg.bind(this);
+
     this.changeSvg = this.changeSvg.bind(this);
     this.changeSvgWidth = this.changeSvgWidth.bind(this);
     this.changeSvgFill = this.changeSvgFill.bind(this);
+    this.changeSvgRotation = this.changeSvgRotation.bind(this);
 
     this.changeViewRotationY = this.changeViewRotationY.bind(this);
     this.changeViewScale = this.changeViewScale.bind(this);
@@ -106,13 +112,7 @@ class App extends Component {
   }
 
 
- changeFontColorArtist(event){
 
-    this.setState({
-      fontColorArtist: event.target.value
-    });
-
-  }
 
    changeFontAlignArtist(event){
 
@@ -122,10 +122,10 @@ class App extends Component {
 
   }
 
-   changeFontColorTitle(event){
+   changeFontColor(event){
 
     this.setState({
-      fontColorTitle: event.target.value
+      fontColor: event.target.value
     });
 
   }
@@ -139,17 +139,12 @@ class App extends Component {
   }
 
 
-  changeFontWeightArtist(event){
+  changeFontWeight(event){
     this.setState({
-      fontWeightArtist: event.target.value
+      fontWeight: event.target.value
     });
   }  
 
-changeFontWeightTitle(event){
-    this.setState({
-      fontWeightTitle: event.target.value
-    });
-  }  
 
 
 changeTextPosition(event){
@@ -199,6 +194,12 @@ changeViewRotationY(event){
     });
   }     
 
+changeSvgRotation(event){
+    this.setState({
+      svgRotation: event.target.value
+    });
+  }       
+
  toggleModal = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -214,18 +215,18 @@ changeViewRotationY(event){
 
     const typoStyleArtist = {
       fontFamily: this.state.fontFamily,
-      fontWeight: this.state.fontWeightArtist,
+      fontWeight: this.state.fontWeight,
       fontSize: this.state.fontSize + "px",
-      color: this.state.fontColorArtist,
+      color: this.state.fontColor,
       textAlign: this.state.fontAlignArtist
     }
 
 
     const typoStyleTitle = {
       fontFamily: this.state.fontFamily,
-      fontWeight: this.state.fontWeightTitle,
+      fontWeight: this.state.fontWeight,
       fontSize: this.state.fontSize + "px",
-      color: this.state.fontColorTitle,
+      color: this.state.fontColor,
       textAlign: this.state.fontAlignTitle
     }
 
@@ -235,13 +236,18 @@ changeViewRotationY(event){
     }
 
 
+       var Data = this.state.colors,
+            MakeItem = function(X) {
+                return <Color name={"color"+X}colr={X}>{X}</Color>;
+            };
+
 
 
     return (
       <div className="App">
           <section id="controlsLeft">
 
-            <UiBox name="Text">
+            <UiBox name="Data">
               
           <TextInput name="Artist" value={this.state.name} onChange={this.changeName}/>
 
@@ -253,21 +259,18 @@ changeViewRotationY(event){
 
             <UiBox name="Typography"> 
 
-               <TextInput name="Font-Size" value={this.state.fontSize} onChange={this.changeFontSize}/>
+              <RangeSlider name="Font-Size" value={this.state.fontSize} min={this.state.fontSizeMin}  max={this.state.fontSizeMax} onChange={this.changeFontSize}/>
 
-               <SelectInput name="Font-Weight" options={["normal","bold"]} value={this.state.fontWeightArtist} onChange={this.changeFontWeightArtist}/>
 
-               <SelectInput name="Font-Family" options={["Roboto","Times","Courier"]} value={this.state.fontFamily} onChange={this.changeFontFamily}/>
+               <SelectInput name="Font-Weight" options={["normal","bold"]} value={this.state.fontWeight} onChange={this.changeFontWeight}/>
 
-               <SelectInput name="text-position" options={["flex-start","center","flex-end"]} value={this.state.textPosition} onChange={this.changeTextPosition}/>
+               <SelectInput name="Font-Family" options={this.state.availableFonts} value={this.state.fontFamily} onChange={this.changeFontFamily}/>
 
-                <TextInput name="Artist Color" value={this.state.fontColorArtist} onChange={this.changeFontColorArtist}/>
+               {/*<SelectInput name="text-position" options={["flex-start","center","flex-end"]} value={this.state.textPosition} onChange={this.changeTextPosition}/>*/}
 
-                <TextInput name="Title Color" value={this.state.fontColorTitle} onChange={this.changeFontColorTitle}/>
+              
 
                 <SelectInput name="Align-Artist" options={["left","center","right"]} value={this.state.fontAlignArtist} onChange={this.changeFontAlignArtist}/>  
-
-                <SelectInput name="Title-Weight" options={["normal","bold"]} value={this.state.fontWeightTitle} onChange={this.changeFontWeightTitle}/>  
 
                 <SelectInput name="Align-Title" options={["left","center","right"]} value={this.state.fontAlignTitle} onChange={this.hangeFontAlignTitle}/>  
 
@@ -283,23 +286,31 @@ changeViewRotationY(event){
      
            <SelectInput name="File" options={this.state.arr} value={this.state.svg} onChange={this.changeSvg}/>
 
-          <TextInput name="Fill-color" value={this.state.svgFill} onChange={this.changeSvgFill}/>
+        
+          <RangeSlider name="Size" value={this.state.svgWidth} min="0"  max="1000" onChange={this.changeSvgWidth}/>
 
-          <TextInput name="Svg-Size" value={this.state.svgWidth} onChange={this.changeSvgWidth}/>           
-
+          <RangeSlider name="Rotation" value={this.state.svgRotation} min="0"  max="360" onChange={this.changeSvgRotation}/>
               
               </UiBox>
 
 
-          <UiBox name="Settings">
+          <UiBox name="Colors">
 
-          <TextInput name="Background" value={this.state.bg} onChange={this.changeBg}/>
+          
 
-         <button onClick={this.toggleModal}>
-          Open the modal
-        </button>
+          <ColorPickerTrigger name="Graphic" bg={this.state.svgFill} onChange={this.changeSvgFill} onClick={this.toggleModal}/>
 
-        
+          <ColorPickerTrigger name="Text" bg={this.state.fontColor} onChange={this.changeFontColor} onClick={this.toggleModal}/>
+
+          <ColorPickerTrigger name="Background" bg={this.state.bg} onClick={this.toggleModal}/>
+       
+
+        <ColorPicker colors={this.state.colors} show={this.state.isOpen}
+          onClose={this.toggleModal}>
+           
+        	{Data.map(MakeItem)}
+        	
+        </ColorPicker>
 
            </UiBox>
 
@@ -307,14 +318,15 @@ changeViewRotationY(event){
 
            <UiBox name="View">
 
-            <TextInput name="scale" value={this.state.viewScale} onChange={this.changeViewScale}/>
 
-            <TextInput name="rotation" value={this.state.viewRotationY} onChange={this.changeViewRotationY}/>
+          <RangeSlider name="Scale" value={this.state.viewScale} min="0.5"  max="1.5" onChange={this.changeViewScale} step="0.1"/>
 
-       <Modal show={this.state.isOpen}
-          onClose={this.toggleModal}>
-          Here's some content for the modal
-        </Modal>
+          <RangeSlider name="Rotation" value={this.state.viewRotationY} min="-25"  max="25" onChange={this.changeViewRotationY} step="1"/>
+
+
+
+
+       
 
            </UiBox>
 
@@ -325,16 +337,17 @@ changeViewRotationY(event){
             coverStyle={coverStyle} 
             textContainerStyles={textContainerStyles} 
             typoStyleArtist={typoStyleArtist} 
-            typoStyleTitle={typoStyleTitle} 
+            typoStyleTitle={typoStyleTitle}
+
             svg={this.state.svg} 
             svgWidth={this.state.svgWidth} 
             svgFill={this.state.svgFill} 
+            svgRotation={this.state.svgRotation} 
+
             name={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
           />
-
-          <ModalColors visibility={this.state.ModalColorsCollapsed} name="background" target={this.state.bg} colors={this.state.colors}/>
           
       </div>
 

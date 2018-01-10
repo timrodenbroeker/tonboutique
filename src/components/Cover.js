@@ -20,7 +20,11 @@ class Cover extends Component {
                     className="example"
                     wrapperClassName="svgWrapper"
                     evalScript="always"
-                    style={{width: this.props.svgWidth, fill: this.props.svgFill}}
+                    style={{
+                      width: this.props.svgWidth, 
+                      fill: this.props.svgFill,
+                      transform: "rotate(" + this.props.svgRotation + "deg);"
+                    }}
                   />
 
                 </div>

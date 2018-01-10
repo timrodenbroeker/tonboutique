@@ -8,7 +8,7 @@ class TextInput extends Component {
     	
       <div className="field">
 			<h4>{this.props.name}</h4>
-			<input value={this.props.value} onChange={this.props.onChange}/>
+			<input className="textInput" value={this.props.value} onChange={this.props.onChange}/>
 		</div>
       
     );

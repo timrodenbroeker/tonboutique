@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3": "^4.12.2",
+    "paper": "^0.11.5",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-color": "^2.13.8",
