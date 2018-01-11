@@ -24,10 +24,12 @@ class App extends Component {
       svgFill: "#111111",
       svgWidth: 444,
       svgRotation: 0,
+      translateX: 0,
+      ranslateY: 0,
 
       fontSize: 40,
-      fontSizeMin: 10,
-      fontSizeMax: 200,
+      fontSizeMin: 20,
+      fontSizeMax: 100,
       fontFamily: "PlexSans",
       fontWeight: "normal",
       fontAlignArtist: "left",
@@ -63,6 +65,9 @@ class App extends Component {
     this.changeSvgWidth = this.changeSvgWidth.bind(this);
     this.changeSvgFill = this.changeSvgFill.bind(this);
     this.changeSvgRotation = this.changeSvgRotation.bind(this);
+
+    this.changeTranslateX = this.changeTranslateX.bind(this);
+    this.changeTranslateY = this.changeTranslateY.bind(this);
 
     this.changeViewRotationY = this.changeViewRotationY.bind(this);
     this.changeViewScale = this.changeViewScale.bind(this);
@@ -198,7 +203,19 @@ changeSvgRotation(event){
     this.setState({
       svgRotation: event.target.value
     });
-  }       
+  }    
+
+changeTranslateX(event){
+    this.setState({
+      translateX: event.target.value
+    });
+  }    
+
+changeTranslateY(event){
+    this.setState({
+      translateY: event.target.value
+    });
+  }      
 
  toggleModal = () => {
     this.setState({
@@ -238,7 +255,7 @@ changeSvgRotation(event){
 
        var Data = this.state.colors,
             MakeItem = function(X) {
-                return <Color name={"color"+X}colr={X}>{X}</Color>;
+                return <Color name={"color"+X}colr={X}></Color>;
             };
 
 
@@ -290,6 +307,10 @@ changeSvgRotation(event){
           <RangeSlider name="Size" value={this.state.svgWidth} min="0"  max="1000" onChange={this.changeSvgWidth}/>
 
           <RangeSlider name="Rotation" value={this.state.svgRotation} min="0"  max="360" onChange={this.changeSvgRotation}/>
+
+          <RangeSlider name="Translate X" value={this.state.translateX} min="-1000"  max="1000" onChange={this.changeTranslateX}/>
+
+          <RangeSlider name="Translate Y" value={this.state.translateY} min="-1000"  max="1000" onChange={this.changeTranslateY}/>
               
               </UiBox>
 
@@ -322,10 +343,6 @@ changeSvgRotation(event){
           <RangeSlider name="Scale" value={this.state.viewScale} min="0.5"  max="1.5" onChange={this.changeViewScale} step="0.1"/>
 
           <RangeSlider name="Rotation" value={this.state.viewRotationY} min="-25"  max="25" onChange={this.changeViewRotationY} step="1"/>
-
-
-
-
        
 
            </UiBox>
@@ -343,6 +360,8 @@ changeSvgRotation(event){
             svgWidth={this.state.svgWidth} 
             svgFill={this.state.svgFill} 
             svgRotation={this.state.svgRotation} 
+            translateX={this.state.translateX}
+            translateY={this.state.translateY}
 
             name={this.state.name} 
             title={this.state.title}

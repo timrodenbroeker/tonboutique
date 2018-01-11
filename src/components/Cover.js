@@ -23,7 +23,7 @@ class Cover extends Component {
                     style={{
                       width: this.props.svgWidth, 
                       fill: this.props.svgFill,
-                      transform: "rotate(" + this.props.svgRotation + "deg);"
+                      transform: "rotate(" + this.props.svgRotation + "deg) translate(" + this.props.translateX + "px, " + this.props.translateY + "px)"
                     }}
                   />
 

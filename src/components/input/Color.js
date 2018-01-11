@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 
 class Color extends Component {
 
+
+
+  constructor(props){
+    super(props);
+    this.state = {
+      color: this.props.color
+    }
+  }
   render() {
 
     const css = {background: this.props.colr};
@@ -11,8 +19,10 @@ class Color extends Component {
 		<div style={css} className="color">
     		
 		</div>
-		<div className="colorName">{this.props.children}</div>
+
+		<div className="colorName"></div>
 		</div>
+
     );
   }
 }
