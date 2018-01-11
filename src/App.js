@@ -59,6 +59,7 @@ class App extends Component {
     this.changeFontAlignTitle = this.changeFontAlignTitle.bind(this);
     this.changeFontColor = this.changeFontColor.bind(this);
     this.changeTextPosition = this.changeTextPosition.bind(this);
+
     this.changeBg = this.changeBg.bind(this);
 
     this.changeSvg = this.changeSvg.bind(this);
@@ -326,8 +327,7 @@ changeTranslateY(event){
           <ColorPickerTrigger name="Background" bg={this.state.bg} onClick={this.toggleModal}/>
        
 
-        <ColorPicker colors={this.state.colors} show={this.state.isOpen}
-          onClose={this.toggleModal}>
+        <ColorPicker colors={this.state.colors} show={this.state.isOpen} onClose={this.toggleModal}>
            
         	{Data.map(MakeItem)}
         	

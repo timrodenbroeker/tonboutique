@@ -16,7 +16,7 @@ class Color extends Component {
 
     return (
     	<div className="colorWrapper">
-		<div style={css} className="color">
+		<div style={css} className="color" onClick="">
     		
 		</div>
 
