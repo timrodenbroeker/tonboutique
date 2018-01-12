@@ -326,18 +326,18 @@ changeTranslateY(event){
           <ColorPickerTrigger name="Background" bg={this.state.bg} onClick={this.toggleModal}/>
        
 
-<<<<<<< HEAD
+
         <ColorPicker 
           show={this.state.isOpen}
           onClose={this.toggleModal}
         />
-=======
+
         <ColorPicker colors={this.state.colors} show={this.state.isOpen} onClose={this.toggleModal}>
            
-        	{Data.map(MakeItem)}
+
         	
         </ColorPicker>
->>>>>>> 4008663c177b8ba8ee6f675a2523e21f816030b8
+
 
            </UiBox>
 
