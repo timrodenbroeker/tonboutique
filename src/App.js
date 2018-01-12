@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
-import Cover from './components/Cover';
-import UiBox from './components/UiBox';
-import RangeSlider from './components/input/RangeSlider';
-import ColorPicker from './components/input/ColorPicker';
-import ColorPickerTrigger from './components/input/ColorPickerTrigger';
-import TextInput from './components/input/TextInput';
-import TextArea from './components/input/TextArea';
-import SelectInput from './components/input/SelectInput';
-import Color from './components/input/Color';
+import Cover from './components/cover/Cover';
+import UiBox from './components/controls/UiBox';
+import RangeSlider from './components/controls/input/RangeSlider';
+import ColorPicker from './components/controls/input/ColorPicker';
+import ColorPickerTrigger from './components/controls/input/ColorPickerTrigger';
+import TextInput from './components/controls/input/TextInput';
+import TextArea from './components/controls/input/TextArea';
+import SelectInput from './components/controls/input/SelectInput';
+import Color from './components/controls/input/Color';
 
 class App extends Component {
 
@@ -38,7 +38,6 @@ class App extends Component {
       textPosition: "top",
       bg: "#f45844",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-      colors: ["#03214E","#050C31","#DC332C","#023859","#ff0000","#111111","#f1f1f1"],
       ModalColorsCollapsed: true,
       availableFonts: ["PlexMono","PlexSerif","PlexSans"],
 
@@ -326,12 +325,10 @@ changeTranslateY(event){
           <ColorPickerTrigger name="Background" bg={this.state.bg} onClick={this.toggleModal}/>
        
 
-        <ColorPicker colors={this.state.colors} show={this.state.isOpen}
-          onClose={this.toggleModal}>
-           
-        	{Data.map(MakeItem)}
-        	
-        </ColorPicker>
+        <ColorPicker 
+          show={this.state.isOpen}
+          onClose={this.toggleModal}
+        />
 
            </UiBox>
 
