@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import TextInput from '../../input/TextInput';
 import ColorPickerTrigger from '../../input/ColorPickerTrigger';
-import ColorPicker from '../../input/ColorPicker';
 
 class UiBoxColors extends Component {
 

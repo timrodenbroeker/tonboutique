@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
-
 import Cover from './components/cover/Cover';
 import ControlBoxLeft from './components/controls/ControlBoxLeft';
 import ControlBoxRight from './components/controls/ControlBoxRight';
@@ -32,6 +31,25 @@ class App extends Component {
       textPosition: "top",
       bg: "#f45844",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
+      colors: [
+        'Crimson',
+        'DarkBlue',
+        'DarkGray',
+        'DarkSeaGreen',
+        'MediumBlue',
+        'MidnightBlue',
+        'SeaGreen',
+        'Sienna',
+        'SlateGray',
+        'SteelBlue',
+        'Gainsboro',
+        '#111111',
+        '#222222',
+        '#f1f1f1',
+        '#eeeeee',
+        '#dddddd',
+        '#aaaaaa'
+      ], 
       ModalColorsCollapsed: true,
       availableFonts: ["PlexMono","PlexSerif","PlexSans"],
 
@@ -182,8 +200,6 @@ changeTranslateY(event){
     const textContainerStyles = {
         alignItems: this.state.textPosition
     }
-
-
        
 
 
@@ -257,7 +273,6 @@ changeTranslateY(event){
           />
           
 
-        
 
 
       </div>

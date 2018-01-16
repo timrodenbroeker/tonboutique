@@ -15,10 +15,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "webpack -p",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build": "webpack -p",
     "watch": "webpack --watch"
   },
   "devDependencies": {

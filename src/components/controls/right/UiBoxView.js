@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import TextInput from '../../input/TextInput';
-import SelectInput from '../../input/SelectInput';
 import RangeSlider from '../../input/RangeSlider';
 
 class UiBoxView extends Component {
