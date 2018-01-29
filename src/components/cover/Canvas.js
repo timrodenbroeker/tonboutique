@@ -106,8 +106,8 @@ render() {
                 style={this.props.coverStyle}
                 id="theCanvas"
                 path={"svg/" + this.props.svg + ".svg"} 
-                width="800" 
-                height="800" 
+                width="600" 
+                height="600" 
                 scale={this.props.scale}
             >
             </canvas>
