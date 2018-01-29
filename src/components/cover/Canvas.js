@@ -36,10 +36,10 @@ drawCanvas(){
 
     var canvasPadding = 100;
 
-    var svgScalingFactor = 0.8;
+    var svgScalingFactor = this.props.scale ;
 
-    var svgW = this.props.svgWidth;
-    var svgH = this.props.svgWidth;
+    var svgW = canvasW * svgScalingFactor;
+    var svgH = canvasW * svgScalingFactor;
 
     var bg = this.props.bg;
     var fg = this.props.fg;
@@ -102,12 +102,13 @@ render() {
 
     return (
     	<section id="artboard">
-            <canvas className="cover"
+            <canvas className=""
                 style={this.props.coverStyle}
                 id="theCanvas"
                 path={"svg/" + this.props.svg + ".svg"} 
-                width="550" 
-                height="550" 
+                width="800" 
+                height="800" 
+                scale={this.props.scale}
             >
             </canvas>
 

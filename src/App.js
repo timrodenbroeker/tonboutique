@@ -15,7 +15,7 @@ class App extends Component {
       name: "Maxon",
       title: "Flash",
       subline: "Including a remix by Alexander Franz",
-      
+      scale: 0.8,
       svg: 1,
       svgWidth: 444,
       svgRotation: 0,
@@ -269,6 +269,7 @@ pickFg(event){
             bg={this.state.bg}
             fg={this.state.fg}
             svg={this.state.svg} 
+            scale={this.state.scale}
             svgWidth={this.state.svgWidth} 
             svgRotation={this.state.svgRotation} 
             translateX={this.state.translateX}
