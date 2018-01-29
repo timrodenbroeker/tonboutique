@@ -16,42 +16,23 @@ class App extends Component {
       subline: "Including a remix by Alexander Franz",
       
       svg: 1,
-      svgFill: "#111111",
       svgWidth: 444,
       svgRotation: 0,
       translateX: 0,
-      ranslateY: 0,
+      translateY: 0,
 
       fontSize: 40,
-      fontFamily: "PlexSans",
-      fontWeight: "normal",
+      fontFamily: "Libre Franklin",
+      fontWeight: 600,
       fontAlignArtist: "left",
       fontAlignTitle: "right",
       fontColor: "#111111",
       textPosition: "top",
       bg: "#f45844",
+      fg: "#111111",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-      colors: [
-        'Crimson',
-        'DarkBlue',
-        'DarkGray',
-        'DarkSeaGreen',
-        'MediumBlue',
-        'MidnightBlue',
-        'SeaGreen',
-        'Sienna',
-        'SlateGray',
-        'SteelBlue',
-        'Gainsboro',
-        '#111111',
-        '#222222',
-        '#f1f1f1',
-        '#eeeeee',
-        '#dddddd',
-        '#aaaaaa'
-      ], 
       ModalColorsCollapsed: true,
-      availableFonts: ["PlexMono","PlexSerif","PlexSans"],
+      availableFonts: ["Helvetica","Arial"],
 
       isOpen: false,
       viewRotationY: 0,
@@ -74,7 +55,7 @@ class App extends Component {
 
     this.changeSvg = this.changeSvg.bind(this);
     this.changeSvgWidth = this.changeSvgWidth.bind(this);
-    this.changeSvgFill = this.changeSvgFill.bind(this);
+    this.changeFg = this.changeFg.bind(this);
     this.changeSvgRotation = this.changeSvgRotation.bind(this);
 
     this.changeTranslateX = this.changeTranslateX.bind(this);
@@ -94,7 +75,8 @@ changeSubline(event){
     }
 
 changeBg(event){
-    this.setState({bg: event.target.value});
+      alert('Hi!');
+    this.setState({bg: event.target.bg});
     }
 
 changeTitle(event){
@@ -133,8 +115,8 @@ changeSvg(event){
     this.setState({svg: event.target.value});
     }    
 
-changeSvgFill(event){
-    this.setState({svgFill: event.target.value});
+changeFg(event){
+    this.setState({fg: event.target.value});
     }   
 
 
@@ -166,6 +148,14 @@ changeTranslateY(event){
     this.setState({translateY: event.target.value});
     }      
 
+pickBg(event){
+    this.setState({bg: event.target.getAttribute('color')})
+}    
+
+pickFg(event){
+    this.setState({fg: event.target.getAttribute('color')})
+}    
+
  toggleModal = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -183,7 +173,7 @@ changeTranslateY(event){
       fontFamily: this.state.fontFamily,
       fontWeight: this.state.fontWeight,
       fontSize: this.state.fontSize + "px",
-      color: this.state.fontColor,
+      color: this.state.fg,
       textAlign: this.state.fontAlignArtist
     }
 
@@ -192,8 +182,13 @@ changeTranslateY(event){
       fontFamily: this.state.fontFamily,
       fontWeight: this.state.fontWeight,
       fontSize: this.state.fontSize + "px",
-      color: this.state.fontColor,
+      color: this.state.fg,
       textAlign: this.state.fontAlignTitle
+    }
+
+    const typoStyleSubline = {
+      fontFamily: this.state.fontFamily,
+      color: this.state.fg
     }
 
 
@@ -208,6 +203,17 @@ changeTranslateY(event){
       <div className="App">
 
          <ControlBoxLeft 
+            arr={this.state.arr}
+
+            svg={this.state.svg}
+            changeSvg={this.changeSvg}
+
+            svgWidth={this.state.svgWidth}
+            changeSvgWidth={this.changeSvgWidth}
+
+            svgRotation={this.state.svgRotation}
+            changeSvgRotation={this.changeSvgRotation}
+
             name={this.state.name}
             changeName={this.changeName}
 
@@ -233,23 +239,23 @@ changeTranslateY(event){
             fontAlignTitle={this.state.fontAlignTitle}
             changeFontAlignTitle={this.changeFontAlignTitle}
 
+
+            bg={this.state.bg}
+            changeBg={(event) => this.pickBg(event)}
+
+            fg={this.state.fg}
+            changeFg={(event) => this.pickFg(event)}            
+
          />
 
         <ControlBoxRight 
-            arr={this.state.arr}
-            svg={this.state.svg}
-            changeSvg={this.changeSvg}
-
-            svgWidth={this.state.svgWidth}
-            changeSvgWidth={this.changeSvgWidth}
-
-            svgRotation={this.state.svgRotation}
-            changeSvgRotation={this.changeSvgRotation}
+            
+            
 
             viewScale={this.state.viewScale}
             changeViewScale={this.changeViewScale}
 
-            viewRotationY={this.state.viewRotation}
+            viewRotationY={this.state.viewRotationY}
             changeViewRotationY={this.changeViewRotationY}
 
            />
@@ -258,22 +264,19 @@ changeTranslateY(event){
             coverStyle={coverStyle} 
             textContainerStyles={textContainerStyles} 
             typoStyleArtist={typoStyleArtist} 
+            typoStyleSubline={typoStyleSubline} 
             typoStyleTitle={typoStyleTitle}
-
+            bg={this.state.bg}
+            fg={this.state.fg}
             svg={this.state.svg} 
             svgWidth={this.state.svgWidth} 
-            svgFill={this.state.svgFill} 
             svgRotation={this.state.svgRotation} 
             translateX={this.state.translateX}
             translateY={this.state.translateY}
-
             name={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
           />
-          
-
-
 
       </div>
 

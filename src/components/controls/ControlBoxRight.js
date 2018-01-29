@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import UiBoxColors from './right/UiBoxColors';
-import UiBoxView from './right/UiBoxView';
-import UiBoxGraphic from './right/UiBoxGraphic';
+import UiBoxColors from './UiBoxColors';
+import UiBoxView from './UiBoxView';
+import UiBoxExport from './UiBoxExport';
+
 
 class ControlBoxRight extends Component {
 
@@ -11,31 +12,17 @@ class ControlBoxRight extends Component {
 
 	 <section id="controlsRight">
 
-    <UiBoxGraphic 
-                arr={this.props.arr}
-                svg={this.props.svg}
-                changeSvg={this.props.changeSvg}
-
-                svgWidth={this.props.svgWidth}
-                changeSvgWidth={this.props.changeSvgWidth}
-
-                svgRotation={this.props.svgRotation}
-                changeSvgRotation={this.props.changeSvgRotation}
-
-                translateX={this.props.translateX}
-                changeTranslateX={this.props.changeTranslateX}
-                
-                translateY={this.props.translateY}
-                changeTranslateY={this.props.changeTranslateY}
-            />
-
            <UiBoxView 
+           name="View"
+            collapsed={true}
             viewScale={this.props.viewScale}
             changeViewScale={this.props.changeViewScale}
 
             viewRotationY={this.props.viewRotationY}
             changeViewRotationY={this.props.changeViewRotationY}
            />
+
+            <UiBoxExport name="Export"/>
 
         </section>
 

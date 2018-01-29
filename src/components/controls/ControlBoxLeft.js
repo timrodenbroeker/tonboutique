@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import UiBoxData from './left/UiBoxData';
-import UiBoxTypography from './left/UiBoxTypography';
+import UiBoxData from './UiBoxData';
+import UiBoxTypography from './UiBoxTypography';
+import UiBoxGraphic from './UiBoxGraphic';
+import UiBoxColors from './UiBoxColors';
 
 class ControlBoxLeft extends Component {
 
@@ -11,6 +13,10 @@ class ControlBoxLeft extends Component {
 	 <section id="controlsLeft">
 
             <UiBoxData 
+
+                name="Data"
+
+                collapsed={false}
               
                 artist={this.props.name}
                 onChangeArtist={this.props.changeName}
@@ -24,6 +30,11 @@ class ControlBoxLeft extends Component {
 
 
             <UiBoxTypography 
+
+                name="Typography"
+
+                collapsed={true}
+
                 fontSize={this.props.fontSize}
                 changeFontSize={this.props.changeFontSize}
 
@@ -41,6 +52,43 @@ class ControlBoxLeft extends Component {
                 changeFontAlignTitle={this.props.changeFontAlignTitle}
             /> 
 
+             <UiBoxGraphic 
+
+             name="Graphic"
+
+        collapsed={true}
+
+        arr={this.props.arr}
+        svg={this.props.svg}
+        changeSvg={this.props.changeSvg}
+
+        svgWidth={this.props.svgWidth}
+        changeSvgWidth={this.props.changeSvgWidth}
+
+        svgRotation={this.props.svgRotation}
+        changeSvgRotation={this.props.changeSvgRotation}
+
+        translateX={this.props.translateX}
+        changeTranslateX={this.props.changeTranslateX}
+                
+        translateY={this.props.translateY}
+        changeTranslateY={this.props.changeTranslateY}
+    />
+
+
+        <UiBoxColors
+    name="background-color"
+    collapsed={true}
+    color={this.props.bg}
+    changeColor={this.props.changeBg}
+/>
+
+            <UiBoxColors
+                name="main color"
+                collapsed={true}
+                color={this.props.fg}
+                changeColor={this.props.changeFg}
+            />
 
           </section>
 

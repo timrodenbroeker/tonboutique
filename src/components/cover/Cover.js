@@ -5,7 +5,7 @@ class Cover extends Component {
 
   render() {
 
-  	const css = ".example path {fill:" + this.props.svgFill + ";}";
+  	const css = ".example path {fill:" + this.props.fg + ";}";
 
     return (
     	<section id="canvas">
@@ -16,13 +16,12 @@ class Cover extends Component {
 
                 <ReactSVG
                     path={"svg/" + this.props.svg + ".svg"} 
-                    callback={svg => console.log(svg)}
                     className="example"
                     wrapperClassName="svgWrapper"
                     evalScript="always"
                     style={{
                       width: this.props.svgWidth, 
-                      fill: this.props.svgFill,
+                      fill: this.props.fg,
                       transform: "rotate(" + this.props.svgRotation + "deg) translate(" + this.props.translateX + "px, " + this.props.translateY + "px)"
                     }}
                   />
@@ -32,16 +31,20 @@ class Cover extends Component {
                 <div className="child cover">
                   <div id="textContainer" style={this.props.textContainerStyles}>
                   <div>
-                      <h1 style={this.props.typoStyleArtist}>{this.props.name}</h1>
-                      <h1 style={this.props.typoStyleTitle}>{this.props.title}</h1>
+                      <h1 className="artist" style={this.props.typoStyleArtist}>{this.props.name}</h1>
+                      <h1 className="title" style={this.props.typoStyleTitle}>{this.props.title}</h1>
                       </div>
                     </div>
                 </div>
 
+                {/*
+
                 <div className="child cover sublineContainer">
 
-                  <div className="subline">{this.props.subline}</div>
+                  <div style={this.props.typoStyleSubline} className="subline">{this.props.subline}</div>
                 </div>
+
+              */ }
               
             </div>
           </section>

@@ -1,196 +1,10 @@
-/* Sans Light */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-Light-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-Regular-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* Sans LightItalic */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-LightItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-LightItalic-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-
-
-/* Sans Regular */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-Regular-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-Regular-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Sans Italic */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-Italic-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-Italic-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Sans Semibold */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-SemiBold-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-SemiBold-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* Sans SemiboldItalic */
-
-@font-face {
-  font-family: "PlexSans";
-  src:  url("./fonts/Sans/web/woff2/IBMPlexSans-SemiBoldItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Sans/web/woff/IBMPlexSans-SemiBoldItalic-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-
-/* Mono Light */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-Light-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-Regular-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* Mono LightItalic */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-LightItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-LightItalic-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-
-
-/* Mono Regular */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-Regular-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-Regular-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Mono Italic */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-Italic-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-Italic-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Mono Semibold */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-SemiBold-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-SemiBold-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* Mono SemiboldItalic */
-
-@font-face {
-  font-family: "PlexMono";
-  src:  url("./fonts/Mono/web/woff2/IBMPlexMono-SemiBoldItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Mono/web/woff/IBMPlexMono-SemiBoldItalic-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-/* Serif Light */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-Light-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-Regular-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-
-/* Serif LightItalic */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-LightItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-LightItalic-Latin1.woff") format("woff");
-  font-weight: 300;
-  font-style: italic;
-}
-
-
-/* Serif Regular */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-Regular-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-Regular-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-/* Serif Italic */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-Italic-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-Italic-Latin1.woff") format("woff");
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Serif Semibold */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-SemiBold-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-SemiBold-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-
-/* Serif SemiboldItalic */
-
-@font-face {
-  font-family: "PlexSerif";
-  src:  url("./fonts/Serif/web/woff2/IBMPlexSerif-SemiBoldItalic-Latin1.woff2") format("woff2"),
-        url("./fonts/Serif/web/woff/IBMPlexSerif-SemiBoldItalic-Latin1.woff") format("woff");
-  font-weight: 600;
-  font-style: italic;
-}
-
-
-
 html,body,* {
   box-sizing: border-box;
-  font-family: 'PlexMono', sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 body {
-background: #f1f1f1;
+
 }
 
 .App {
@@ -265,7 +79,7 @@ h1 {
 }
 
 h4 {
-  font-size: 11px;
+  font-size: 14px;
 
   font-weight: bold;
   margin: 0 0 5px 0;
@@ -288,7 +102,7 @@ input,select, textarea {
   font-size: 14px;
   width: 100%;
   background: transparent;
-  font-family: "PlexMono", sans-serif;
+  font-family: sans-serif;
   font-weight: normal;
   border-radius: 0px;
 }
@@ -330,7 +144,8 @@ textarea:focus {
 .field {
   display: flex;
   align-items: center;
-  margin-bottom: 9px;
+  margin-bottom: 5px;
+  height: 30px;
 }
 
 .field h4 {
@@ -373,8 +188,7 @@ textarea:focus {
 }
 
 .group {
-  padding: 15px 10px 10px 10px;
-  margin-bottom: 15px;
+  padding: 0px 0 10px 0;
   /*border: 1px solid black;*/
 
   /*height: 60px;
@@ -384,8 +198,8 @@ textarea:focus {
 .group h3 {
   font-size: 18px;
   display: block;
-  font-family: "PlexSans";
-  margin-bottom: 15px;
+  font-family: sans-serif;
+
 }
 
 #save {
@@ -460,12 +274,11 @@ width: 100%;
 }
 
 .boxHead {
-
+  margin-bottom: 15px;
 }
 
 .boxBody {
-
-
+  margin-bottom: 15px;
 }
 
 svg {
@@ -529,7 +342,7 @@ svg {
 
 .colorName {
   text-align: center;
-  font-size: 13px;
+
   font-weight: 600;
   padding: 10px;
 }
@@ -589,8 +402,8 @@ position: relative;
     -webkit-appearance: none;  /* Override default CSS styles */
     appearance: none;
     width: 100%; /* Full-width */
-    height: 2px; /* Specified height */
-    background: #111111; /* Grey background */
+    height: 1px; /* Specified height */
+    background: #aaaaaa; /* Grey background */
     outline: none; /* Remove outline */
 
 
@@ -603,9 +416,9 @@ position: relative;
 .inputRangeSlider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 15px; /* Set a specific slider handle width */
-    height: 15px; /* Slider handle height */
-    background: #f1f1f1; /* Green background */
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    background: #111111; /* Green background */
     border: 2px solid #111111;
     cursor: pointer; /* Cursor on hover */
     border-radius: 100%;
@@ -632,6 +445,54 @@ textarea {
 }
 
 .colorField {
-  width: 22px;
-  height: 22px;
+  
+}
+
+.color {
+  width: 30px; 
+  height: 30px;
+  margin: 0 5px 5px 0;
+}
+
+.boxBodyColors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxBodyColors div {
+  
+  cursor: pointer;
+}
+
+.artist {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+}
+
+.boxHead {
+  cursor: pointer;
+}
+
+
+::-moz-selection { /* Code for Firefox */
+    color: black;
+    background: transparent;
+}
+
+::selection {
+    color: black; 
+    background: transparent;
+}
+
+.lighten {
+  opacity: 0.4;
 }
