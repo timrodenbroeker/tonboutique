@@ -8,7 +8,7 @@ class Cover extends Component {
   	const css = ".example path {fill:" + this.props.fg + ";}";
 
     return (
-    	<section id="canvas">
+    	<section id="artboard">
             <div className="cover parent" style={this.props.coverStyle}>
 
           <style>{css}</style>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
 import Cover from './components/cover/Cover';
+import Canvas from './components/cover/Canvas';
 import ControlBoxLeft from './components/controls/ControlBoxLeft';
 import ControlBoxRight from './components/controls/ControlBoxRight';
 
@@ -261,6 +262,24 @@ pickFg(event){
            />
 
           <Cover 
+            coverStyle={coverStyle} 
+            textContainerStyles={textContainerStyles} 
+            typoStyleArtist={typoStyleArtist} 
+            typoStyleSubline={typoStyleSubline} 
+            typoStyleTitle={typoStyleTitle}
+            bg={this.state.bg}
+            fg={this.state.fg}
+            svg={this.state.svg} 
+            svgWidth={this.state.svgWidth} 
+            svgRotation={this.state.svgRotation} 
+            translateX={this.state.translateX}
+            translateY={this.state.translateY}
+            name={this.state.name} 
+            title={this.state.title}
+            subline={this.state.subline}
+          />
+
+          <Canvas 
             coverStyle={coverStyle} 
             textContainerStyles={textContainerStyles} 
             typoStyleArtist={typoStyleArtist} 
