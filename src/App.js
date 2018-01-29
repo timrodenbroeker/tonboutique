@@ -22,18 +22,17 @@ class App extends Component {
       translateX: 0,
       translateY: 0,
 
-      fontSize: 40,
+      fontSize: 15,
       fontFamily: "Libre Franklin",
       fontWeight: 600,
       fontAlignArtist: "left",
       fontAlignTitle: "right",
-      fontColor: "#111111",
       textPosition: "top",
-      bg: "#f45844",
-      fg: "#111111",
+      bg: "#0000ff",
+      fg: "#ffffff",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       ModalColorsCollapsed: true,
-      availableFonts: ["Helvetica","Arial"],
+      availableFonts: ["Libre Franklin"],
 
       isOpen: false,
       viewRotationY: 0,
@@ -261,24 +260,6 @@ pickFg(event){
 
            />
 
-          <Cover 
-            coverStyle={coverStyle} 
-            textContainerStyles={textContainerStyles} 
-            typoStyleArtist={typoStyleArtist} 
-            typoStyleSubline={typoStyleSubline} 
-            typoStyleTitle={typoStyleTitle}
-            bg={this.state.bg}
-            fg={this.state.fg}
-            svg={this.state.svg} 
-            svgWidth={this.state.svgWidth} 
-            svgRotation={this.state.svgRotation} 
-            translateX={this.state.translateX}
-            translateY={this.state.translateY}
-            name={this.state.name} 
-            title={this.state.title}
-            subline={this.state.subline}
-          />
-
           <Canvas 
             coverStyle={coverStyle} 
             textContainerStyles={textContainerStyles} 
@@ -295,6 +276,8 @@ pickFg(event){
             name={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
+            fontSize={this.state.fontSize*0.01}
+            fontWeight={this.state.fontWeight}
           />
 
       </div>

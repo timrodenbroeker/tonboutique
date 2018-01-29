@@ -35,8 +35,8 @@ class UiBoxTypography extends Component {
             <RangeSlider 
                 name="Font-Size" 
                 value={this.props.fontSize} 
-                min="20" 
-                max="100"
+                min="3" 
+                max="20"
                 onChange={this.props.changeFontSize}
             />
 

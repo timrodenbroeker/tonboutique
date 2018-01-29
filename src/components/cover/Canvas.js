@@ -23,6 +23,7 @@ drawCanvas(){
       xhttp.send();
     }
 
+    var fontWeight = this.props.fontWeight; 
 
     var c= document.getElementById("theCanvas");
     var ctx= c.getContext("2d");
@@ -31,7 +32,7 @@ drawCanvas(){
     var canvasH = c.height;
 
     var fontPadding = canvasW * 0.025;
-    var fontSizeInPercent = canvasH *0.05;
+    var fontSizeInPercent = canvasH * this.props.fontSize;
 
     var canvasPadding = 100;
 
@@ -50,12 +51,11 @@ drawCanvas(){
     // Canvas 
 
     ctx.fillStyle = bg;
-
     ctx.fillRect(0,0,canvasW,canvasH);
     ctx.stroke();
     ctx.fillStyle = fg;
     ctx.textBaseline="top"; 
-    ctx.font = fontSizeInPercent +"px Arial";
+    ctx.font = fontWeight + " " + fontSizeInPercent +"px Libre Franklin";
     ctx.textAlign="end";    
     ctx.fillText(title, canvasW-fontPadding, 0+fontPadding);
 
@@ -70,7 +70,7 @@ drawCanvas(){
 
     // Load file
 
-    var filename = 2;
+    var filename = 1;
 
     loadDoc('svg/' + this.props.svg + '.svg', function(svgXml) {
 
@@ -102,7 +102,8 @@ render() {
 
     return (
     	<section id="artboard">
-            <canvas 
+            <canvas className="cover"
+                style={this.props.coverStyle}
                 id="theCanvas"
                 path={"svg/" + this.props.svg + ".svg"} 
                 width="550" 
