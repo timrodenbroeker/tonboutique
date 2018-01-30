@@ -18,23 +18,11 @@ class UiBoxColors extends Component {
   render() {
 
      const colors = [
-        'Crimson',
-        'DarkBlue',
-        'DarkGray',
-        'DarkSeaGreen',
-        'MediumBlue',
-        'MidnightBlue',
-        'SeaGreen',
-        'Sienna',
-        'SlateGray',
-        'SteelBlue',
-        'Gainsboro',
-        '#111111',
-        '#222222',
-        '#f1f1f1',
-        '#eeeeee',
-        '#dddddd',
-        '#aaaaaa'
+        '#292C44',
+        '#FF5349',
+        '#F0F0F1',
+        '#18CDCA',
+        '#4F80E1'
       ];
 
     const theColors = colors.map((color) =>

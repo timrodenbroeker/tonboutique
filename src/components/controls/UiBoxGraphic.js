@@ -41,10 +41,11 @@ class UiBoxGraphic extends Component {
 
                 <RangeSlider 
                     name="Size" 
-                    value={this.props.svgWidth} 
+                    value={this.props.scale} 
                     min="0"  
-                    max="1000" 
-                    onChange={this.props.changeSvgWidth}
+                    max="2" 
+                    step={0.01}
+                    onChange={this.props.changeScale}
                 />
 
                 <RangeSlider 

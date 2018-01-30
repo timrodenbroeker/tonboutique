@@ -6,8 +6,11 @@ class Canvas extends Component {
     this.state = {}
 }
 
-drawCanvas(){
 
+
+
+drawCanvas(){
+    var c= document.getElementById("theCanvas");
     // A function to load the images
 
     function loadDoc(url, cFunction) {
@@ -15,7 +18,8 @@ drawCanvas(){
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-        console.log(this.response);
+        // console.log(this.response);
+        
           cFunction(this.response);
         }
       };
@@ -25,7 +29,7 @@ drawCanvas(){
 
     var fontWeight = this.props.fontWeight; 
 
-    var c= document.getElementById("theCanvas");
+    
     var ctx= c.getContext("2d");
 
     var canvasW = c.width;
@@ -36,7 +40,9 @@ drawCanvas(){
 
     var canvasPadding = 100;
 
-    var svgScalingFactor = this.props.scale ;
+    var svgScalingFactor = this.props.scale;
+
+    console.log(svgScalingFactor);
 
     var svgW = canvasW * svgScalingFactor;
     var svgH = canvasW * svgScalingFactor;
@@ -102,16 +108,27 @@ render() {
 
     return (
     	<section id="artboard">
-            <canvas className=""
-                style={this.props.coverStyle}
-                id="theCanvas"
-                path={"svg/" + this.props.svg + ".svg"} 
-                width="600" 
-                height="600" 
-                scale={this.props.scale}
-            >
-            </canvas>
-
+            <div 
+                className="theCover"
+                style={this.props.coverStyle}>
+                
+                <div 
+                    style={{
+                        width: this.props.width,
+                        height: this.props.height
+                    }}
+                    className="record">
+                </div>
+                
+                <canvas 
+                    id="theCanvas"
+                    path={"svg/" + this.props.svg + ".svg"} 
+                    width={this.props.width}
+                    height={this.props.height}
+                    scale={this.props.scale}
+                >
+                </canvas>
+            </div>
         </section>
     );
   }

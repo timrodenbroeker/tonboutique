@@ -10,7 +10,6 @@ class Cover extends Component {
     return (
     	<section id="artboard">
             <div className="cover parent" style={this.props.coverStyle}>
-
           <style>{css}</style>
                 <div className="child coverImage">
 

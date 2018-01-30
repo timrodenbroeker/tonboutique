@@ -37,7 +37,7 @@ class UiBoxView extends Component {
                 min="0.5"  
                 max="1.5" 
                 onChange={this.props.changeViewScale} 
-                step="0.1"
+                step="0.01"
             />
 
             <RangeSlider 
@@ -46,7 +46,7 @@ class UiBoxView extends Component {
                 min="-25" 
                 max="25" 
                 onChange={this.props.changeViewRotationY} 
-                step="1"
+                step="0.1"
             />
 
 

@@ -60,10 +60,11 @@ class ControlBoxLeft extends Component {
 
         arr={this.props.arr}
         svg={this.props.svg}
-        changeSvg={this.props.changeSvg}
 
-        svgWidth={this.props.svgWidth}
-        changeSvgWidth={this.props.changeSvgWidth}
+        scale={this.props.scale}
+        changeScale={this.props.changeScale}
+
+        changeSvg={this.props.changeSvg}
 
         svgRotation={this.props.svgRotation}
         changeSvgRotation={this.props.changeSvgRotation}

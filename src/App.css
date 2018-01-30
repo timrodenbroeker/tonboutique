@@ -501,3 +501,38 @@ textarea {
   /*border: 1px solid blue;*/
 
 }
+
+#theCanvas {
+  position: relative;
+  -webkit-transition: all 500ms ease; /* Firefox */
+-moz-transition: all 500ms ease; /* WebKit */
+-o-transition: all 500ms ease; /* Opera */
+transition: all 500ms ease; /* Standard */
+}
+
+.theCover {
+  -webkit-transition: all 500ms ease; /* Firefox */
+  -moz-transition: all 500ms ease; /* WebKit */
+  -o-transition: all 500ms ease; /* Opera */
+  transition: all 500ms ease; /* Standard */
+} 
+
+.theCover:hover .record {
+  left: 100px;
+}
+
+#theCanvas:hover {
+
+}
+
+.record {
+  -webkit-transition: all 500ms ease; /* Firefox */
+  -moz-transition: all 500ms ease; /* WebKit */
+  -o-transition: all 500ms ease; /* Opera */
+  transition: all 500ms ease; /* Standard */
+  position: absolute;
+  left: 0;
+  border-radius: 100%;
+  top: 0;
+  background: #111111;
+}

@@ -5,9 +5,18 @@ import UiBoxExport from './UiBoxExport';
 
 
 class ControlBoxRight extends Component {
+constructor(props){
+  super(props);
+  this.state = {}
+  this.test = this.test.bind(this);
+}
+
+test(){
+  alert('a');
+}
 
 
-  render() {
+render() {
     return (
 
 	 <section id="controlsRight">
@@ -22,7 +31,10 @@ class ControlBoxRight extends Component {
             changeViewRotationY={this.props.changeViewRotationY}
            />
 
-            <UiBoxExport name="Export"/>
+            <UiBoxExport 
+              name="Export" 
+              onClick={this.test}
+            />
 
         </section>
 

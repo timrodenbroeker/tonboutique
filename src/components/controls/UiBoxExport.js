@@ -9,7 +9,7 @@ class UiBoxExport extends Component {
     return (
     	<div className="group">
             <div className="boxHead">
-                <h3 className="lighten">
+                <h3 className="lighten" onClick={() => alert('a')}>
                     
                     {this.props.name}
                 </h3>

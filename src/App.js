@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './normalize.css';
 import './App.css';
-import Cover from './components/cover/Cover';
 import Canvas from './components/cover/Canvas';
 import ControlBoxLeft from './components/controls/ControlBoxLeft';
 import ControlBoxRight from './components/controls/ControlBoxRight';
@@ -17,6 +16,10 @@ class App extends Component {
       subline: "Including a remix by Alexander Franz",
       scale: 0.8,
       svg: 1,
+
+      width: 600,
+      height: 600,
+
       svgWidth: 444,
       svgRotation: 0,
       translateX: 0,
@@ -28,8 +31,8 @@ class App extends Component {
       fontAlignArtist: "left",
       fontAlignTitle: "right",
       textPosition: "top",
-      bg: "#0000ff",
-      fg: "#ffffff",
+      bg: "#FF5349",
+      fg: "#292C44",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       ModalColorsCollapsed: true,
       availableFonts: ["Libre Franklin"],
@@ -54,7 +57,7 @@ class App extends Component {
     this.changeBg = this.changeBg.bind(this);
 
     this.changeSvg = this.changeSvg.bind(this);
-    this.changeSvgWidth = this.changeSvgWidth.bind(this);
+    this.changeScale = this.changeScale.bind(this);
     this.changeFg = this.changeFg.bind(this);
     this.changeSvgRotation = this.changeSvgRotation.bind(this);
 
@@ -63,6 +66,8 @@ class App extends Component {
 
     this.changeViewRotationY = this.changeViewRotationY.bind(this);
     this.changeViewScale = this.changeViewScale.bind(this);
+
+    this.savePng = this.savePng.bind(this);
 
   }
 
@@ -120,8 +125,8 @@ changeFg(event){
     }   
 
 
-changeSvgWidth(event){
-    this.setState({svgWidth: event.target.value});
+changeScale(event){
+    this.setState({scale: event.target.value});
     }   
 
 toggleModalColors(event){
@@ -156,6 +161,14 @@ pickFg(event){
     this.setState({fg: event.target.getAttribute('color')})
 }    
 
+savePng(){
+    var c= document.getElementById("theCanvas");
+    var image = c.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
+
+    alert('a');
+    window.location.href=image; // it will save locally
+}
+
  toggleModal = () => {
     this.setState({
       isOpen: !this.state.isOpen
@@ -165,7 +178,7 @@ pickFg(event){
   render() {
 
     const coverStyle = {
-      backgroundColor:this.state.bg,
+
       transform: "scale("+this.state.viewScale+") rotateY("+this.state.viewRotationY+"deg)"
     }
 
@@ -208,8 +221,8 @@ pickFg(event){
             svg={this.state.svg}
             changeSvg={this.changeSvg}
 
-            svgWidth={this.state.svgWidth}
-            changeSvgWidth={this.changeSvgWidth}
+            scale={this.state.scale}
+            changeScale={this.changeScale}
 
             svgRotation={this.state.svgRotation}
             changeSvgRotation={this.changeSvgRotation}
@@ -239,7 +252,6 @@ pickFg(event){
             fontAlignTitle={this.state.fontAlignTitle}
             changeFontAlignTitle={this.changeFontAlignTitle}
 
-
             bg={this.state.bg}
             changeBg={(event) => this.pickBg(event)}
 
@@ -250,13 +262,14 @@ pickFg(event){
 
         <ControlBoxRight 
             
-            
-
+          
             viewScale={this.state.viewScale}
             changeViewScale={this.changeViewScale}
 
             viewRotationY={this.state.viewRotationY}
             changeViewRotationY={this.changeViewRotationY}
+
+            savePng={this.savePng}
 
            />
 
@@ -269,8 +282,12 @@ pickFg(event){
             bg={this.state.bg}
             fg={this.state.fg}
             svg={this.state.svg} 
+            
             scale={this.state.scale}
-            svgWidth={this.state.svgWidth} 
+
+            width={this.state.width}
+            height={this.state.height}
+
             svgRotation={this.state.svgRotation} 
             translateX={this.state.translateX}
             translateY={this.state.translateY}
@@ -279,6 +296,8 @@ pickFg(event){
             subline={this.state.subline}
             fontSize={this.state.fontSize*0.01}
             fontWeight={this.state.fontWeight}
+
+            savePng={this.savePng}
           />
 
       </div>
