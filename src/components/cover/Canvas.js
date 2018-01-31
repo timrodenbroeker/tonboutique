@@ -17,12 +17,11 @@ class Canvas extends Component {
         rotation : this.props.svgRotation,
         artist : this.props.name,
         title : this.props.title,
-        knopf : 0,
         img : 0,
-        newKnopf : 0
+        knopf: 0
     }   
 
-    this.drawCanvas = this.drawCanvas.bind(this); 
+    // this.drawCanvas = this.drawCanvas.bind(this); 
 
 }
 
@@ -30,7 +29,7 @@ loadGraphic(){
 
     var comp = this;
 
-    var knopf, img, newKnopf;
+    var knopf, img;
 
     var xhttp;
 
@@ -45,7 +44,11 @@ loadGraphic(){
 
             img = new Image();
 
-            newKnopf = knopf.replace(/#ff0000/g, comp.props.fg);
+            img.src = "data:image/svg+xml;charset=utf-8," + knopf.replace(/#ff0000/g, comp.props.fg);
+
+            comp.setState({img: img});
+
+            comp.setState({knopf: knopf});
 
         }
     };
@@ -54,6 +57,7 @@ loadGraphic(){
     xhttp.send();
 
 }
+
 
 
 drawCanvas(){ 
@@ -76,17 +80,6 @@ drawCanvas(){
     var svgY = ctx.canvas.height * .5;
 
 
-    // Load the SVG-file asynchronous
-
-    // This im xhttp-Objekt ansprechbar machen
-
-
-
-    // xhttp-request
-
-
-
-    img.src = "data:image/svg+xml;charset=utf-8," + newKnopf;
 
     ctx.save(); 
 
@@ -94,13 +87,12 @@ drawCanvas(){
 
     ctx.rotate( (Math.PI / 180) * this.props.svgRotation);
 
-    ctx.drawImage(img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
+    ctx.drawImage(this.state.img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
     ctx.restore();
 
 }
 
 componentDidMount(){
-    this.drawCanvas();
     this.loadGraphic();
 }
 
@@ -125,8 +117,8 @@ render() {
                 </div>
                 
                 <canvas 
-                className="cover"
-                ref="canvas"
+                    className="cover"
+                    ref="canvas"
                     id="theCanvas"
                     path={"svg/" + this.props.svg + ".svg"} 
                     width={this.props.width}

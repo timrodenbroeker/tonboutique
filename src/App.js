@@ -288,6 +288,7 @@ savePng(){
             
             svgWidth={this.state.svgWidth}
             svgHeight={this.state.svgHeight}
+            
             width={this.state.width}
             height={this.state.height}
 
