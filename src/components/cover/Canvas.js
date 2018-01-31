@@ -4,19 +4,6 @@ class Canvas extends Component {
     constructor(props){
     super(props);
     this.state = {
-        fontWeight : this.props.fontWeight,
-        canvasW : this.props.width,
-        canvasH : this.props.height,
-        fontPadding : this.props.width * 0.025,
-        fontSizeInPercent: this.props.height * this.props.fontSize,
-        svgScalingFactor : this.props.scale,
-        svgW : this.props.width * this.props.scale,
-        svgH : this.props.height * this.props.scale,
-        bg : this.props.bg,
-        fg : this.props.fg,
-        rotation : this.props.svgRotation,
-        artist : this.props.name,
-        title : this.props.title,
         img : 0,
         knopf: 0
     }   
@@ -51,6 +38,8 @@ loadGraphic(){
 
             comp.setState({knopf: knopf});
 
+            comp.drawCanvas();
+
         }
     };
     
@@ -66,16 +55,16 @@ drawCanvas(){
     const ctx = this.refs.canvas.getContext("2d");
 
     ctx.fillStyle = this.props.bg;
-    ctx.fillRect(0,0,this.state.canvasW,this.state.canvasH);
+    ctx.fillRect(0,0,this.props.width,this.props.height);
     ctx.stroke();
     ctx.fillStyle = this.props.fg;
     ctx.textBaseline="top"; 
     ctx.font = this.props.fontWeight + " " + this.props.height * this.props.fontSize +"px lf";
     ctx.textAlign="end";    
-    ctx.fillText(this.props.title, this.state.canvasW - this.state.fontPadding, 0+this.state.fontPadding);
+    ctx.fillText(this.props.title, this.props.width - this.props.width * 0.025, 0+this.props.width * 0.025);
 
     ctx.textAlign="start"; 
-    ctx.fillText(this.props.artist, 0+this.state.fontPadding, 0+this.state.fontPadding);
+    ctx.fillText(this.props.artist, 0+this.props.width * 0.025, 0+this.props.width * 0.025);
 
     var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
@@ -89,14 +78,42 @@ drawCanvas(){
     ctx.drawImage(this.state.img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
     ctx.restore();
 
+
+    // Is this a way to get the fonts working on reload?
+    //
+    // var link = document.createElement('link');
+    // link.rel = 'stylesheet';
+    // link.type = 'text/css';
+    // link.href = 'fonts/ttf/lf600.ttf';
+    // link.style = 'font-weight: 600;'
+    // document.getElementById("invisible").appendChild(link);
+
+
 }
 
 componentDidMount(){
     this.loadGraphic();
+    console.log('mount!!!!!');
 }
 
-componentDidUpdate(){
+// componentDidUpdate(){
+    
+// }
+
+// Fire this only when svg prop changes
+//
+componentDidUpdate(prevProps) {
+    console.log('update!!!!!');
+  if(this.props.svg !== prevProps.svg) {
+    console.log('aaaaa');
+    this.loadGraphic();
+    
+  } else {
     this.drawCanvas();
+    console.log('jajajjaja');
+  }
+
+
 }
 
 render() {

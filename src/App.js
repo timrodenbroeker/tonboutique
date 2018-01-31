@@ -15,7 +15,7 @@ class App extends Component {
       title: "Flash",
       subline: "Including a remix by Alexander Franz",
       scale: 0.8,
-      svg: 1,
+      svg: 2,
 
       width: 600,
       height: 600,
