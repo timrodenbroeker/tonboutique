@@ -288,14 +288,14 @@ savePng(){
             
             svgWidth={this.state.svgWidth}
             svgHeight={this.state.svgHeight}
-            
+
             width={this.state.width}
             height={this.state.height}
 
             svgRotation={this.state.svgRotation} 
             translateX={this.state.translateX}
             translateY={this.state.translateY}
-            name={this.state.name} 
+            artist={this.state.name} 
             title={this.state.title}
             subline={this.state.subline}
             fontSize={this.state.fontSize*0.01}

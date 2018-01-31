@@ -70,12 +70,12 @@ drawCanvas(){
     ctx.stroke();
     ctx.fillStyle = this.props.fg;
     ctx.textBaseline="top"; 
-    ctx.font = this.state.fontWeight + " " + this.state.fontSizeInPercent +"px lf";
+    ctx.font = this.props.fontWeight + " " + this.props.height * this.props.fontSize +"px lf";
     ctx.textAlign="end";    
-    ctx.fillText(this.state.title, this.state.canvasW - this.state.fontPadding, 0+this.state.fontPadding);
+    ctx.fillText(this.props.title, this.state.canvasW - this.state.fontPadding, 0+this.state.fontPadding);
 
     ctx.textAlign="start"; 
-    ctx.fillText(this.state.artist, 0+this.state.fontPadding, 0+this.state.fontPadding);
+    ctx.fillText(this.props.artist, 0+this.state.fontPadding, 0+this.state.fontPadding);
 
     var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
