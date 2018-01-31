@@ -21,7 +21,8 @@ class Canvas extends Component {
         knopf: 0
     }   
 
-    // this.drawCanvas = this.drawCanvas.bind(this); 
+    this.drawCanvas = this.drawCanvas.bind(this); 
+    this.loadGraphic = this.loadGraphic.bind(this); 
 
 }
 
@@ -78,8 +79,6 @@ drawCanvas(){
 
     var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
-
-
 
     ctx.save(); 
 
