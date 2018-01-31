@@ -26,7 +26,7 @@ class App extends Component {
       translateY: 0,
 
       fontSize: 15,
-      fontFamily: "Libre Franklin",
+      fontFamily: "lf",
       fontWeight: 600,
       fontAlignArtist: "left",
       fontAlignTitle: "right",
@@ -35,7 +35,7 @@ class App extends Component {
       fg: "#292C44",
       arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
       ModalColorsCollapsed: true,
-      availableFonts: ["Libre Franklin"],
+      availableFonts: ["lf"],
 
       isOpen: false,
       viewRotationY: 0,
@@ -262,7 +262,6 @@ savePng(){
 
         <ControlBoxRight 
             
-          
             viewScale={this.state.viewScale}
             changeViewScale={this.changeViewScale}
 

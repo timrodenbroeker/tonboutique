@@ -1,6 +1,50 @@
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf300.ttf') format('truetype'); 
+  font-weight: 300;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf400.ttf') format('truetype'); 
+  font-weight: 400;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf500.ttf') format('truetype'); 
+  font-weight: 500;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf600.ttf') format('truetype'); 
+  font-weight: 600;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf700.ttf') format('truetype'); 
+  font-weight: 700;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf800.ttf') format('truetype'); 
+  font-weight: 800;
+}
+
+@font-face { 
+  font-family: 'lf';
+  src: url('fonts/ttf/lf800.ttf') format('truetype'); 
+  font-weight: 800;
+}
+
+
+
 html,body,* {
   box-sizing: border-box;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: "lf", sans-serif !important;
 }
 
 body {
@@ -496,43 +540,42 @@ textarea {
 .lighten {
   opacity: 0.4;
 }
-
-#theCanvas {
-  /*border: 1px solid blue;*/
-
-}
-
-#theCanvas {
-  position: relative;
-  -webkit-transition: all 500ms ease; /* Firefox */
--moz-transition: all 500ms ease; /* WebKit */
--o-transition: all 500ms ease; /* Opera */
-transition: all 500ms ease; /* Standard */
-}
-
-.theCover {
-  -webkit-transition: all 500ms ease; /* Firefox */
-  -moz-transition: all 500ms ease; /* WebKit */
-  -o-transition: all 500ms ease; /* Opera */
-  transition: all 500ms ease; /* Standard */
-} 
-
-.theCover:hover .record {
-  left: 100px;
-}
-
-#theCanvas:hover {
-
-}
-
 .record {
+  top: 0; left: 0;
+  position: relative;
+  width: 600px;
+  height: 600px;  
+}
+
+.cover {
+  top: 0; left: 0;
+  position: absolute;
+  width: 600px;
+  height: 600px;
   -webkit-transition: all 500ms ease; /* Firefox */
   -moz-transition: all 500ms ease; /* WebKit */
   -o-transition: all 500ms ease; /* Opera */
-  transition: all 500ms ease; /* Standard */
+  transition: all 500ms ease; /* Standard */  
+}
+
+.vinyl {
+  top: 0; left: 0;
   position: absolute;
-  left: 0;
-  border-radius: 100%;
-  top: 0;
+  width: 600px;
+  height: 600px;
   background: #111111;
+  border-radius: 100%;
+  -webkit-transition: all 500ms ease; /* Firefox */
+  -moz-transition: all 500ms ease; /* WebKit */
+  -o-transition: all 500ms ease; /* Opera */
+  transition: all 500ms ease; /* Standard */    
+}
+
+.record:hover .vinyl {
+  left: 50px;
+}
+
+
+.record:hover .cover {
+  left: -50px;
 }
