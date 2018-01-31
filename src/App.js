@@ -21,6 +21,8 @@ class App extends Component {
       height: 600,
 
       svgWidth: 444,
+      svgHeight: 444,
+
       svgRotation: 0,
       translateX: 0,
       translateY: 0,
@@ -283,7 +285,9 @@ savePng(){
             svg={this.state.svg} 
             
             scale={this.state.scale}
-
+            
+            svgWidth={this.state.svgWidth}
+            svgHeight={this.state.svgHeight}
             width={this.state.width}
             height={this.state.height}
 

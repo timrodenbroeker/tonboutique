@@ -17,21 +17,53 @@ class Canvas extends Component {
         rotation : this.props.svgRotation,
         artist : this.props.name,
         title : this.props.title,
-
-    }
+        knopf : 0,
+        img : 0,
+        newKnopf : 0
+    }   
 
     this.drawCanvas = this.drawCanvas.bind(this); 
+
+}
+
+loadGraphic(){
+
+    var comp = this;
+
+    var knopf, img, newKnopf;
+
+    var xhttp;
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+
+        // When ready...
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            knopf = this.response;
+
+            img = new Image();
+
+            newKnopf = knopf.replace(/#ff0000/g, comp.props.fg);
+
+        }
+    };
+    
+    xhttp.open("GET", 'svg/' + this.props.svg + '.svg', true);
+    xhttp.send();
+
 }
 
 
-drawCanvas(){
+drawCanvas(){ 
 
     const ctx = this.refs.canvas.getContext("2d");
 
-    ctx.fillStyle = this.state.bg;
+    ctx.fillStyle = this.props.bg;
     ctx.fillRect(0,0,this.state.canvasW,this.state.canvasH);
     ctx.stroke();
-    ctx.fillStyle = this.state.fg;
+    ctx.fillStyle = this.props.fg;
     ctx.textBaseline="top"; 
     ctx.font = this.state.fontWeight + " " + this.state.fontSizeInPercent +"px lf";
     ctx.textAlign="end";    
@@ -40,64 +72,40 @@ drawCanvas(){
     ctx.textAlign="start"; 
     ctx.fillText(this.state.artist, 0+this.state.fontPadding, 0+this.state.fontPadding);
 
-    var svgX = ctx.canvas.width * .5;
+    var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
 
 
-    // Load the SVG-file asynchronous laden
+    // Load the SVG-file asynchronous
 
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-
-    // When ready...
-
-    if (this.readyState == 4 && this.status == 200) {
-
-        var knopf = this.response;
-
-        var img = new Image();
-
-        var newKnopf = knopf.replace(/#ff0000/g, this.state.fg);
-
-        // TypeError: Cannot read property 'fg' of undefined
-
-        
-
-        img.src = "data:image/svg+xml;charset=utf-8," + newKnopf;
+    // This im xhttp-Objekt ansprechbar machen
 
 
 
-        setTimeout(function(){ 
-            ctx.save(); 
-
-            ctx.translate(() => this.state.svgX, () => this.state.svgY);   
-            ctx.rotate( () => (Math.PI / 180) * this.state.rotation);
-
-
-    // Draw the SVG to the canvas
-
-            ctx.drawImage(img, () => 0-this.state.this.state.svgW/2, () => 0-this.state.svgH/2, () => this.state.svgW, () => this.state.svgH);
-            ctx.restore();
-
-    }, 30);
+    // xhttp-request
 
 
 
-        }
-      };
-      xhttp.open("GET", 'svg/' + this.props.svg + '.svg', true);
-      xhttp.send();
-    
+    img.src = "data:image/svg+xml;charset=utf-8," + newKnopf;
+
+    ctx.save(); 
+
+    ctx.translate( svgX, svgY);   
+
+    ctx.rotate( (Math.PI / 180) * this.props.svgRotation);
+
+    ctx.drawImage(img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
+    ctx.restore();
 
 }
 
 componentDidMount(){
-    this.drawCanvas()
+    this.drawCanvas();
+    this.loadGraphic();
 }
 
 componentDidUpdate(){
-    this.drawCanvas()
+    this.drawCanvas();
 }
 
 render() {
