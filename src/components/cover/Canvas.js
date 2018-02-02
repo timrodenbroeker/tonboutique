@@ -30,12 +30,13 @@ loadGraphic(){
             this.setState({
                 img: img
             }, () => {
+                // The callback here does not work !!!
                 this.drawCanvas();
             });
 
     });
 
-} // close loadGraphic!
+} 
 
 
 
