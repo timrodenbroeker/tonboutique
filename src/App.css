@@ -36,8 +36,8 @@
 
 @font-face { 
   font-family: 'lf';
-  src: url('fonts/ttf/lf800.ttf') format('truetype'); 
-  font-weight: 800;
+  src: url('fonts/ttf/lf900.ttf') format('truetype'); 
+  font-weight: 900;
 }
 
 
@@ -540,6 +540,11 @@ textarea {
 .lighten {
   opacity: 0.4;
 }
+
+.lighten:hover {
+ opacity: 1; 
+}
+
 .record {
   top: 0; left: 0;
   position: relative;

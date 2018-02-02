@@ -12,6 +12,8 @@ class ControlBoxLeft extends Component {
 
 	 <section id="controlsLeft">
 
+     {/*}
+
             <UiBoxData 
 
                 name="Data"
@@ -51,6 +53,8 @@ class ControlBoxLeft extends Component {
                 fontAlignTitle={this.props.fontAlignTitle}
                 changeFontAlignTitle={this.props.changeFontAlignTitle}
             /> 
+
+        */}
 
              <UiBoxGraphic 
 

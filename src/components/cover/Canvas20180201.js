@@ -19,7 +19,6 @@
 
     3       Because 'img' and 'svgGraphic' are saved to the state on loadGraphic(),
             'componentDidUpdate' triggers on 'componentDidMount'. (Is that a problem?)
-
 */
 
 
@@ -30,7 +29,8 @@ class Canvas extends Component {
     constructor(props){
     super(props);
     this.state = {
-        img : 0
+        img : 0,
+        svgGraphic: 0
     }   
 
     this.drawCanvas = this.drawCanvas.bind(this); 
@@ -40,32 +40,67 @@ class Canvas extends Component {
 
 loadGraphic(){
 
-    fetch('svg/' + this.props.svg + '.svg')
-        .then(dataWrappedByPromise => dataWrappedByPromise.text())
-        .then(data => {
-        var svgGraphic = data;
+    // I need to reference "this" from the XMLHttpRequest-object,
+    // That's why i assign it to a variable here
 
-            var img = new Image();
+    var comp = this;
+
+
+    // Temporary variables
+
+    var svgGraphic, img;
+
+
+    // xhttp-request
+
+    var xhttp;
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+
+        // When ready...
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            svgGraphic = this.response;
+
+            img = new Image();
 
             // Replace color
 
-            img.src = "data:image/svg+xml;charset=utf-8," + svgGraphic.replace(/#ff0000/g, this.props.fg);
+            img.src = "data:image/svg+xml;charset=utf-8," + svgGraphic.replace(/#ff0000/g, comp.props.fg);
 
-            // Save img to state
 
-            this.setState({
-                img: img
-            }, () => {
-                this.drawCanvas();
+
+            // Here i save img and svgGraphic to the state
+            // ( Is that necessary? )
+
+            comp.setState({
+                img: img, 
+                svgGraphic: svgGraphic
             });
 
-    });
+            console.log('draw');
 
-} // close loadGraphic!
+            // fire drawCanvas() as a callback
+            comp.drawCanvas(img);
+
+        }
+    };
+    
+    xhttp.open("GET", 'svg/' + this.props.svg + '.svg', true);
+    xhttp.send();
+
+
+
+}
 
 
 
 drawCanvas(){ 
+
+    console.log('check this !!!');
+
 
     const ctx = this.refs.canvas.getContext("2d");
 
@@ -81,10 +116,8 @@ drawCanvas(){
 
     ctx.rotate( (Math.PI / 180) * this.props.svgRotation);
 
-    console.log(this.state.img); 
-
     ctx.drawImage(this.state.img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
-
+    
     ctx.restore();
 
 }
@@ -95,19 +128,19 @@ componentDidMount(){
 }
 
 componentDidUpdate(prevProps) {
+    
+    // Fire this only when this.props.svg changes    
+    
+    console.log('update!');
 
     if(this.props.svg !== prevProps.svg) {
 
         this.loadGraphic();
-        console.log('graphic loaded');
-        
-    } else if (this.props.fg !== prevProps.fg) {
-
-        this.loadGraphic(); 
+        console.log('svg updated!   ');
 
     } else {
 
-        // Else draw canvas without loadGraphic for better performance
+    // Else draw canvas without loadGraphic for better performance
 
         this.drawCanvas();
 

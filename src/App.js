@@ -261,7 +261,7 @@ savePng(){
             changeFg={(event) => this.pickFg(event)}            
 
          />
-
+         {/*
         <ControlBoxRight 
             
             viewScale={this.state.viewScale}
@@ -273,6 +273,8 @@ savePng(){
             savePng={this.savePng}
 
            />
+
+         */}
 
           <Canvas 
             coverStyle={coverStyle} 

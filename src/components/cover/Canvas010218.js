@@ -1,24 +1,8 @@
 /*
 
-    This is a canvas-component that draws an asynchrounous loaded svg.
+    Problems: 
+    Fonts
 
-    The interface has various inputs to control the SVG-file, the size, rotation and fill. 
-
-    The drawCanvas()-function works perfect. But if the props 'fg' or 'svg' change and i have to fire loadGraphic() before drawCanvas() i get a few bugs.
-
-    MAIN ISSUES
-    -----------
-
-    1       The canvas is sometimes empty on initial load, because the loadGraphic() is not finished 
-            before drawCanvas() is fired (i guess)
-
-    2       when the svg-props 'fg' or 'svg' change, i have to fire loadGraphic() before drawCanvas()  
-            And drawCanvas() has to wait for loadGraphic()
-            
-            How can this be done? 
-
-    3       Because 'img' and 'svgGraphic' are saved to the state on loadGraphic(),
-            'componentDidUpdate' triggers on 'componentDidMount'. (Is that a problem?)
 
 */
 
@@ -30,7 +14,8 @@ class Canvas extends Component {
     constructor(props){
     super(props);
     this.state = {
-        img : 0
+        img : 0,
+        svgGraphic: 0
     }   
 
     this.drawCanvas = this.drawCanvas.bind(this); 
@@ -40,28 +25,48 @@ class Canvas extends Component {
 
 loadGraphic(){
 
-    fetch('svg/' + this.props.svg + '.svg')
-        .then(dataWrappedByPromise => dataWrappedByPromise.text())
-        .then(data => {
-        var svgGraphic = data;
+    // I need to reference this from the XMLHttpRequest-object,
+    // That's why i assign it to a variable
 
-            var img = new Image();
+    var comp = this;
 
-            // Replace color
 
-            img.src = "data:image/svg+xml;charset=utf-8," + svgGraphic.replace(/#ff0000/g, this.props.fg);
+    // Temporary variables
 
-            // Save img to state
+    var svgGraphic, img;
 
-            this.setState({
-                img: img
-            }, () => {
-                this.drawCanvas();
-            });
 
-    });
+    // xhttp-request
 
-} // close loadGraphic!
+    var xhttp;
+
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+
+        // When ready...
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            svgGraphic = this.response;
+
+            img = new Image();
+
+            img.src = "data:image/svg+xml;charset=utf-8," + svgGraphic.replace(/#ff0000/g, comp.props.fg);
+
+
+
+            // Here i save img and svgGraphic to the state
+            // ( Is that necessary? )
+
+            comp.setState({img: img,svgGraphic: svgGraphic});
+
+        }
+    };
+    
+    xhttp.open("GET", 'svg/' + this.props.svg + '.svg', true);
+    xhttp.send();
+
+}
 
 
 
@@ -71,6 +76,15 @@ drawCanvas(){
 
     ctx.fillStyle = this.props.bg;
     ctx.fillRect(0,0,this.props.width,this.props.height);
+    ctx.stroke();
+    ctx.fillStyle = this.props.fg;
+    ctx.textBaseline="top"; 
+    ctx.font = this.props.fontWeight + " " + this.props.height * this.props.fontSize +"px lf";
+    ctx.textAlign="end";    
+    ctx.fillText(this.props.title, this.props.width - this.props.width * 0.025, 0+this.props.width * 0.025);
+
+    ctx.textAlign="start"; 
+    ctx.fillText(this.props.artist, 0+this.props.width * 0.025, 0+this.props.width * 0.025);
 
     var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
@@ -81,36 +95,29 @@ drawCanvas(){
 
     ctx.rotate( (Math.PI / 180) * this.props.svgRotation);
 
-    console.log(this.state.img); 
-
     ctx.drawImage(this.state.img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
-
     ctx.restore();
+
 
 }
 
 componentDidMount(){
     this.loadGraphic();
-    console.log('mount!');
+    console.log('mount!!!!!');
 }
 
+// componentDidUpdate(){
+    
+// }
+
+// Fire this only when this.props.svg changes
+//
 componentDidUpdate(prevProps) {
-
+    console.log('update!!!!!');
     if(this.props.svg !== prevProps.svg) {
-
-        this.loadGraphic();
-        console.log('graphic loaded');
-        
-    } else if (this.props.fg !== prevProps.fg) {
-
-        this.loadGraphic(); 
-
+        this.loadGraphic();    
     } else {
-
-        // Else draw canvas without loadGraphic for better performance
-
         this.drawCanvas();
-
     }
 }
 

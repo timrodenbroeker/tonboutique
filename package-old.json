@@ -1,16 +1,7 @@
 {
-  "name": "Tonboutique",
+  "name": "step04",
   "version": "0.1.0",
   "private": true,
-  "devDependencies": {
-    "babel-loader": "^7.1.2",
-    "css-loader": "^0.28.8",
-    "json-loader": "^0.5.7",
-    "react-scripts": "1.0.17",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
-  },
   "dependencies": {
     "d3": "^4.12.2",
     "paper": "^0.11.5",
@@ -19,6 +10,7 @@
     "react-color": "^2.13.8",
     "react-dom": "^16.2.0",
     "react-rangeslider": "^2.2.0",
+    "react-scripts": "1.0.17",
     "react-svg": "^2.2.6"
   },
   "scripts": {
@@ -27,5 +19,15 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "watch": "webpack --watch"
+  },
+  "devDependencies": {
+    "babel-loader": "^7.1.2",
+    "css-loader": "^0.28.8",
+    "json-loader": "^0.5.7",
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0"
   }
 }
+
+
