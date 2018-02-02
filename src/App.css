@@ -1,42 +1,42 @@
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf300.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf300.ttf") format("truetype");
   font-weight: 300;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf400.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf400.ttf") format("truetype");
   font-weight: 400;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf500.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf500.ttf") format("truetype");
   font-weight: 500;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf600.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf600.ttf") format("truetype");
   font-weight: 600;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf700.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf700.ttf") format("truetype");
   font-weight: 700;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf800.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf800.ttf") format("truetype");
   font-weight: 800;
 }
 
-@font-face { 
-  font-family: 'lf';
-  src: url('fonts/ttf/lf900.ttf') format('truetype'); 
+@font-face {
+  font-family: "lf";
+  src: url("fonts/ttf/lf900.ttf") format("truetype");
   font-weight: 900;
 }
 
@@ -79,32 +79,36 @@
   overflow: hidden;
 }
 
-html,body,* {
+html,
+body,
+* {
   box-sizing: border-box;
   font-family: "lf", sans-serif !important;
 }
 
 body {
-
 }
 
 .App {
   display: flex;
   justify-content: flex-start;
   overflow: hidden;
-    perspective: 100vw;
+  perspective: 100vw;
 }
 
-h1,h2,h3,h4,h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 400;
   /*text-transform: uppercase;*/
 }
 
 .cover {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.8);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 
 #controlsLeft {
   width: 25%;
@@ -115,14 +119,12 @@ h1,h2,h3,h4,h5 {
   flex-direction: column;
 }
 
-
 #controlsRight {
   width: 17.5%;
   z-index: 100;
   height: 100vh;
 
   padding: 15px;
-
 }
 
 #artboard {
@@ -136,7 +138,6 @@ h1,h2,h3,h4,h5 {
 }
 
 .cover {
-
   width: 550px;
   height: 550px;
   overflow: hidden;
@@ -144,10 +145,7 @@ h1,h2,h3,h4,h5 {
   -moz-transition: all 200ms ease; /* WebKit */
   -o-transition: all 200ms ease; /* Opera */
   transition: all 200ms ease; /* Standard */
-
 }
-
-
 
 h1 {
   margin: 0;
@@ -164,18 +162,17 @@ h4 {
 }
 
 input {
-
 }
 
 select {
--webkit-appearance: none; 
-   -moz-appearance: none;
-   appearance: none;       /* remove default arrow */
-
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; /* remove default arrow */
 }
 
-input,select, textarea {
-
+input,
+select,
+textarea {
   font-size: 14px;
   width: 100%;
   background: transparent;
@@ -184,12 +181,10 @@ input,select, textarea {
   border-radius: 0px;
 }
 
-input,select {
+input,
+select {
   height: 25px;
 }
-
-
-
 
 button {
   -webkit-box-shadow: none;
@@ -200,22 +195,24 @@ button {
   cursor: pointer;
 }
 
-input,select,textarea {
+input,
+select,
+textarea {
   background: transparent;
   -webkit-box-shadow: none;
--moz-box-shadow: none;
-box-shadow: none;
-    border-top: 0;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-top: 0;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
 }
 
-button:focus, 
-input:focus, 
+button:focus,
+input:focus,
 select:focus,
 textarea:focus {
-  outline:0;
+  outline: 0;
 }
 
 .field {
@@ -239,11 +236,9 @@ textarea:focus {
 }
 
 .field textarea {
- width: 60%;
- height: 60px; 
+  width: 60%;
+  height: 60px;
 }
-
-
 
 .parent {
   position: relative;
@@ -256,7 +251,7 @@ textarea:focus {
 }
 
 .coverImage {
-    width: 550px;
+  width: 550px;
   height: 550px;
 }
 
@@ -281,13 +276,12 @@ textarea:focus {
   font-size: 18px;
   display: block;
   font-family: sans-serif;
-
 }
 
 #save {
   position: absolute;
   bottom: 0;
-  left:0;
+  left: 0;
   padding: 15px;
   width: 100%;
 }
@@ -312,13 +306,13 @@ h3 {
 
 #textContainer {
   display: flex;
-    width: 550px;
+  width: 550px;
   height: 550px;
   padding: 15px;
 }
 
 #textContainer div {
-width: 100%;
+  width: 100%;
 }
 
 #imageBrowser {
@@ -352,11 +346,9 @@ width: 100%;
 }
 
 .example path {
-
 }
 
 .boxHead {
-
 }
 
 .boxBody {
@@ -365,11 +357,10 @@ width: 100%;
 }
 
 svg {
-
 }
 
 .subline {
-  padding: 15px; 
+  padding: 15px;
   font-size: 12px;
 }
 
@@ -380,28 +371,22 @@ svg {
 }
 
 .modal {
-
 }
 
 .ModalColors {
-
-
 }
 
 .ModalColorsWrapper {
   display: none;
-    top: 0;
+  top: 0;
 
   left: 0;
-  position: fixed; 
-     z-index: 1000;
-
+  position: fixed;
+  z-index: 1000;
 }
 
 .ModalColors {
-
   display: flex;
-
 }
 
 .ModalColors .color {
@@ -416,12 +401,10 @@ svg {
   cursor: pointer;
 }
 
-
 .colorField {
   width: 40px;
   height: 40px;
 }
-
 
 .colorName {
   text-align: center;
@@ -435,7 +418,6 @@ svg {
 }
 
 option {
-
 }
 
 .backdrop {
@@ -443,7 +425,7 @@ option {
   left: 0;
   top: 0;
   width: 100%;
-  background: rgba(240,240,240,0.8);
+  background: rgba(240, 240, 240, 0.8);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -459,9 +441,8 @@ option {
 }
 
 .ModalBtnClose button {
-  color: #111111;  
+  color: #111111;
 }
-
 
 .ModalBtnTheme {
   position: absolute;
@@ -472,54 +453,43 @@ option {
 }
 
 .ModalBtnTheme button {
-  color: #111111;  
+  color: #111111;
 }
-
-
 
 /* The slider itself */
 .inputRangeSlider {
-
-position: relative;
-  top: -6px;  
-    -webkit-appearance: none;  /* Override default CSS styles */
-    appearance: none;
-    width: 100%; /* Full-width */
-    height: 1px; /* Specified height */
-    background: #aaaaaa; /* Grey background */
-    outline: none; /* Remove outline */
-
-
+  position: relative;
+  top: -6px;
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 1px; /* Specified height */
+  background: #aaaaaa; /* Grey background */
+  outline: none; /* Remove outline */
 }
 
-
-
-
-/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */ 
+/* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
 .inputRangeSlider::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
-    appearance: none;
-    width: 10px; /* Set a specific slider handle width */
-    height: 10px; /* Slider handle height */
-    background: #111111; /* Green background */
-    border: 2px solid #111111;
-    cursor: pointer; /* Cursor on hover */
-    border-radius: 100%;
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10px; /* Set a specific slider handle width */
+  height: 10px; /* Slider handle height */
+  background: #111111; /* Green background */
+  border: 2px solid #111111;
+  cursor: pointer; /* Cursor on hover */
+  border-radius: 100%;
 }
 
 .inputRangeSlider::-moz-range-thumb {
-    width: 15px; /* Set a specific slider handle width */
-    height: 15px; /* Slider handle height */
-    background: #f1f1f1; /* Green background */
-    cursor: pointer; /* Cursor on hover */
-    border: 2px solid #111111;
-    border-radius: 100%;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #f1f1f1; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+  border: 2px solid #111111;
+  border-radius: 100%;
 }
 
-
 .sliderContainer {
-
-
   width: 60%;
 }
 
@@ -528,11 +498,10 @@ textarea {
 }
 
 .colorField {
-  
 }
 
 .color {
-  width: 25px; 
+  width: 25px;
   height: 25px;
   margin: 0;
 }
@@ -543,7 +512,6 @@ textarea {
 }
 
 .boxBodyColors div {
-  
   cursor: pointer;
 }
 
@@ -565,15 +533,15 @@ textarea {
   cursor: pointer;
 }
 
-
-::-moz-selection { /* Code for Firefox */
-    color: black;
-    background: transparent;
+::-moz-selection {
+  /* Code for Firefox */
+  color: black;
+  background: transparent;
 }
 
 ::selection {
-    color: black; 
-    background: transparent;
+  color: black;
+  background: transparent;
 }
 
 .lighten {
@@ -581,29 +549,32 @@ textarea {
 }
 
 .lighten:hover {
- opacity: 1; 
+  opacity: 1;
 }
 
 .record {
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   position: relative;
   width: 600px;
-  height: 600px;  
+  height: 600px;
 }
 
 .cover {
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   position: absolute;
   width: 600px;
   height: 600px;
   -webkit-transition: all 500ms ease; /* Firefox */
   -moz-transition: all 500ms ease; /* WebKit */
   -o-transition: all 500ms ease; /* Opera */
-  transition: all 500ms ease; /* Standard */  
+  transition: all 500ms ease; /* Standard */
 }
 
 .vinyl {
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   position: absolute;
   width: 600px;
   height: 600px;
@@ -612,14 +583,14 @@ textarea {
   -webkit-transition: all 500ms ease; /* Firefox */
   -moz-transition: all 500ms ease; /* WebKit */
   -o-transition: all 500ms ease; /* Opera */
-  transition: all 500ms ease; /* Standard */    
+  transition: all 500ms ease; /* Standard */
 }
 
 .recordWrapper {
   -webkit-transition: all 500ms ease; /* Firefox */
   -moz-transition: all 500ms ease; /* WebKit */
   -o-transition: all 500ms ease; /* Opera */
-  transition: all 500ms ease; /* Standard */    
+  transition: all 500ms ease; /* Standard */
 }
 
 #artboard:hover .recordWrapper {
@@ -632,14 +603,13 @@ textarea {
   left: 50px;
 }
 
-
 #artboard:hover .record .cover {
   left: -50px;
 }
 
 #buttonWrapper {
   position: absolute;
-  width:100%;
+  width: 100%;
   bottom: 0;
 }
 
@@ -659,6 +629,3 @@ textarea {
   color: white;
   border: 2px solid black;
 }
-
-
-

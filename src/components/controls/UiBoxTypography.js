@@ -41,12 +41,14 @@ class UiBoxTypography extends Component {
             />
 
 
-            <SelectInput 
-                name="Font-Weight" 
-                options={[300,400,500,600,700,800,900]} 
-                value={this.props.fontWeight} 
-                onChange={this.props.changeFontWeight}
-            />
+            <RangeSlider
+                            name="Font-Weight"
+                            value={this.props.fontWeight}
+                            min="300"
+                            max="900"
+                            step={100}
+                            onChange={this.props.changeFontWeight}
+                        />
 
         {/* 
 

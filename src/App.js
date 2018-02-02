@@ -1,317 +1,303 @@
-import React, { Component } from 'react';
-import './normalize.css';
-import './App.css';
-import Canvas from './components/cover/Canvas';
-import ControlBoxLeft from './components/controls/ControlBoxLeft';
+import React, { Component } from "react";
+import "./normalize.css";
+import "./App.css";
+import Canvas from "./components/cover/Canvas";
+import ControlBoxLeft from "./components/controls/ControlBoxLeft";
 // import ControlBoxRight from './components/controls/ControlBoxRight';
 
-
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: "Maxon",
+            title: "Flash",
+            subline: "Including a remix by Alexander Franz",
+            scale: 0.8,
+            svg: 2,
 
-  constructor(props){
-    super(props);
-    this.state = {
-      name: "Maxon",
-      title: "Flash",
-      subline: "Including a remix by Alexander Franz",
-      scale: 0.8,
-      svg: 2,
+            width: 600,
+            height: 600,
 
-      width: 600,
-      height: 600,
+            svgWidth: 444,
+            svgHeight: 444,
 
-      svgWidth: 444,
-      svgHeight: 444,
+            svgRotation: 0,
+            translateX: 0,
+            translateY: 0,
 
-      svgRotation: 0,
-      translateX: 0,
-      translateY: 0,
+            fontSize: 8,
+            fontFamily: "lf",
+            fontWeight: 600,
+            fontAlignArtist: "left",
+            fontAlignTitle: "right",
+            textPosition: "top",
+            bg: "#FF5349",
+            fg: "#292C44",
+            arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+            ModalColorsCollapsed: true,
+            availableFonts: ["lf"],
 
-      fontSize: 8,
-      fontFamily: "lf",
-      fontWeight: 600,
-      fontAlignArtist: "left",
-      fontAlignTitle: "right",
-      textPosition: "top",
-      bg: "#FF5349",
-      fg: "#292C44",
-      arr: [1,2,3,4,5,6,7,8,9,10,11,12,13,14],
-      ModalColorsCollapsed: true,
-      availableFonts: ["lf"],
+            isOpen: false,
+            viewRotationY: 0,
+            viewScale: 1
+        };
 
-      isOpen: false,
-      viewRotationY: 0,
-      viewScale: 1
+        this.changeName = this.changeName.bind(this);
+        this.changeTitle = this.changeTitle.bind(this);
+        this.changeSubline = this.changeSubline.bind(this);
+        this.changeFontSize = this.changeFontSize.bind(this);
+        this.changeFontFamily = this.changeFontFamily.bind(this);
+
+        this.changeFontAlignArtist = this.changeFontAlignArtist.bind(this);
+        this.changeFontWeight = this.changeFontWeight.bind(this);
+        this.changeFontAlignTitle = this.changeFontAlignTitle.bind(this);
+        this.changeFontColor = this.changeFontColor.bind(this);
+        this.changeTextPosition = this.changeTextPosition.bind(this);
+
+        this.changeBg = this.changeBg.bind(this);
+
+        this.changeSvg = this.changeSvg.bind(this);
+        this.changeScale = this.changeScale.bind(this);
+        this.changeFg = this.changeFg.bind(this);
+        this.changeSvgRotation = this.changeSvgRotation.bind(this);
+
+        this.changeTranslateX = this.changeTranslateX.bind(this);
+        this.changeTranslateY = this.changeTranslateY.bind(this);
+
+        this.changeViewRotationY = this.changeViewRotationY.bind(this);
+        this.changeViewScale = this.changeViewScale.bind(this);
+
+        this.savePng = this.savePng.bind(this);
+
+        this.increment = this.increment.bind(this);
+        this.decrement = this.decrement.bind(this);
     }
 
-    this.changeName = this.changeName.bind(this);
-    this.changeTitle = this.changeTitle.bind(this);
-    this.changeSubline = this.changeSubline.bind(this);
-    this.changeFontSize = this.changeFontSize.bind(this);
-    this.changeFontFamily = this.changeFontFamily.bind(this);
-
-    this.changeFontAlignArtist = this.changeFontAlignArtist.bind(this);
-    this.changeFontWeight = this.changeFontWeight.bind(this);
-    this.changeFontAlignTitle = this.changeFontAlignTitle.bind(this);
-    this.changeFontColor = this.changeFontColor.bind(this);
-    this.changeTextPosition = this.changeTextPosition.bind(this);
-
-    this.changeBg = this.changeBg.bind(this);
-
-    this.changeSvg = this.changeSvg.bind(this);
-    this.changeScale = this.changeScale.bind(this);
-    this.changeFg = this.changeFg.bind(this);
-    this.changeSvgRotation = this.changeSvgRotation.bind(this);
-
-    this.changeTranslateX = this.changeTranslateX.bind(this);
-    this.changeTranslateY = this.changeTranslateY.bind(this);
-
-    this.changeViewRotationY = this.changeViewRotationY.bind(this);
-    this.changeViewScale = this.changeViewScale.bind(this);
-
-    this.savePng = this.savePng.bind(this);
-
-  }
-
-changeName(event){
-    this.setState({name: event.target.value});
+    increment(){
+        this.setState({svg: this.state.svg+1});
     }
 
-changeSubline(event){
-    this.setState({subline: event.target.value});
+    decrement(){
+        this.setState({svg: this.state.svg-1});
     }
 
-changeBg(event){
-      alert('Hi!');
-    this.setState({bg: event.target.bg});
+    changeName(event) {
+        this.setState({ name: event.target.value });
     }
 
-changeTitle(event){
-    this.setState({title: event.target.value});
+    changeSubline(event) {
+        this.setState({ subline: event.target.value });
     }
 
-changeFontSize(event){
-    this.setState({fontSize: event.target.value});
+    changeBg(event) {
+        alert("Hi!");
+        this.setState({ bg: event.target.bg });
     }
 
-changeFontFamily(event){
-    this.setState({fontFamily: event.target.value});
+    changeTitle(event) {
+        this.setState({ title: event.target.value });
     }
 
-changeFontAlignArtist(event){
-    this.setState({fontAlignArtist: event.target.value});
+    changeFontSize(event) {
+        this.setState({ fontSize: event.target.value });
     }
 
-changeFontColor(event){
-    this.setState({fontColor: event.target.value});
+    changeFontFamily(event) {
+        this.setState({ fontFamily: event.target.value });
     }
 
-changeFontAlignTitle(event){
-    this.setState({fontAlignTitle: event.target.value});
+    changeFontAlignArtist(event) {
+        this.setState({ fontAlignArtist: event.target.value });
     }
 
-changeFontWeight(event){
-    this.setState({fontWeight: event.target.value});
-    }  
-
-changeTextPosition(event){
-    this.setState({textPosition: event.target.value});
-    }  
-
-changeSvg(event){
-    this.setState({svg: event.target.value});
-    }    
-
-changeFg(event){
-    this.setState({fg: event.target.value});
-    }   
-
-
-changeScale(event){
-    this.setState({scale: event.target.value});
-    }   
-
-toggleModalColors(event){
-    this.setState({ModalColorsCollapsed: !this.state.ModalColorsCollapsed});
+    changeFontColor(event) {
+        this.setState({ fontColor: event.target.value });
     }
 
-changeViewScale(event){
-    this.setState({viewScale: event.target.value});
-    }   
-
-changeViewRotationY(event){
-    this.setState({viewRotationY: event.target.value});
-    }     
-
-changeSvgRotation(event){
-    this.setState({svgRotation: event.target.value});
-    }    
-
-changeTranslateX(event){
-    this.setState({translateX: event.target.value});
-    }    
-
-changeTranslateY(event){
-    this.setState({translateY: event.target.value});
-    }      
-
-pickBg(event){
-    this.setState({bg: event.target.getAttribute('color')})
-}    
-
-pickFg(event){
-    this.setState({fg: event.target.getAttribute('color')})
-}    
-
-savePng(){
-    var c= document.getElementById("theCanvas");
-    var image = c.toDataURL("image/png").replace("image/png", "image/octet-stream");  // here is the most important part because if you dont replace you will get a DOM 18 exception.
-
-    alert('a');
-    window.location.href=image; // it will save locally
-}
-
- toggleModal = () => {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-  render() {
-
-    const coverStyle = {
-      transform: "scale("+this.state.viewScale+")"
+    changeFontAlignTitle(event) {
+        this.setState({ fontAlignTitle: event.target.value });
     }
 
-    const typoStyleArtist = {
-      fontFamily: this.state.fontFamily,
-      fontWeight: this.state.fontWeight,
-      fontSize: this.state.fontSize + "px",
-      color: this.state.fg,
-      textAlign: this.state.fontAlignArtist
+    changeFontWeight(event) {
+        this.setState({ fontWeight: event.target.value });
     }
 
-
-    const typoStyleTitle = {
-      fontFamily: this.state.fontFamily,
-      fontWeight: this.state.fontWeight,
-      fontSize: this.state.fontSize + "px",
-      color: this.state.fg,
-      textAlign: this.state.fontAlignTitle
+    changeTextPosition(event) {
+        this.setState({ textPosition: event.target.value });
     }
 
-    const typoStyleSubline = {
-      fontFamily: this.state.fontFamily,
-      color: this.state.fg
+    changeSvg(event) {
+        this.setState({ svg: event.target.value });
     }
 
-
-    const textContainerStyles = {
-        alignItems: this.state.textPosition
+    changeFg(event) {
+        this.setState({ fg: event.target.value });
     }
-       
 
+    changeScale(event) {
+        this.setState({ scale: event.target.value });
+    }
 
+    toggleModalColors(event) {
+        this.setState({
+            ModalColorsCollapsed: !this.state.ModalColorsCollapsed
+        });
+    }
 
-    return (
-      <div className="App">
-      
-      {/*
+    changeViewScale(event) {
+        this.setState({ viewScale: event.target.value });
+    }
+
+    changeViewRotationY(event) {
+        this.setState({ viewRotationY: event.target.value });
+    }
+
+    changeSvgRotation(event) {
+        this.setState({ svgRotation: event.target.value });
+    }
+
+    changeTranslateX(event) {
+        this.setState({ translateX: event.target.value });
+    }
+
+    changeTranslateY(event) {
+        this.setState({ translateY: event.target.value });
+    }
+
+    pickBg(event) {
+        this.setState({ bg: event.target.getAttribute("color") });
+    }
+
+    pickFg(event) {
+        this.setState({ fg: event.target.getAttribute("color") });
+    }
+
+    savePng() {
+        var c = document.getElementById("theCanvas");
+        var image = c
+            .toDataURL("image/png")
+            .replace("image/png", "image/octet-stream"); // here is the most important part because if you dont replace you will get a DOM 18 exception.
+
+        alert("a");
+        window.location.href = image; // it will save locally
+    }
+
+    toggleModal = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    };
+
+    render() {
+        const coverStyle = {
+            transform: "scale(" + this.state.viewScale + ")"
+        };
+
+        const typoStyleArtist = {
+            fontFamily: this.state.fontFamily,
+            fontWeight: this.state.fontWeight,
+            fontSize: this.state.fontSize + "px",
+            color: this.state.fg,
+            textAlign: this.state.fontAlignArtist
+        };
+
+        const typoStyleTitle = {
+            fontFamily: this.state.fontFamily,
+            fontWeight: this.state.fontWeight,
+            fontSize: this.state.fontSize + "px",
+            color: this.state.fg,
+            textAlign: this.state.fontAlignTitle
+        };
+
+        const typoStyleSubline = {
+            fontFamily: this.state.fontFamily,
+            color: this.state.fg
+        };
+
+        const textContainerStyles = {
+            alignItems: this.state.textPosition
+        };
+
+        return (
+            <div className="App">
+                {/*
         
         Preload Fonts
 
       */}
 
-        <div id="fontloader">
-          <div className="fw300">a</div>
-          <div className="fw400">a</div>
-          <div className="fw500">a</div>
-          <div className="fw600">a</div>
-          <div className="fw700">a</div>
-          <div className="fw800">a</div>
-          <div className="fw900">a</div>
-        </div>
+                <div id="fontloader">
+                    <div className="fw300">a</div>
+                    <div className="fw400">a</div>
+                    <div className="fw500">a</div>
+                    <div className="fw600">a</div>
+                    <div className="fw700">a</div>
+                    <div className="fw800">a</div>
+                    <div className="fw900">a</div>
+                </div>
 
-         <ControlBoxLeft 
-            arr={this.state.arr}
-
-            svg={this.state.svg}
-            changeSvg={this.changeSvg}
-
-            scale={this.state.scale}
-            changeScale={this.changeScale}
-
-            svgRotation={this.state.svgRotation}
-            changeSvgRotation={this.changeSvgRotation}
-
-            name={this.state.name}
-            changeName={this.changeName}
-
-            title={this.state.title}
-            changeTitle={this.changeTitle}
-
-            subline={this.state.subline}
-            changeSubline={this.changeSubline}
-
-            fontSize={this.state.fontSize}
-            changeFontSize={this.changeFontSize}
-
-            fontWeight={this.state.fontWeight}
-            changeFontWeight={this.changeFontWeight}
-
-            availableFonts={this.state.availableFonts}
-            fontFamily={this.state.fontFamily}
-            changeFontFamily={this.changeFontFamily}
-
-            fontAlignArtist={this.state.fontAlignArtist}
-            changeFontAlignArtist={this.changeFontAlignArtist}
-
-            fontAlignTitle={this.state.fontAlignTitle}
-            changeFontAlignTitle={this.changeFontAlignTitle}
-
-            bg={this.state.bg}
-            changeBg={(event) => this.pickBg(event)}
-
-            fg={this.state.fg}
-            changeFg={(event) => this.pickFg(event)}            
-
-         />
+                <ControlBoxLeft
+                    arr={this.state.arr}
+                    svg={this.state.svg}
+                    changeSvg={this.changeSvg}
+                    scale={this.state.scale}
+                    changeScale={this.changeScale}
+                    svgRotation={this.state.svgRotation}
+                    changeSvgRotation={this.changeSvgRotation}
+                    name={this.state.name}
+                    changeName={this.changeName}
+                    title={this.state.title}
+                    changeTitle={this.changeTitle}
+                    subline={this.state.subline}
+                    changeSubline={this.changeSubline}
+                    fontSize={this.state.fontSize}
+                    changeFontSize={this.changeFontSize}
+                    fontWeight={this.state.fontWeight}
+                    changeFontWeight={this.changeFontWeight}
+                    availableFonts={this.state.availableFonts}
+                    fontFamily={this.state.fontFamily}
+                    changeFontFamily={this.changeFontFamily}
+                    fontAlignArtist={this.state.fontAlignArtist}
+                    changeFontAlignArtist={this.changeFontAlignArtist}
+                    fontAlignTitle={this.state.fontAlignTitle}
+                    changeFontAlignTitle={this.changeFontAlignTitle}
+                    bg={this.state.bg}
+                    changeBg={event => this.pickBg(event)}
+                    fg={this.state.fg}
+                    changeFg={event => this.pickFg(event)}
 
 
-          <Canvas 
-            coverStyle={coverStyle} 
-            textContainerStyles={textContainerStyles} 
-            typoStyleArtist={typoStyleArtist} 
-            typoStyleSubline={typoStyleSubline} 
-            typoStyleTitle={typoStyleTitle}
-            bg={this.state.bg}
-            fg={this.state.fg}
-            svg={this.state.svg} 
-            
-            scale={this.state.scale}
-            
-            svgWidth={this.state.svgWidth}
-            svgHeight={this.state.svgHeight}
+                    increment={this.increment}
+                    decrement={this.decrement}
+                />
 
-            width={this.state.width}
-            height={this.state.height}
-
-            svgRotation={this.state.svgRotation} 
-            translateX={this.state.translateX}
-            translateY={this.state.translateY}
-            artist={this.state.name} 
-            title={this.state.title}
-            subline={this.state.subline}
-            fontSize={this.state.fontSize*0.01}
-            fontWeight={this.state.fontWeight}
-
-            savePng={this.savePng}
-          />
-
-      </div>
-
-    );
-  }
+                <Canvas
+                    coverStyle={coverStyle}
+                    textContainerStyles={textContainerStyles}
+                    typoStyleArtist={typoStyleArtist}
+                    typoStyleSubline={typoStyleSubline}
+                    typoStyleTitle={typoStyleTitle}
+                    bg={this.state.bg}
+                    fg={this.state.fg}
+                    svg={this.state.svg}
+                    scale={this.state.scale}
+                    svgWidth={this.state.svgWidth}
+                    svgHeight={this.state.svgHeight}
+                    width={this.state.width}
+                    height={this.state.height}
+                    svgRotation={this.state.svgRotation}
+                    translateX={this.state.translateX}
+                    translateY={this.state.translateY}
+                    artist={this.state.name}
+                    title={this.state.title}
+                    subline={this.state.subline}
+                    fontSize={this.state.fontSize * 0.01}
+                    fontWeight={this.state.fontWeight}
+                    savePng={this.savePng}
+                />
+            </div>
+        );
+    }
 }
 
 export default App;
