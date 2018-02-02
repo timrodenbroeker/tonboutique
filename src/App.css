@@ -629,3 +629,40 @@ textarea {
   color: white;
   border: 2px solid black;
 }
+
+.stepper {
+  display: flex;
+}
+
+.stepperBox {
+  width: 30px;
+  height: 20px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 10px;
+}
+
+.stepperBox.left {
+  display: flex;
+justify-content: center;
+align-items: center;
+  border-top: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa;
+}
+
+.stepperBox.center {
+    display: flex;
+justify-content: center;
+align-items: center;
+  border: 1px solid #aaaaaa;
+}
+
+.stepperBox.right {
+    display: flex;
+justify-content: center;
+align-items: center;
+ border-top: 1px solid #aaaaaa;
+  border-right: 1px solid #aaaaaa;
+  border-bottom: 1px solid #aaaaaa; 
+}

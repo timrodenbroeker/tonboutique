@@ -8,9 +8,15 @@ class Stepper extends Component {
     		<div className="field">
     		<h4>{this.props.name}</h4>
 	    		<div className="stepper">
-	    			<button onClick={this.props.decrement}>-</button>
-	    			{this.props.value}
-	    			<button onClick={this.props.increment}>+</button>
+	    			<button onClick={this.props.decrement} className="stepperBox left">
+	    				<div>–</div>
+	    			</button>
+	    			<div class="stepperBox center">
+	    				{this.props.value}
+	    			</div>
+	    			<button onClick={this.props.increment} class="stepperBox right">
+	    				<div>+</div>
+	    			</button>
 	    		</div>
     		</div>
     	);
