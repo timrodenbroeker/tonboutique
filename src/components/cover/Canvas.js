@@ -1,29 +1,3 @@
-/*
-
-    This is a canvas-component that draws an asynchrounous loaded svg.
-
-    The interface has various inputs to control the SVG-file, the size, rotation and fill. 
-
-    The drawCanvas()-function works perfect. But if the props 'fg' or 'svg' change and i have to fire loadGraphic() before drawCanvas() i get a few bugs.
-
-    MAIN ISSUES
-    -----------
-
-    1       The canvas is sometimes empty on initial load, because the loadGraphic() is not finished 
-            before drawCanvas() is fired (i guess)
-
-    2       when the svg-props 'fg' or 'svg' change, i have to fire loadGraphic() before drawCanvas()  
-            And drawCanvas() has to wait for loadGraphic()
-            
-            How can this be done? 
-
-    3       Because 'img' and 'svgGraphic' are saved to the state on loadGraphic(),
-            'componentDidUpdate' triggers on 'componentDidMount'. (Is that a problem?)
-
-*/
-
-
-
 import React, { Component } from 'react';
 
 class Canvas extends Component {
