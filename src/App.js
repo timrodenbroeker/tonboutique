@@ -3,7 +3,7 @@ import './normalize.css';
 import './App.css';
 import Canvas from './components/cover/Canvas';
 import ControlBoxLeft from './components/controls/ControlBoxLeft';
-import ControlBoxRight from './components/controls/ControlBoxRight';
+// import ControlBoxRight from './components/controls/ControlBoxRight';
 
 
 class App extends Component {
@@ -27,7 +27,7 @@ class App extends Component {
       translateX: 0,
       translateY: 0,
 
-      fontSize: 15,
+      fontSize: 8,
       fontFamily: "lf",
       fontWeight: 600,
       fontAlignArtist: "left",
@@ -180,8 +180,7 @@ savePng(){
   render() {
 
     const coverStyle = {
-
-      transform: "scale("+this.state.viewScale+") rotateY("+this.state.viewRotationY+"deg)"
+      transform: "scale("+this.state.viewScale+")"
     }
 
     const typoStyleArtist = {
@@ -216,6 +215,22 @@ savePng(){
 
     return (
       <div className="App">
+      
+      {/*
+        
+        Preload Fonts
+
+      */}
+
+        <div id="fontloader">
+          <div className="fw300">a</div>
+          <div className="fw400">a</div>
+          <div className="fw500">a</div>
+          <div className="fw600">a</div>
+          <div className="fw700">a</div>
+          <div className="fw800">a</div>
+          <div className="fw900">a</div>
+        </div>
 
          <ControlBoxLeft 
             arr={this.state.arr}
@@ -261,20 +276,7 @@ savePng(){
             changeFg={(event) => this.pickFg(event)}            
 
          />
-         {/*
-        <ControlBoxRight 
-            
-            viewScale={this.state.viewScale}
-            changeViewScale={this.changeViewScale}
 
-            viewRotationY={this.state.viewRotationY}
-            changeViewRotationY={this.changeViewRotationY}
-
-            savePng={this.savePng}
-
-           />
-
-         */}
 
           <Canvas 
             coverStyle={coverStyle} 

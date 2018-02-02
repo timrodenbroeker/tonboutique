@@ -8,6 +8,22 @@ class UiBoxColors extends Component {
         color: this.props.color,
         collapsed: this.props.collapsed
         }
+    this.colors = [
+        '#73584D',
+        '#47291D',
+        '#7C5043',
+        '#AB7B71',
+        '#4F80E1',
+        '#DEBA88',
+        '#1A1B1D',
+        '#A9B3BD',
+        '#CACED9',
+        '#678EAD',
+        '#81B0BA',
+        '#43677F',
+        '#434957',
+        '#2E5080'
+    ]; 
     this.collapseBox = this.collapseBox.bind(this);        
     }
 
@@ -17,19 +33,9 @@ class UiBoxColors extends Component {
 
   render() {
 
-     const colors = [
-        '#292C44',
-        '#FF5349',
-        '#F0F0F1',
-        '#18CDCA',
-        '#4F80E1'
-      ];
-
-    const theColors = colors.map((color) =>
+    const theColors = this.colors.map((color) =>
         <ColorField color={color} changeColor={this.props.changeColor}/>
     );
-
-
 
         return (
         <div className="group">

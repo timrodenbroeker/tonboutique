@@ -12,31 +12,29 @@ class Canvas extends Component {
 
 }
 
-loadGraphic(){
-
+ loadGraphic() {
     fetch('svg/' + this.props.svg + '.svg')
-        .then(dataWrappedByPromise => dataWrappedByPromise.text())
-        .then(data => {
-        var svgGraphic = data;
+      .then(dataWrappedByPromise => dataWrappedByPromise.text())
+      .then(data => {
+        var svgGraphic = data
 
-            var img = new Image();
+        var img = new Image()
 
-            // Replace color
+        // Replace color
 
-            img.src = "data:image/svg+xml;charset=utf-8," + svgGraphic.replace(/#ff0000/g, this.props.fg);
-
-            // Save img to state
-
-            this.setState({
-                img: img
-            }, () => {
-                // The callback here does not work !!!
-                this.drawCanvas();
-            });
-
-    });
-
-} 
+        img.src = 'data:image/svg+xml;charset=utf-8,' + svgGraphic.replace(/#ff0000/g, this.props.fg)
+        img.onload = () => {
+          this.setState(
+            {
+              img: img.src
+            },
+            () => {
+              this.drawCanvas()
+            }
+          )
+        }
+      })
+  }
 
 
 
@@ -46,6 +44,15 @@ drawCanvas(){
 
     ctx.fillStyle = this.props.bg;
     ctx.fillRect(0,0,this.props.width,this.props.height);
+    ctx.stroke();
+    ctx.fillStyle = this.props.fg;
+    ctx.textBaseline="top"; 
+    ctx.font = this.props.fontWeight + " " + this.props.height * this.props.fontSize +"px lf";
+    ctx.textAlign="end";    
+    ctx.fillText(this.props.title, this.props.width - this.props.width * 0.025, 0+this.props.width * 0.025);
+
+    ctx.textAlign="start"; 
+    ctx.fillText(this.props.artist, 0+this.props.width * 0.025, 0+this.props.width * 0.025);
 
     var svgX = ctx.canvas.width * .5;   
     var svgY = ctx.canvas.height * .5;
@@ -56,9 +63,11 @@ drawCanvas(){
 
     ctx.rotate( (Math.PI / 180) * this.props.svgRotation);
 
-    console.log(this.state.img); 
+    var img = new Image();
 
-    ctx.drawImage(this.state.img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
+    img.src = this.state.img;
+
+    ctx.drawImage(img, 0-this.props.width*this.props.scale/2, 0-this.props.width*this.props.scale/2, this.props.width*this.props.scale, this.props.width*this.props.scale);
 
     ctx.restore();
 
@@ -77,7 +86,7 @@ componentDidUpdate(prevProps) {
         console.log('graphic loaded');
         
     } else if (this.props.fg !== prevProps.fg) {
-
+        console.log('graphic loaded');
         this.loadGraphic(); 
 
     } else {
@@ -93,6 +102,7 @@ render() {
 
     return (
     	<section id="artboard">
+        <div className="recordWrapper">
             <div 
                 className="record"
                 style={this.props.coverStyle}>
@@ -113,8 +123,8 @@ render() {
                     width={this.props.width}
                     height={this.props.height}
                     scale={this.props.scale}
-                >
-                </canvas>
+                />
+            </div>
             </div>
         </section>
     );

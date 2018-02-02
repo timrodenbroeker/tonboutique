@@ -3,22 +3,23 @@ import UiBoxData from './UiBoxData';
 import UiBoxTypography from './UiBoxTypography';
 import UiBoxGraphic from './UiBoxGraphic';
 import UiBoxColors from './UiBoxColors';
+import UiBoxExport from './UiBoxExport';
 
 class ControlBoxLeft extends Component {
 
-
+test(){
+  alert('a');
+}
   render() {
     return (
 
 	 <section id="controlsLeft">
 
-     {/*}
-
             <UiBoxData 
 
                 name="Data"
 
-                collapsed={false}
+                collapsed={true}
               
                 artist={this.props.name}
                 onChangeArtist={this.props.changeName}
@@ -53,8 +54,6 @@ class ControlBoxLeft extends Component {
                 fontAlignTitle={this.props.fontAlignTitle}
                 changeFontAlignTitle={this.props.changeFontAlignTitle}
             /> 
-
-        */}
 
              <UiBoxGraphic 
 
@@ -93,6 +92,11 @@ class ControlBoxLeft extends Component {
                 collapsed={true}
                 color={this.props.fg}
                 changeColor={this.props.changeFg}
+            />
+
+            <UiBoxExport 
+              name="Export" 
+              onClick={this.test}
             />
 
           </section>

@@ -2,19 +2,26 @@ import React, { Component } from 'react';
 
 class UiBoxExport extends Component {
   
+  saveCanvas(){
+    alert('save!');
+  }
 
   render() {
 
     
     return (
-    	<div className="group">
-            <div className="boxHead">
-                <h3 className="lighten" onClick={() => alert('a')}>
+
+        <div id="buttonWrapper">
+
+            <button id="exportButton" className="btn" onClick={this.saveCanvas}>
                     
-                    {this.props.name}
-                </h3>
-            </div>
+                {this.props.name}
+            
+            </button>
+            
         </div>
+        
+
     );
   }
 }
