@@ -14,7 +14,7 @@ class ControlBoxLeft extends Component {
             <section id="controlsLeft">
                 <UiBoxData
                     name="Data"
-                    collapsed={true}
+                    collapsed={false}
                     artist={this.props.name}
                     onChangeArtist={this.props.changeName}
                     title={this.props.title}
@@ -25,7 +25,7 @@ class ControlBoxLeft extends Component {
 
                 <UiBoxTypography
                     name="Font"
-                    collapsed={true}
+                    collapsed={false}
                     fontSize={this.props.fontSize}
                     changeFontSize={this.props.changeFontSize}
                     fontWeight={this.props.fontWeight}
@@ -63,7 +63,7 @@ class ControlBoxLeft extends Component {
 
                 <UiBoxColors
                     name="Color"
-                    collapsed={true}
+                    collapsed={false}
                     color={this.props.bg}
                     changeBg={this.props.changeBg}
                     changeFg={this.props.changeFg}

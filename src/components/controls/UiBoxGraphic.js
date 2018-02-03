@@ -57,16 +57,18 @@ class UiBoxGraphic extends Component {
                          <RangeSlider
                             name="x"
                             value={this.props.translateX}
-                            min="-200"
-                            max="200"
+                            min={-1}
+                            max={1}
+                            step={0.001}
                             onChange={this.props.changeTranslateX}
                         />
 
                          <RangeSlider
                             name="y"
                             value={this.props.translateY}
-                            min="-200"
-                            max="200"
+                            min={-1}
+                            max={1}
+                            step={0.001}
                             onChange={this.props.changeTranslateY}
                         />
 

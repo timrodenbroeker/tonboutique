@@ -64,14 +64,14 @@ class Canvas extends Component {
             0 + this.props.width * 0.025
         );
 
-        var svgX = ctx.canvas.width * 0.5;
-        var svgY = ctx.canvas.height * 0.5;
+        var svgX = ctx.canvas.width * 0.5 + (this.props.translateX*ctx.canvas.width*0.5);
+        var svgY = ctx.canvas.height * 0.5 + (this.props.translateY*ctx.canvas.width*0.5);
 
         ctx.save();
 
-        ctx.translate(svgX+this.props.translateX, svgY);
+        ctx.translate(svgX, svgY);
 
-        console.log(this.props.translateX)
+        // console.log(this.props.translateX)
 
         ctx.rotate(Math.PI / 180 * this.props.svgRotation);
 

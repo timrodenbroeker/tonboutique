@@ -11,7 +11,6 @@ class UiBoxExport extends Component {
     
     return (
 
-        <div id="buttonWrapper">
 
             <button id="exportButton" className="btn" onClick={this.saveCanvas}>
                     
@@ -19,7 +18,7 @@ class UiBoxExport extends Component {
             
             </button>
             
-        </div>
+
         
 
     );
