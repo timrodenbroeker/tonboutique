@@ -635,34 +635,35 @@ textarea {
 }
 
 .stepperBox {
-  width: 30px;
+  
   height: 20px;
   text-align: center;
   font-weight: 600;
   font-size: 10px;
+    display: flex;
+justify-content: center;
+align-items: center;
+background: #eeeeee;
 }
 
 .stepperBox.left {
-  display: flex;
-justify-content: center;
-align-items: center;
-  border-top: 1px solid #aaaaaa;
-  border-left: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa;
+  width: 20px;
+}
+
+.stepperBox.left:active {
+  background: black;
+  color: white;
 }
 
 .stepperBox.center {
-    display: flex;
-justify-content: center;
-align-items: center;
-  border: 1px solid #aaaaaa;
+  width: 30px;
 }
 
 .stepperBox.right {
-    display: flex;
-justify-content: center;
-align-items: center;
- border-top: 1px solid #aaaaaa;
-  border-right: 1px solid #aaaaaa;
-  border-bottom: 1px solid #aaaaaa; 
+  width: 20px;
+}
+
+.stepperBox.right:active {
+  background: black;
+  color: white;  
 }

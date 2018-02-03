@@ -11,10 +11,10 @@ class Stepper extends Component {
 	    			<button onClick={this.props.decrement} className="stepperBox left">
 	    				<div>–</div>
 	    			</button>
-	    			<div class="stepperBox center">
+	    			<div className="stepperBox center">
 	    				{this.props.value}
 	    			</div>
-	    			<button onClick={this.props.increment} class="stepperBox right">
+	    			<button onClick={this.props.increment} className="stepperBox right">
 	    				<div>+</div>
 	    			</button>
 	    		</div>

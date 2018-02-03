@@ -10,13 +10,14 @@ class App extends Component {
         super(props);
 
         this.colors=[
-            'rgb(255,0,0)',
-            'rgb(0,255,0)',
-            'rgb(0,0,255)'
+                ['#eeeeee','#cccccc','#aaaaaa','#888888','#666666','#444444','#222222'],
+                ['#BC9178','#23255E','#DC9D35','#897BBF','#4B4A81','#2E1C38','#403939','#2A584E','#CB4A34'],
+                ['#A9B3BD','#73584D','#678EAD','#AB7B71','#43677F','#434957','#2E5080'],
+                ['#B2ABA3','#9B978B','#686868','#3D3D3D','#EA5D4A']
             ];
 
         this.graphics = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
             ];
 
         this.state = {
@@ -42,15 +43,17 @@ class App extends Component {
             fontAlignArtist: "left",
             fontAlignTitle: "right",
             textPosition: "top",
-            bg: this.colors[1],
-            fg: this.colors[0],
+            bg: this.colors[0][0],
+            fg: this.colors[0][this.colors[0].length-1],
             
             ModalColorsCollapsed: true,
             availableFonts: ["lf"],
 
             isOpen: false,
             viewRotationY: 0,
-            viewScale: 1
+            viewScale: 1,
+
+            theme: 0
         };
 
 
@@ -83,17 +86,40 @@ class App extends Component {
 
         this.nextGraphic = this.nextGraphic.bind(this);
         this.prevGraphic = this.prevGraphic.bind(this);
+
+        this.nextColorTheme = this.nextColorTheme.bind(this);
+        this.prevColorTheme = this.prevColorTheme.bind(this);
     }
 
     nextGraphic() {
         if (this.state.svg < this.graphics.length) {
             this.setState({ svg: this.state.svg + 1 });
+        } else {
+            this.setState({ svg: 1 });
         }
     }
 
     prevGraphic() {
         if (this.state.svg > 1) {
             this.setState({ svg: this.state.svg - 1 });
+        } else {
+            this.setState({ svg: this.graphics.length });
+        }
+    }
+
+    nextColorTheme() {
+        if (this.state.theme < this.colors.length-1) {
+            this.setState({ theme: this.state.theme + 1 });
+        } else {
+            this.setState({ theme: 0 });
+        }
+    }
+
+    prevColorTheme() {
+        if (this.state.theme > 0) {
+            this.setState({ theme: this.state.theme - 1 });
+        } else {
+            this.setState({ theme: this.colors.length - 1 });
         }
     }
 
@@ -173,14 +199,17 @@ class App extends Component {
     }
 
     changeTranslateX(event) {
+
         this.setState({ translateX: event.target.value });
     }
 
     changeTranslateY(event) {
+
         this.setState({ translateY: event.target.value });
     }
 
     pickBg(event) {
+
         this.setState({ bg: event.target.getAttribute("color") });
     }
 
@@ -276,14 +305,31 @@ class App extends Component {
                     changeFontAlignArtist={this.changeFontAlignArtist}
                     fontAlignTitle={this.state.fontAlignTitle}
                     changeFontAlignTitle={this.changeFontAlignTitle}
+                    
+
+                    // Translate 
+
+                    translateX={this.state.translateX}
+                    changeTranslateX={this.changeTranslateX}
+
+                    translateY={this.state.translateY}
+                    changeTranslateY={this.changeTranslateY}
+
+                    // Colors
+
                     bg={this.state.bg}
                     changeBg={event => this.pickBg(event)}
+
                     fg={this.state.fg}
                     changeFg={event => this.pickFg(event)}
+
                     nextGraphic={this.nextGraphic}
                     prevGraphic={this.prevGraphic}
                     colors={this.colors}
                     graphics={this.graphics}
+                    theme={this.state.theme}
+                    nextColorTheme={this.nextColorTheme}
+                    prevColorTheme={this.prevColorTheme}
                 />
 
                 <Canvas
@@ -301,8 +347,11 @@ class App extends Component {
                     width={this.state.width}
                     height={this.state.height}
                     svgRotation={this.state.svgRotation}
+
                     translateX={this.state.translateX}
+
                     translateY={this.state.translateY}
+
                     artist={this.state.name}
                     title={this.state.title}
                     subline={this.state.subline}

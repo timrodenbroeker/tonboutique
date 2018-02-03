@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SelectInput from "../input/SelectInput";
 import RangeSlider from "../input/RangeSlider";
 import Stepper from "../input/Stepper";
 
@@ -53,6 +52,22 @@ class UiBoxGraphic extends Component {
                             min="0"
                             max="360"
                             onChange={this.props.changeSvgRotation}
+                        />
+
+                         <RangeSlider
+                            name="x"
+                            value={this.props.translateX}
+                            min="-200"
+                            max="200"
+                            onChange={this.props.changeTranslateX}
+                        />
+
+                         <RangeSlider
+                            name="y"
+                            value={this.props.translateY}
+                            min="-200"
+                            max="200"
+                            onChange={this.props.changeTranslateY}
                         />
 
                     </div>

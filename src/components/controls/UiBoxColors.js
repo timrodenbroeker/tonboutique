@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ColorField from "../input/ColorField";
+import ColorSelect from "../input/ColorSelect";
+import Stepper from "../input/Stepper";
 
 class UiBoxColors extends Component {
     constructor(props) {
@@ -17,9 +19,8 @@ class UiBoxColors extends Component {
     }
 
     render() {
-        const theColors = this.colors.map(color => (
-            <ColorField color={color} changeColor={this.props.changeColor} />
-        ));
+
+        
 
         return (
             <div className="group">
@@ -34,18 +35,31 @@ class UiBoxColors extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
-                            <div className="field">
-                                <h4>Main</h4>
-                                <div className="boxBodyColors">
-                                    {theColors}
-                                </div>
-                            </div>
-                            <div className="field">
-                                <h4>Back</h4>
-                                <div className="boxBodyColors">
-                                    {theColors}
-                                </div>
-                            </div>
+  
+                     <Stepper
+                            name="Theme"
+                            options={this.props.graphics}
+                            value={this.props.theme}
+                            increment={this.props.nextColorTheme}
+                            decrement={this.props.prevColorTheme}
+                        />
+
+                        <ColorSelect 
+                            name="backgr" 
+                            colors={this.props.colors}
+                            theme={this.props.theme}
+                            target={this.props.bg}
+                            changeColor={this.props.changeBg}
+                        />
+
+                        <ColorSelect 
+                            name="main" 
+                            colors={this.props.colors}
+                            theme={this.props.theme}
+                            target={this.props.fg}
+                            changeColor={this.props.changeFg}
+                        />
+                                
                 </div>
                 )}
             </div>

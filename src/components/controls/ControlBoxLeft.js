@@ -49,10 +49,13 @@ class ControlBoxLeft extends Component {
                     changeSvg={this.props.changeSvg}
                     svgRotation={this.props.svgRotation}
                     changeSvgRotation={this.props.changeSvgRotation}
+
                     translateX={this.props.translateX}
                     changeTranslateX={this.props.changeTranslateX}
+
                     translateY={this.props.translateY}
                     changeTranslateY={this.props.changeTranslateY}
+                    
                     nextGraphic={this.props.nextGraphic}
                     prevGraphic={this.props.prevGraphic}
                     graphics={this.props.graphics}
@@ -62,8 +65,13 @@ class ControlBoxLeft extends Component {
                     name="Color"
                     collapsed={true}
                     color={this.props.bg}
-                    changeColor={this.props.changeBg}
+                    changeBg={this.props.changeBg}
+                    changeFg={this.props.changeFg}
+
                     colors={this.props.colors}
+                    theme={this.props.theme}
+                    nextColorTheme={this.props.nextColorTheme}
+                    prevColorTheme={this.props.prevColorTheme}
                 />
 
                

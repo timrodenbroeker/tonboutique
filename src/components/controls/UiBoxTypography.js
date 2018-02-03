@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import SelectInput from "../input/SelectInput";
 import RangeSlider from "../input/RangeSlider";
 
 class UiBoxTypography extends Component {
