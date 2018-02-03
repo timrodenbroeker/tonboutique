@@ -32,7 +32,7 @@ class UiBoxGraphic extends Component {
                     <div className="boxBody">
                         <Stepper
                             name="File"
-                            options={this.props.arr}
+                            options={this.props.graphics}
                             value={this.props.svg}
                             increment={this.props.nextGraphic}
                             decrement={this.props.prevGraphic}

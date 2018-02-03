@@ -55,6 +55,7 @@ class ControlBoxLeft extends Component {
                     changeTranslateY={this.props.changeTranslateY}
                     nextGraphic={this.props.nextGraphic}
                     prevGraphic={this.props.prevGraphic}
+                    graphics={this.props.graphics}
                 />
 
                 <UiBoxColors
@@ -62,6 +63,7 @@ class ControlBoxLeft extends Component {
                     collapsed={true}
                     color={this.props.bg}
                     changeColor={this.props.changeBg}
+                    colors={this.props.colors}
                 />
 
                 <UiBoxColors
@@ -69,6 +71,7 @@ class ControlBoxLeft extends Component {
                     collapsed={true}
                     color={this.props.fg}
                     changeColor={this.props.changeFg}
+                    colors={this.props.colors}
                 />
 
                 <UiBoxExport name="Export" onClick={this.test} />

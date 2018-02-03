@@ -8,12 +8,23 @@ import ControlBoxLeft from "./components/controls/ControlBoxLeft";
 class App extends Component {
     constructor(props) {
         super(props);
+
+        this.colors=[
+            'rgb(255,0,0)',
+            'rgb(0,255,0)',
+            'rgb(0,0,255)'
+            ];
+
+        this.graphics = [
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14
+            ];
+
         this.state = {
             name: "Maxon",
             title: "Flash",
             subline: "Including a remix by Alexander Franz",
             scale: 0.8,
-            svg: 15,
+            svg: this.graphics[0],
 
             width: 600,
             height: 600,
@@ -31,9 +42,9 @@ class App extends Component {
             fontAlignArtist: "left",
             fontAlignTitle: "right",
             textPosition: "top",
-            bg: "#FF5349",
-            fg: "#292C44",
-            arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+            bg: this.colors[1],
+            fg: this.colors[0],
+            
             ModalColorsCollapsed: true,
             availableFonts: ["lf"],
 
@@ -41,6 +52,7 @@ class App extends Component {
             viewRotationY: 0,
             viewScale: 1
         };
+
 
         this.changeName = this.changeName.bind(this);
         this.changeTitle = this.changeTitle.bind(this);
@@ -73,15 +85,15 @@ class App extends Component {
         this.prevGraphic = this.prevGraphic.bind(this);
     }
 
-    nextGraphic(){
-        if (this.state.svg <= this.state.arr.length + 1){
-            this.setState({svg: this.state.svg+1});
+    nextGraphic() {
+        if (this.state.svg < this.graphics.length) {
+            this.setState({ svg: this.state.svg + 1 });
         }
     }
 
-    prevGraphic(){
-        if (this.state.svg > 1){
-            this.setState({svg: this.state.svg-1});
+    prevGraphic() {
+        if (this.state.svg > 1) {
+            this.setState({ svg: this.state.svg - 1 });
         }
     }
 
@@ -241,7 +253,6 @@ class App extends Component {
                 </div>
 
                 <ControlBoxLeft
-                    arr={this.state.arr}
                     svg={this.state.svg}
                     changeSvg={this.changeSvg}
                     scale={this.state.scale}
@@ -269,10 +280,10 @@ class App extends Component {
                     changeBg={event => this.pickBg(event)}
                     fg={this.state.fg}
                     changeFg={event => this.pickFg(event)}
-
-
                     nextGraphic={this.nextGraphic}
                     prevGraphic={this.prevGraphic}
+                    colors={this.colors}
+                    graphics={this.graphics}
                 />
 
                 <Canvas
