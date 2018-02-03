@@ -13,7 +13,7 @@ class App extends Component {
             title: "Flash",
             subline: "Including a remix by Alexander Franz",
             scale: 0.8,
-            svg: 2,
+            svg: 15,
 
             width: 600,
             height: 600,
@@ -69,16 +69,20 @@ class App extends Component {
 
         this.savePng = this.savePng.bind(this);
 
-        this.increment = this.increment.bind(this);
-        this.decrement = this.decrement.bind(this);
+        this.nextGraphic = this.nextGraphic.bind(this);
+        this.prevGraphic = this.prevGraphic.bind(this);
     }
 
-    increment(){
-        this.setState({svg: this.state.svg+1});
+    nextGraphic(){
+        if (this.state.svg <= this.state.arr.length + 1){
+            this.setState({svg: this.state.svg+1});
+        }
     }
 
-    decrement(){
-        this.setState({svg: this.state.svg-1});
+    prevGraphic(){
+        if (this.state.svg > 1){
+            this.setState({svg: this.state.svg-1});
+        }
     }
 
     changeName(event) {
@@ -267,8 +271,8 @@ class App extends Component {
                     changeFg={event => this.pickFg(event)}
 
 
-                    increment={this.increment}
-                    decrement={this.decrement}
+                    nextGraphic={this.nextGraphic}
+                    prevGraphic={this.prevGraphic}
                 />
 
                 <Canvas

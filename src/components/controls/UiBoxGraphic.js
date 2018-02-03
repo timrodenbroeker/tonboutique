@@ -34,8 +34,8 @@ class UiBoxGraphic extends Component {
                             name="File"
                             options={this.props.arr}
                             value={this.props.svg}
-                            increment={this.props.increment}
-                            decrement={this.props.decrement}
+                            increment={this.props.nextGraphic}
+                            decrement={this.props.prevGraphic}
                         />
 
                         <RangeSlider

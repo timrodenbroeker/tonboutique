@@ -53,8 +53,8 @@ class ControlBoxLeft extends Component {
                     changeTranslateX={this.props.changeTranslateX}
                     translateY={this.props.translateY}
                     changeTranslateY={this.props.changeTranslateY}
-                    increment={this.props.increment}
-                    decrement={this.props.decrement}
+                    nextGraphic={this.props.nextGraphic}
+                    prevGraphic={this.props.prevGraphic}
                 />
 
                 <UiBoxColors
