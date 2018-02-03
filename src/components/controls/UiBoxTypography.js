@@ -1,48 +1,44 @@
-import React, { Component } from 'react';
-import SelectInput from '../input/SelectInput';
-import RangeSlider from '../input/RangeSlider';
+import React, { Component } from "react";
+import SelectInput from "../input/SelectInput";
+import RangeSlider from "../input/RangeSlider";
 
 class UiBoxTypography extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-        collapsed: this.props.collapsed
-        }
-    this.collapseBox = this.collapseBox.bind(this);        
+    constructor(props) {
+        super(props);
+        this.state = {
+            collapsed: this.props.collapsed
+        };
+        this.collapseBox = this.collapseBox.bind(this);
     }
 
-    collapseBox(){
-        this.setState({collapsed: !this.state.collapsed});
+    collapseBox() {
+        this.setState({ collapsed: !this.state.collapsed });
     }
-    
-  render() {
-    return (
-    	<div className="group">
-            <div className="boxHead">
-               <h3 
-                    className={this.state.collapsed ? 'lighten' : 'active'} 
-                    onClick={this.collapseBox} >
-                    {this.props.name}
-                </h3>
-            </div>
 
+    render() {
+        return (
+            <div className="group">
+                <div className="boxHead">
+                    <h3
+                        className={this.state.collapsed ? "lighten" : "active"}
+                        onClick={this.collapseBox}
+                    >
+                        {this.props.name}
+                    </h3>
+                </div>
 
+                {this.state.collapsed === false && (
+                    <div className="boxBody">
+                        <RangeSlider
+                            name="Size"
+                            value={this.props.fontSize}
+                            min="3"
+                            max="20"
+                            onChange={this.props.changeFontSize}
+                        />
 
-            {this.state.collapsed === false &&
-
-            <div className="boxBody">
-           
-            <RangeSlider 
-                name="Font-Size" 
-                value={this.props.fontSize} 
-                min="3" 
-                max="20"
-                onChange={this.props.changeFontSize}
-            />
-
-
-            <RangeSlider
-                            name="Font-Weight"
+                        <RangeSlider
+                            name="Weight"
                             value={this.props.fontWeight}
                             min="300"
                             max="900"
@@ -50,7 +46,7 @@ class UiBoxTypography extends Component {
                             onChange={this.props.changeFontWeight}
                         />
 
-        {/* 
+                        {/* 
 
             <SelectInput 
                 name="Font-Family" 
@@ -75,15 +71,11 @@ class UiBoxTypography extends Component {
             />  
 
         */}
-
-         </div>
-
-
-     }
-
-        </div>
-    );
-  }
+                    </div>
+                )}
+            </div>
+        );
+    }
 }
 
 export default UiBoxTypography;

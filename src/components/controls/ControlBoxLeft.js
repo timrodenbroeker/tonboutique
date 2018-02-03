@@ -24,7 +24,7 @@ class ControlBoxLeft extends Component {
                 />
 
                 <UiBoxTypography
-                    name="Typography"
+                    name="Font"
                     collapsed={true}
                     fontSize={this.props.fontSize}
                     changeFontSize={this.props.changeFontSize}
@@ -59,22 +59,16 @@ class ControlBoxLeft extends Component {
                 />
 
                 <UiBoxColors
-                    name="background-color"
+                    name="Color"
                     collapsed={true}
                     color={this.props.bg}
                     changeColor={this.props.changeBg}
                     colors={this.props.colors}
                 />
 
-                <UiBoxColors
-                    name="main color"
-                    collapsed={true}
-                    color={this.props.fg}
-                    changeColor={this.props.changeFg}
-                    colors={this.props.colors}
-                />
+               
 
-                <UiBoxExport name="Export" onClick={this.test} />
+                <UiBoxExport name="Save" onClick={this.test} />
             </section>
         );
     }

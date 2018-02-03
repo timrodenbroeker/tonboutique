@@ -224,11 +224,11 @@ textarea:focus {
 
 .field h4 {
   margin: 0;
-  width: 40%;
+  width: 30%;
 }
 
 .field input.textInput {
-  width: 60%;
+  width: 70%;
 }
 
 .field select {
@@ -402,8 +402,8 @@ svg {
 }
 
 .colorField {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .colorName {
@@ -501,8 +501,8 @@ textarea {
 }
 
 .color {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   margin: 0;
 }
 

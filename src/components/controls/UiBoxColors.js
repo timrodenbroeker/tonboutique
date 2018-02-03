@@ -34,8 +34,19 @@ class UiBoxColors extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
-                        <div className="boxBodyColors">{theColors}</div>
-                    </div>
+                            <div className="field">
+                                <h4>Main</h4>
+                                <div className="boxBodyColors">
+                                    {theColors}
+                                </div>
+                            </div>
+                            <div className="field">
+                                <h4>Back</h4>
+                                <div className="boxBodyColors">
+                                    {theColors}
+                                </div>
+                            </div>
+                </div>
                 )}
             </div>
         );

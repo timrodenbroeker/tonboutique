@@ -48,7 +48,7 @@ class UiBoxGraphic extends Component {
                         />
 
                         <RangeSlider
-                            name="Rotation"
+                            name="Rotate"
                             value={this.props.svgRotation}
                             min="0"
                             max="360"
