@@ -30,8 +30,13 @@ class ControlBoxLeft extends Component {
                         collapsed={false}
                         fontSize={this.props.fontSize}
                         changeFontSize={this.props.changeFontSize}
+
                         fontWeight={this.props.fontWeight}
                         changeFontWeight={this.props.changeFontWeight}
+
+                        fontWeightTitle={this.props.fontWeightTitle}
+                        changeFontWeightTitle={this.props.changeFontWeightTitle}
+                        
                         availableFonts={this.props.availableFonts}
                         fontFamily={this.props.fontFamily}
                         changeFontFamily={this.props.changeFontFamily}

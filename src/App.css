@@ -801,7 +801,7 @@ background: #eeeeee;
 
 .thumbnail {
   padding: 15px;
-  width: 20%;
+  width: 12.5%;
   cursor: pointer;
   display: inline-block;
   border: 1px solid white;
@@ -826,4 +826,20 @@ background: #eeeeee;
 .modalTrigger:hover {
   background: black;
   color: white;
+}
+
+
+
+.component {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;   
+}
+
+.show {
+  visibility: visible;
+  opacity: 1;
 }

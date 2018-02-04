@@ -5,8 +5,6 @@ import Canvas from "./components/cover/Canvas";
 import ControlBoxLeft from "./components/controls/ControlBoxLeft";
 import SvgModal from "./components/input/SvgModal";
 
-
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -59,8 +57,8 @@ class App extends Component {
             scale: 0.8,
             svg: this.graphics[0],
 
-            width: 600,
-            height: 600,
+            width: 2000,
+            height: 2000,
 
             svgWidth: 444,
             svgHeight: 444,
@@ -72,6 +70,7 @@ class App extends Component {
             fontSize: 8,
             fontFamily: this.fonts[0],
             fontWeight: 600,
+            fontWeightTitle: 600,
             fontAlignArtist: "left",
             fontAlignTitle: "right",
             textPosition: "top",
@@ -102,6 +101,7 @@ class App extends Component {
 
         this.changeFontAlignArtist = this.changeFontAlignArtist.bind(this);
         this.changeFontWeight = this.changeFontWeight.bind(this);
+        this.changeFontWeightTitle = this.changeFontWeightTitle.bind(this);
         this.changeFontAlignTitle = this.changeFontAlignTitle.bind(this);
         this.changeFontColor = this.changeFontColor.bind(this);
         this.changeTextPosition = this.changeTextPosition.bind(this);
@@ -230,6 +230,10 @@ class App extends Component {
         this.setState({ fontWeight: event.target.value });
     }
 
+    changeFontWeightTitle(event) {
+        this.setState({ fontWeightTitle: event.target.value });
+    }
+
     changeTextPosition(event) {
         this.setState({ textPosition: event.target.value });
     }
@@ -281,17 +285,17 @@ class App extends Component {
     }
 
     pickSvg(event) {
-        this.setState({ 
+        this.setState({
             svg: event.target.getAttribute("id"),
             svgModalOpen: false
-         });
+        });
     }
 
-    toggleSvgModal(){
+    toggleSvgModal() {
         this.setState({
             svgModalOpen: !this.state.svgModalOpen
-       })
-    };
+        });
+    }
 
     savePng() {
         var c = document.getElementById("theCanvas");
@@ -323,8 +327,13 @@ class App extends Component {
                     changeFontTranslateY={this.changeFontTranslateY}
                     fontSize={this.state.fontSize}
                     changeFontSize={this.changeFontSize}
+
+                    // FontWeight
                     fontWeight={this.state.fontWeight}
                     changeFontWeight={this.changeFontWeight}
+                    fontWeightTitle={this.state.fontWeightTitle}
+                    changeFontWeightTitle={this.changeFontWeightTitle}
+                    
                     fontFamily={this.state.fontFamily}
                     changeFontFamily={this.changeFontFamily}
                     fontAlignArtist={this.state.fontAlignArtist}
@@ -381,6 +390,7 @@ class App extends Component {
                     fontFamily={this.state.fontFamily}
                     fontSize={this.state.fontSize * 0.01}
                     fontWeight={this.state.fontWeight}
+                    fontWeightTitle={this.state.fontWeightTitle}
                     fontTranslateY={this.state.fontTranslateY}
                     // EXPORT
                     savePng={this.savePng}
@@ -388,12 +398,11 @@ class App extends Component {
                     view={this.state.view}
                 />
 
-                <SvgModal 
+                <SvgModal
                     open={this.state.svgModalOpen}
                     graphics={this.graphics}
                     pickSvg={this.pickSvg}
                 />
-
             </div>
         );
     }

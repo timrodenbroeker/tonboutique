@@ -52,16 +52,23 @@ class Canvas extends Component {
         ctx.textBaseline = "top";
 
         ctx.font =
-            this.props.fontWeight +
+            this.props.fontWeightTitle +
             " " +
             this.props.height * this.props.fontSize +
             "px "+ this.props.fontFamily;
+
         ctx.textAlign = "end";
         ctx.fillText(
             this.props.title,
             this.props.width - this.props.width * 0.025,
             this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
         );
+
+        ctx.font =
+            this.props.fontWeight +
+            " " +
+            this.props.height * this.props.fontSize +
+            "px "+ this.props.fontFamily;
 
         ctx.textAlign = "start";
         ctx.fillText(
@@ -126,8 +133,8 @@ class Canvas extends Component {
                     <div className="record" style={this.props.coverStyle}>
                         <div
                             style={{
-                                width: this.props.width,
-                                height: this.props.height
+                                width: 600,
+                                height: 600
                             }}
                             className="vinyl"
                         />

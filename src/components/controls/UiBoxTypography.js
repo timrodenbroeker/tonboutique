@@ -29,7 +29,7 @@ class UiBoxTypography extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
-                    <SelectInput
+                        <SelectInput
                             name="Family"
                             value={this.props.fontFamily}
                             options={this.props.fonts}
@@ -54,13 +54,23 @@ class UiBoxTypography extends Component {
                         />
 
                         <RangeSlider
-                            name="Weight"
+                            name="Weight1"
                             value={this.props.fontWeight}
                             min="300"
                             max="900"
                             step={100}
                             onChange={this.props.changeFontWeight}
                         />
+
+                        <RangeSlider
+                            name="Weight2"
+                            value={this.props.fontWeightTitle}
+                            min="300"
+                            max="900"
+                            step={100}
+                            onChange={this.props.changeFontWeightTitle}
+                        />
+
 
                         {/* 
 

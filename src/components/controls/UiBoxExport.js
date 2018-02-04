@@ -13,6 +13,16 @@ constructor(props){
         this.setState({collapsed: !this.state.collapsed});
     }
 
+    saveCanvas(){
+      var canvas = document.getElementById('theCanvas');
+
+          var saveButton = document.getElementById('exportButton');
+
+          saveButton.href = canvas.toDataURL();
+          saveButton.download = "mypainting.png";
+
+    }
+
   render() {
     return (
     	<div className="group">
