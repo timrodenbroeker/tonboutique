@@ -41,15 +41,11 @@ constructor(props){
                 onChange={this.props.onChangeTitle}
             />
 
-            {/*
-
             <TextInput 
                 name="Subline" 
                 value={this.props.subline} 
                 onChange={this.props.onChangeSubline}
             />
-
-          */}
 
          </div>
 

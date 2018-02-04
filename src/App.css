@@ -95,6 +95,7 @@
 #fontloader {
   display: flex;
   overflow: hidden;
+  visibility: hidden;
 }
 
 html,

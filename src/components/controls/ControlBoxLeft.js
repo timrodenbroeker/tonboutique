@@ -66,7 +66,7 @@ class ControlBoxLeft extends Component {
                     />
 
                     <UiBoxColors
-                        name="Color"
+                        name="Colors"
                         collapsed={false}
                         color={this.props.bg}
                         changeBg={this.props.changeBg}
