@@ -26,7 +26,7 @@ class ControlBoxLeft extends Component {
                     />
 
                     <UiBoxTypography
-                        name="Font"
+                        name="Typography"
                         collapsed={false}
                         fontSize={this.props.fontSize}
                         changeFontSize={this.props.changeFontSize}
@@ -92,7 +92,15 @@ class ControlBoxLeft extends Component {
                         prevView={this.props.prevView}
                     />
 
-                    <div id="fontloader">
+                    <UiBoxExport 
+                        collapsed={false}
+                        name="Export" 
+                        onClick={this.test} 
+                    />
+
+
+
+                     <div id="fontloader">
                         <div className="font-lf fw300">Aa</div>
                         <div className="font-lf fw400">Aa</div>
                         <div className="font-lf fw500">Aa</div>
@@ -108,7 +116,7 @@ class ControlBoxLeft extends Component {
                         <div className="font-rm fw700">Aa</div>
                     </div>
 
-                    <UiBoxExport name="Save" onClick={this.test} />
+                    
                 </section>
             </main>
         );
