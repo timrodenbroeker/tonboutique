@@ -60,14 +60,14 @@ class Canvas extends Component {
         ctx.fillText(
             this.props.title,
             this.props.width - this.props.width * 0.025,
-            this.props.width * 0.025
+            this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
         );
 
         ctx.textAlign = "start";
         ctx.fillText(
             this.props.artist,
             0 + this.props.width * 0.025,
-            0 + this.props.width * 0.025
+            this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
         );
 
         ctx.restore();

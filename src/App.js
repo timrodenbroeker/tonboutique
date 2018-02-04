@@ -21,7 +21,8 @@ class App extends Component {
         this.fonts=[
             "Arial",
             "Times",
-            "Franklin"
+            "Franklin",
+            "RobotoMono"
             ];
 
         this.graphics = [
@@ -55,6 +56,8 @@ class App extends Component {
             fontAlignArtist: "left",
             fontAlignTitle: "right",
             textPosition: "top",
+            fontTranslateY: 0,
+
             bg: this.colors[0][0],
             fg: this.colors[0][this.colors[0].length-1],
             
@@ -106,6 +109,8 @@ class App extends Component {
 
         this.nextView = this.nextView.bind(this);
         this.prevView = this.prevView.bind(this);
+
+        this.changeFontTranslateY = this.changeFontTranslateY.bind(this);        
     }
 
     nextGraphic() {
@@ -114,6 +119,10 @@ class App extends Component {
         } else {
             this.setState({ svg: 1 });
         }
+    }
+
+    changeFontTranslateY(event){
+        this.setState({ fontTranslateY: event.target.value });
     }
 
     prevGraphic() {
@@ -324,7 +333,8 @@ class App extends Component {
                     subline={this.state.subline}
                     changeSubline={this.changeSubline}
 
-
+                    fontTranslateY={this.state.fontTranslateY}
+                    changeFontTranslateY={this.changeFontTranslateY}
 
 
                     fontSize={this.state.fontSize}
@@ -404,6 +414,9 @@ class App extends Component {
                     fontFamily={this.state.fontFamily}
                     fontSize={this.state.fontSize * 0.01}
                     fontWeight={this.state.fontWeight}
+                    fontTranslateY={this.state.fontTranslateY}
+
+
                     savePng={this.savePng}
 
                     view={this.state.view}

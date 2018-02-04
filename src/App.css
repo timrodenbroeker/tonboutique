@@ -40,19 +40,50 @@
   font-weight: 900;
 }
 
+
 @font-face {
-  font-family: "sm";
-  src: url("fonts/ttf/sm600.ttf") format("truetype");
-  font-weight: 600;
+  font-family: "RobotoMono";
+  src: url("fonts/ttf/rm100.ttf") format("truetype");
+  font-weight: 100;
 }
 
 @font-face {
-  font-family: "sm";
-  src: url("fonts/ttf/sm400.ttf") format("truetype");
+  font-family: "RobotoMono";
+  src: url("fonts/ttf/rm300.ttf") format("truetype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("fonts/ttf/rm400.ttf") format("truetype");
   font-weight: 400;
 }
 
+@font-face {
+  font-family: "RobotoMono";
+  src: url("fonts/ttf/rm500.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "RobotoMono";
+  src: url("fonts/ttf/rm700.ttf") format("truetype");
+  font-weight: 700;
+}
+
+.font-rm {
+  font-family: "RobotoMono";
+}
+
+.font-lf {
+ font-family: "Franklin"; 
+}
+
 /* FontLoading */
+
+.fw300 {
+  font-weight: 100;
+}
 
 .fw300 {
   font-weight: 300;
@@ -81,16 +112,6 @@
 .fw900 {
   font-weight: 900;
 }
-
-/*.sm600 {
-  font-family: "sm", sans-serif;
-  font-weight: 600;
-}
-
-.sm400 {
-  font-family: "sm", sans-serif;
-  font-weight: 400;
-}*/
 
 #fontloader {
   display: flex;
@@ -498,9 +519,10 @@ option {
   -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
   width: 100%; /* Full-width */
-  height: 1px; /* Specified height */
-  background: #aaaaaa; /* Grey background */
+  height: 5px; /* Specified height */
+  background: #eeeeee; /* Grey background */
   outline: none; /* Remove outline */
+  cursor: pointer;
 }
 
 /* The slider handle (use webkit (Chrome, Opera, Safari, Edge) and moz (Firefox) to override default look) */
@@ -571,12 +593,12 @@ textarea {
 ::-moz-selection {
   /* Code for Firefox */
   color: black;
-  background: transparent;
+  background: yellow;
 }
 
 ::selection {
   color: black;
-  background: transparent;
+  background: yellow;
 }
 
 .lighten {
@@ -633,7 +655,7 @@ textarea {
 }
 
 .view1 .cover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -669,10 +691,24 @@ textarea {
 }
 
 .view3 .recordWrapper {
- transform: rotateY(0deg) rotateX(55deg);
-  -webkit-transform: rotateY(0deg) rotateX(55deg);
-  -moz-transform: rotateY(0deg) rotateX(55deg); 
+ transform: rotateY(33deg) rotateX(55deg);
+  -webkit-transform: rotateY(33deg) rotateX(55deg);
+  -moz-transform: rotateY(33deg) rotateX(55deg); 
 }
+
+/*
+  Schatten
+
+.recordWrapper .record::after {
+    background: linear-gradient(to right,rgba(0,0,0,.1) 0%,rgba(211,211,211,.1) 5%,rgba(255,255,255,.15) 5%,rgba(255,255,255,.1) 9%,rgba(0,0,0,.01) 100%);
+    background: -webkit-linear-gradient(left,rgba(0,0,0,.1) 0%,rgba(211,211,211,.1) 5%,rgba(255,255,255,.15) 5%,rgba(255,255,255,.1) 9%,rgba(0,0,0,.01) 100%);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;  
+}*/
 
 .view4 {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);

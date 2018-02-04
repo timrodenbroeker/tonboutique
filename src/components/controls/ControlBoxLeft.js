@@ -41,6 +41,9 @@ class ControlBoxLeft extends Component {
                         changeFontAlignTitle={this.props.changeFontAlignTitle}
                         fonts={this.props.fonts}
                         changeFontFamily={this.props.changeFontFamily}
+
+                        fontTranslateY={this.props.fontTranslateY}
+                        changeFontTranslateY={this.props.changeFontTranslateY}
                     />
 
                     <UiBoxGraphic
@@ -87,14 +90,19 @@ class ControlBoxLeft extends Component {
                     />
 
                     <div id="fontloader">
-                        <div className="fw300">Aa</div>
-                        <div className="fw400">Aa</div>
-                        <div className="fw500">Aa</div>
-                        <div className="fw600">Aa</div>
-                        <div className="fw700">Aa</div>
-                        <div className="fw800">Aa</div>
-                        <div className="fw900">Aa</div>
-                        
+                        <div className="font-lf fw300">Aa</div>
+                        <div className="font-lf fw400">Aa</div>
+                        <div className="font-lf fw500">Aa</div>
+                        <div className="font-lf fw600">Aa</div>
+                        <div className="font-lf fw700">Aa</div>
+                        <div className="font-lf fw800">Aa</div>
+                        <div className="font-lf fw900">Aa</div>
+
+                        <div className="font-rm fw100">Aa</div>
+                        <div className="font-rm fw300">Aa</div>
+                        <div className="font-rm fw400">Aa</div>
+                        <div className="font-rm fw500">Aa</div>
+                        <div className="font-rm fw700">Aa</div>
                     </div>
 
                     <UiBoxExport name="Save" onClick={this.test} />

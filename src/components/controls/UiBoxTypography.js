@@ -45,6 +45,15 @@ class UiBoxTypography extends Component {
                         />
 
                         <RangeSlider
+                            name="fix y"
+                            value={this.props.fontTranslateY}
+                            min={-1}
+                            max={1}
+                            step={0.001}
+                            onChange={this.props.changeFontTranslateY}
+                        />
+
+                        <RangeSlider
                             name="Weight"
                             value={this.props.fontWeight}
                             min="300"
