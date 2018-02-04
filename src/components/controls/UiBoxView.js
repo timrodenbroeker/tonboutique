@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RangeSlider from '../input/RangeSlider';
+import Stepper from '../input/Stepper';
 
 class UiBoxView extends Component {
     constructor(props){
@@ -23,7 +24,7 @@ class UiBoxView extends Component {
                <h3 
                     className={this.state.collapsed ? 'lighten' : 'active'} 
                     onClick={this.collapseBox} >
-                    {this.props.name}
+                    View
                 </h3>
             </div>
 
@@ -31,25 +32,14 @@ class UiBoxView extends Component {
              {this.state.collapsed === false &&
             <div className="boxBody">
            
-            <RangeSlider 
-                name="Scale" 
-                value={this.props.viewScale} 
-                min="0.5"  
-                max="1.5" 
-                onChange={this.props.changeViewScale} 
-                step="0.01"
+           <Stepper 
+                name="View"
+                options={this.props.views}
+                value={this.props.view}
+                increment={this.props.nextView}
+                decrement={this.props.prevView}
             />
-
-            <RangeSlider 
-                name="Rotation" 
-                value={this.props.viewRotationY} 
-                min="-25" 
-                max="25" 
-                onChange={this.props.changeViewRotationY} 
-                step="0.1"
-            />
-
-
+        
          </div>
          }
         </div>

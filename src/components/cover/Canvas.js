@@ -43,18 +43,24 @@ class Canvas extends Component {
         ctx.fillStyle = this.props.bg;
         ctx.fillRect(0, 0, this.props.width, this.props.height);
         ctx.stroke();
+
+        // Text
+
+        ctx.save();
+        ctx.translate(0,0 - this.props.fontSize);
         ctx.fillStyle = this.props.fg;
         ctx.textBaseline = "top";
+
         ctx.font =
             this.props.fontWeight +
             " " +
             this.props.height * this.props.fontSize +
-            "px lf";
+            "px "+ this.props.fontFamily;
         ctx.textAlign = "end";
         ctx.fillText(
             this.props.title,
             this.props.width - this.props.width * 0.025,
-            0 + this.props.width * 0.025
+            this.props.width * 0.025
         );
 
         ctx.textAlign = "start";
@@ -63,6 +69,10 @@ class Canvas extends Component {
             0 + this.props.width * 0.025,
             0 + this.props.width * 0.025
         );
+
+        ctx.restore();
+
+
 
         var svgX = ctx.canvas.width * 0.5 + (this.props.translateX*ctx.canvas.width*0.5);
         var svgY = ctx.canvas.height * 0.5 + (this.props.translateY*ctx.canvas.width*0.5);
@@ -111,7 +121,7 @@ class Canvas extends Component {
 
     render() {
         return (
-            <section id="artboard">
+            <section id="artboard" className={"view"+this.props.view}>
                 <div className="recordWrapper">
                     <div className="record" style={this.props.coverStyle}>
                         <div

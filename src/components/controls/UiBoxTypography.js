@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RangeSlider from "../input/RangeSlider";
+import SelectInput from "../input/SelectInput";
 
 class UiBoxTypography extends Component {
     constructor(props) {
@@ -28,6 +29,13 @@ class UiBoxTypography extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
+                    <SelectInput
+                            name="Family"
+                            value={this.props.fontFamily}
+                            options={this.props.fonts}
+                            onChange={this.props.changeFontFamily}
+                        />
+
                         <RangeSlider
                             name="Size"
                             value={this.props.fontSize}

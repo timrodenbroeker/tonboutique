@@ -13,12 +13,24 @@ class App extends Component {
                 ['#eeeeee','#cccccc','#aaaaaa','#888888','#666666','#444444','#222222'],
                 ['#BC9178','#23255E','#DC9D35','#897BBF','#4B4A81','#2E1C38','#403939','#2A584E','#CB4A34'],
                 ['#A9B3BD','#73584D','#678EAD','#AB7B71','#43677F','#434957','#2E5080'],
-                ['#B2ABA3','#9B978B','#686868','#3D3D3D','#EA5D4A']
+                ['#B2ABA3','#9B978B','#686868','#3D3D3D','#EA5D4A'],
+                ['#552B14','#FF2C00'],
+                ['#00BC5C','#000000']
+            ];
+
+        this.fonts=[
+            "Arial",
+            "Times",
+            "Franklin"
             ];
 
         this.graphics = [
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
             ];
+
+        this.views = [
+            1, 2, 3, 4
+            ];            
 
         this.state = {
             name: "Maxon",
@@ -38,7 +50,7 @@ class App extends Component {
             translateY: 0,
 
             fontSize: 8,
-            fontFamily: "lf",
+            fontFamily: this.fonts[0],
             fontWeight: 600,
             fontAlignArtist: "left",
             fontAlignTitle: "right",
@@ -53,7 +65,9 @@ class App extends Component {
             viewRotationY: 0,
             viewScale: 1,
 
-            theme: 0
+            theme: 0,
+
+            view: 1
         };
 
 
@@ -89,6 +103,9 @@ class App extends Component {
 
         this.nextColorTheme = this.nextColorTheme.bind(this);
         this.prevColorTheme = this.prevColorTheme.bind(this);
+
+        this.nextView = this.nextView.bind(this);
+        this.prevView = this.prevView.bind(this);
     }
 
     nextGraphic() {
@@ -104,6 +121,22 @@ class App extends Component {
             this.setState({ svg: this.state.svg - 1 });
         } else {
             this.setState({ svg: this.graphics.length });
+        }
+    }
+
+    nextView() {
+        if (this.state.view < this.views.length) {
+            this.setState({ view: this.state.view + 1 });
+        } else {
+            this.setState({ view: 1 });
+        }
+    }
+
+    prevView() {
+        if (this.state.view > 1) {
+            this.setState({ view: this.state.view - 1 });
+        } else {
+            this.setState({ svg: this.views.length });
         }
     }
 
@@ -234,6 +267,10 @@ class App extends Component {
     };
 
     render() {
+
+
+        // setInterval(function(){ console.log(document.fonts) }, 500);
+
         const coverStyle = {
             transform: "scale(" + this.state.viewScale + ")"
         };
@@ -271,15 +308,7 @@ class App extends Component {
 
       */}
 
-                <div id="fontloader">
-                    <div className="fw300">a</div>
-                    <div className="fw400">a</div>
-                    <div className="fw500">a</div>
-                    <div className="fw600">a</div>
-                    <div className="fw700">a</div>
-                    <div className="fw800">a</div>
-                    <div className="fw900">a</div>
-                </div>
+               
 
                 <ControlBoxLeft
                     svg={this.state.svg}
@@ -294,17 +323,22 @@ class App extends Component {
                     changeTitle={this.changeTitle}
                     subline={this.state.subline}
                     changeSubline={this.changeSubline}
+
+
+
+
                     fontSize={this.state.fontSize}
                     changeFontSize={this.changeFontSize}
                     fontWeight={this.state.fontWeight}
                     changeFontWeight={this.changeFontWeight}
-                    availableFonts={this.state.availableFonts}
                     fontFamily={this.state.fontFamily}
                     changeFontFamily={this.changeFontFamily}
                     fontAlignArtist={this.state.fontAlignArtist}
                     changeFontAlignArtist={this.changeFontAlignArtist}
                     fontAlignTitle={this.state.fontAlignTitle}
                     changeFontAlignTitle={this.changeFontAlignTitle}
+
+                    fonts={this.fonts}
                     
 
                     // Translate 
@@ -323,13 +357,24 @@ class App extends Component {
                     fg={this.state.fg}
                     changeFg={event => this.pickFg(event)}
 
+                    // Graphic
+
                     nextGraphic={this.nextGraphic}
                     prevGraphic={this.prevGraphic}
+
+
                     colors={this.colors}
                     graphics={this.graphics}
                     theme={this.state.theme}
                     nextColorTheme={this.nextColorTheme}
                     prevColorTheme={this.prevColorTheme}
+
+                    // View
+                    view={this.state.view}
+                    views={this.views}
+                    nextView={this.nextView}
+                    prevView={this.prevView}
+
                 />
 
                 <Canvas
@@ -355,9 +400,13 @@ class App extends Component {
                     artist={this.state.name}
                     title={this.state.title}
                     subline={this.state.subline}
+
+                    fontFamily={this.state.fontFamily}
                     fontSize={this.state.fontSize * 0.01}
                     fontWeight={this.state.fontWeight}
                     savePng={this.savePng}
+
+                    view={this.state.view}
                 />
             </div>
         );

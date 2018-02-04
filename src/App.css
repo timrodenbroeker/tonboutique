@@ -1,43 +1,55 @@
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf300.ttf") format("truetype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf400.ttf") format("truetype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf500.ttf") format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf600.ttf") format("truetype");
   font-weight: 600;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf700.ttf") format("truetype");
   font-weight: 700;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf800.ttf") format("truetype");
   font-weight: 800;
 }
 
 @font-face {
-  font-family: "lf";
+  font-family: "Franklin";
   src: url("fonts/ttf/lf900.ttf") format("truetype");
   font-weight: 900;
+}
+
+@font-face {
+  font-family: "sm";
+  src: url("fonts/ttf/sm600.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "sm";
+  src: url("fonts/ttf/sm400.ttf") format("truetype");
+  font-weight: 400;
 }
 
 /* FontLoading */
@@ -70,12 +82,18 @@
   font-weight: 900;
 }
 
+/*.sm600 {
+  font-family: "sm", sans-serif;
+  font-weight: 600;
+}
+
+.sm400 {
+  font-family: "sm", sans-serif;
+  font-weight: 400;
+}*/
+
 #fontloader {
-  position: fixed;
-  top: 0;
-  left: 120%;
-  width: 0;
-  height: 0;
+  display: flex;
   overflow: hidden;
 }
 
@@ -83,17 +101,15 @@ html,
 body,
 * {
   box-sizing: border-box;
-  font-family: "lf", sans-serif !important;
+  font-family: "Franklin", sans-serif;
 }
 
 body {
 }
 
 .App {
-  display: flex;
-  justify-content: flex-start;
-  overflow: hidden;
-  perspective: 100vw;
+  
+  
 }
 
 h1,
@@ -106,17 +122,16 @@ h5 {
 }
 
 .cover {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  
 }
 
 #controlsLeft {
   width: 25%;
-  height: 100vh;
+
   padding: 0 15px 15px 15px;
   z-index: 100;
   
-  overflow-y: scroll;
+
 }
 
 #controlsLeft::-webkit-scrollbar {
@@ -138,13 +153,22 @@ h5 {
 }
 
 #artboard {
+  position: fixed;
+  top:0;
+  right: 0;
+  
   width: 75%;
   height: 100vh;
   display: flex;
-  background: #eeeeee;
+
   overflow: hidden;
   justify-content: center;
   align-items: center;
+  -webkit-transition: all 500ms ease; /* Firefox */
+  -moz-transition: all 500ms ease; /* WebKit */
+  -o-transition: all 500ms ease; /* Opera */
+  transition: all 500ms ease; /* Standard */
+  perspective: 100vw;
 }
 
 .cover {
@@ -603,18 +627,55 @@ textarea {
   transition: all 500ms ease; /* Standard */
 }
 
-#artboard:hover .recordWrapper {
+.view1 {
+  background: #cccccc !important;
+}
+
+.view1 .cover {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.view2 {
+  background: #cccccc;
+}
+
+.view2 .cover {
+
+  
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);  
+}
+
+
+
+.view2 .recordWrapper {
   transform: rotateY(-15deg);
   -webkit-transform: rotateY(-15deg);
   -moz-transform: rotateY(-15deg);
 }
 
-#artboard:hover .record .vinyl {
+.view2 .record .vinyl {
   left: 50px;
 }
 
-#artboard:hover .record .cover {
+.view2 .record .cover {
   left: -50px;
+}
+
+
+.view3 {
+  background: #cccccc;
+}
+
+.view3 .recordWrapper {
+ transform: rotateY(0deg) rotateX(55deg);
+  -webkit-transform: rotateY(0deg) rotateX(55deg);
+  -moz-transform: rotateY(0deg) rotateX(55deg); 
+}
+
+.view4 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.8);
+ background: #cccccc;  
 }
 
 .btn {
@@ -669,4 +730,8 @@ background: #eeeeee;
 .stepperBox.right:active {
   background: black;
   color: white;  
+}
+
+#main {
+  width: 100%;
 }
