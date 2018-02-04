@@ -23,7 +23,7 @@ class Canvas extends Component {
 
                 img.src =
                     "data:image/svg+xml;charset=utf-8," +
-                    svgGraphic.replace(/#ff0000/g, this.props.fg);
+                    svgGraphic.replace(/#121212/g, this.props.fg);
                 img.onload = () => {
                     this.setState(
                         {

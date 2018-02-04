@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import RangeSlider from "../input/RangeSlider";
 import Stepper from "../input/Stepper";
+import ToggleButton from "../input/ToggleButton";
 
 class UiBoxGraphic extends Component {
     constructor(props) {
@@ -29,6 +30,8 @@ class UiBoxGraphic extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
+
+                    {/*
                         <Stepper
                             name="File"
                             options={this.props.graphics}
@@ -36,6 +39,14 @@ class UiBoxGraphic extends Component {
                             increment={this.props.nextGraphic}
                             decrement={this.props.prevGraphic}
                         />
+
+                    */}
+
+                    <ToggleButton 
+                        toggle={this.props.toggleSvgModal}
+                        name="File"
+                        text="Select"
+                    />
 
                         <RangeSlider
                             name="Size"

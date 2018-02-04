@@ -3,35 +3,54 @@ import "./normalize.css";
 import "./App.css";
 import Canvas from "./components/cover/Canvas";
 import ControlBoxLeft from "./components/controls/ControlBoxLeft";
-// import ControlBoxRight from './components/controls/ControlBoxRight';
+import SvgModal from "./components/input/SvgModal";
+
+
 
 class App extends Component {
     constructor(props) {
         super(props);
 
-        this.colors=[
-                ['#eeeeee','#cccccc','#aaaaaa','#888888','#666666','#444444','#222222'],
-                ['#BC9178','#23255E','#DC9D35','#897BBF','#4B4A81','#2E1C38','#403939','#2A584E','#CB4A34'],
-                ['#A9B3BD','#73584D','#678EAD','#AB7B71','#43677F','#434957','#2E5080'],
-                ['#B2ABA3','#9B978B','#686868','#3D3D3D','#EA5D4A'],
-                ['#552B14','#FF2C00'],
-                ['#00BC5C','#000000']
-            ];
+        this.colors = [
+            [
+                "#eeeeee",
+                "#cccccc",
+                "#aaaaaa",
+                "#888888",
+                "#666666",
+                "#444444",
+                "#222222"
+            ],
+            [
+                "#BC9178",
+                "#23255E",
+                "#DC9D35",
+                "#897BBF",
+                "#4B4A81",
+                "#2E1C38",
+                "#403939",
+                "#2A584E",
+                "#CB4A34"
+            ],
+            [
+                "#A9B3BD",
+                "#73584D",
+                "#678EAD",
+                "#AB7B71",
+                "#43677F",
+                "#434957",
+                "#2E5080"
+            ],
+            ["#B2ABA3", "#9B978B", "#686868", "#3D3D3D", "#EA5D4A"],
+            ["#552B14", "#FF2C00"],
+            ["#00BC5C", "#000000"]
+        ];
 
-        this.fonts=[
-            "Arial",
-            "Times",
-            "Franklin",
-            "RobotoMono"
-            ];
+        this.fonts = ["Arial", "Times", "Franklin", "RobotoMono"];
 
-        this.graphics = [
-            1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-            ];
+        this.graphics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-        this.views = [
-            1, 2, 3
-            ];            
+        this.views = [1, 2, 3];
 
         this.state = {
             name: "Maxon",
@@ -59,8 +78,8 @@ class App extends Component {
             fontTranslateY: 0,
 
             bg: this.colors[0][0],
-            fg: this.colors[0][this.colors[0].length-1],
-            
+            fg: this.colors[0][this.colors[0].length - 1],
+
             ModalColorsCollapsed: true,
             availableFonts: ["lf"],
 
@@ -70,9 +89,10 @@ class App extends Component {
 
             theme: 0,
 
-            view: 1
-        };
+            view: 1,
 
+            svgModalOpen: false
+        };
 
         this.changeName = this.changeName.bind(this);
         this.changeTitle = this.changeTitle.bind(this);
@@ -110,7 +130,11 @@ class App extends Component {
         this.nextView = this.nextView.bind(this);
         this.prevView = this.prevView.bind(this);
 
-        this.changeFontTranslateY = this.changeFontTranslateY.bind(this);        
+        this.changeFontTranslateY = this.changeFontTranslateY.bind(this);
+
+        this.pickSvg = this.pickSvg.bind(this);
+
+        this.toggleSvgModal = this.toggleSvgModal.bind(this);
     }
 
     nextGraphic() {
@@ -121,7 +145,7 @@ class App extends Component {
         }
     }
 
-    changeFontTranslateY(event){
+    changeFontTranslateY(event) {
         this.setState({ fontTranslateY: event.target.value });
     }
 
@@ -150,7 +174,7 @@ class App extends Component {
     }
 
     nextColorTheme() {
-        if (this.state.theme < this.colors.length-1) {
+        if (this.state.theme < this.colors.length - 1) {
             this.setState({ theme: this.state.theme + 1 });
         } else {
             this.setState({ theme: 0 });
@@ -241,23 +265,33 @@ class App extends Component {
     }
 
     changeTranslateX(event) {
-
         this.setState({ translateX: event.target.value });
     }
 
     changeTranslateY(event) {
-
         this.setState({ translateY: event.target.value });
     }
 
     pickBg(event) {
-
         this.setState({ bg: event.target.getAttribute("color") });
     }
 
     pickFg(event) {
         this.setState({ fg: event.target.getAttribute("color") });
     }
+
+    pickSvg(event) {
+        this.setState({ 
+            svg: event.target.getAttribute("id"),
+            svgModalOpen: false
+         });
+    }
+
+    toggleSvgModal(){
+        this.setState({
+            svgModalOpen: !this.state.svgModalOpen
+       })
+    };
 
     savePng() {
         var c = document.getElementById("theCanvas");
@@ -269,56 +303,9 @@ class App extends Component {
         window.location.href = image; // it will save locally
     }
 
-    toggleModal = () => {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    };
-
     render() {
-
-
-        // setInterval(function(){ console.log(document.fonts) }, 500);
-
-        const coverStyle = {
-            transform: "scale(" + this.state.viewScale + ")"
-        };
-
-        const typoStyleArtist = {
-            fontFamily: this.state.fontFamily,
-            fontWeight: this.state.fontWeight,
-            fontSize: this.state.fontSize + "px",
-            color: this.state.fg,
-            textAlign: this.state.fontAlignArtist
-        };
-
-        const typoStyleTitle = {
-            fontFamily: this.state.fontFamily,
-            fontWeight: this.state.fontWeight,
-            fontSize: this.state.fontSize + "px",
-            color: this.state.fg,
-            textAlign: this.state.fontAlignTitle
-        };
-
-        const typoStyleSubline = {
-            fontFamily: this.state.fontFamily,
-            color: this.state.fg
-        };
-
-        const textContainerStyles = {
-            alignItems: this.state.textPosition
-        };
-
         return (
             <div className="App">
-                {/*
-        
-        Preload Fonts
-
-      */}
-
-               
-
                 <ControlBoxLeft
                     svg={this.state.svg}
                     changeSvg={this.changeSvg}
@@ -332,11 +319,8 @@ class App extends Component {
                     changeTitle={this.changeTitle}
                     subline={this.state.subline}
                     changeSubline={this.changeSubline}
-
                     fontTranslateY={this.state.fontTranslateY}
                     changeFontTranslateY={this.changeFontTranslateY}
-
-
                     fontSize={this.state.fontSize}
                     changeFontSize={this.changeFontSize}
                     fontWeight={this.state.fontWeight}
@@ -347,80 +331,69 @@ class App extends Component {
                     changeFontAlignArtist={this.changeFontAlignArtist}
                     fontAlignTitle={this.state.fontAlignTitle}
                     changeFontAlignTitle={this.changeFontAlignTitle}
-
                     fonts={this.fonts}
-                    
-
-                    // Translate 
-
+                    // Translate
                     translateX={this.state.translateX}
                     changeTranslateX={this.changeTranslateX}
-
                     translateY={this.state.translateY}
                     changeTranslateY={this.changeTranslateY}
-
-                    // Colors
-
-                    bg={this.state.bg}
-                    changeBg={event => this.pickBg(event)}
-
-                    fg={this.state.fg}
-                    changeFg={event => this.pickFg(event)}
-
                     // Graphic
-
                     nextGraphic={this.nextGraphic}
                     prevGraphic={this.prevGraphic}
-
-
-                    colors={this.colors}
                     graphics={this.graphics}
+                    toggleSvgModal={this.toggleSvgModal}
+                    // COLORS
+                    colors={this.colors}
                     theme={this.state.theme}
                     nextColorTheme={this.nextColorTheme}
                     prevColorTheme={this.prevColorTheme}
-
+                    bg={this.state.bg}
+                    changeBg={event => this.pickBg(event)}
+                    fg={this.state.fg}
+                    changeFg={event => this.pickFg(event)}
                     // View
                     view={this.state.view}
                     views={this.views}
                     nextView={this.nextView}
                     prevView={this.prevView}
-
                 />
 
                 <Canvas
-                    coverStyle={coverStyle}
-                    textContainerStyles={textContainerStyles}
-                    typoStyleArtist={typoStyleArtist}
-                    typoStyleSubline={typoStyleSubline}
-                    typoStyleTitle={typoStyleTitle}
+                    // COLORS
                     bg={this.state.bg}
                     fg={this.state.fg}
+                    // SVG
                     svg={this.state.svg}
                     scale={this.state.scale}
+                    svgRotation={this.state.svgRotation}
                     svgWidth={this.state.svgWidth}
                     svgHeight={this.state.svgHeight}
+                    translateX={this.state.translateX}
+                    translateY={this.state.translateY}
+                    // SIZE
                     width={this.state.width}
                     height={this.state.height}
-                    svgRotation={this.state.svgRotation}
-
-                    translateX={this.state.translateX}
-
-                    translateY={this.state.translateY}
-
+                    // DATA
                     artist={this.state.name}
                     title={this.state.title}
                     subline={this.state.subline}
-
+                    // TYPOGRAPHY
                     fontFamily={this.state.fontFamily}
                     fontSize={this.state.fontSize * 0.01}
                     fontWeight={this.state.fontWeight}
                     fontTranslateY={this.state.fontTranslateY}
-
-
+                    // EXPORT
                     savePng={this.savePng}
-
+                    // VIEW
                     view={this.state.view}
                 />
+
+                <SvgModal 
+                    open={this.state.svgModalOpen}
+                    graphics={this.graphics}
+                    pickSvg={this.pickSvg}
+                />
+
             </div>
         );
     }

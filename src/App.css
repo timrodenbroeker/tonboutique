@@ -772,3 +772,58 @@ background: #eeeeee;
 #main {
   width: 100%;
 }
+
+.modalWrapper {
+  width: 100%;
+  padding: 50px;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  
+}
+
+.modal {
+  position: relative;
+  padding: 15px;
+  
+  width: 90%;
+
+  background: white;
+  overflow-y: scroll;
+
+}
+
+.thumbnail {
+  padding: 15px;
+  width: 20%;
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid white;
+}
+
+.thumbnail:hover {
+  border: 1px solid black;
+}
+
+.thumbnail img{
+  
+
+}
+
+.modalTrigger {
+  font-size: 14px;
+  font-weight: 400; 
+  border: 1px solid #aaaaaa;
+  color: black;
+}
+
+.modalTrigger:hover {
+  background: black;
+  color: white;
+}

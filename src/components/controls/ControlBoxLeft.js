@@ -66,6 +66,9 @@ class ControlBoxLeft extends Component {
                         nextGraphic={this.props.nextGraphic}
                         prevGraphic={this.props.prevGraphic}
                         graphics={this.props.graphics}
+
+                        toggleSvgModal={this.props.toggleSvgModal}
+                        
                     />
 
                     <UiBoxColors
