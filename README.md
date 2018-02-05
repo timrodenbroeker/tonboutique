@@ -9,10 +9,12 @@ This is a concept that is already in use since a few years.
 
 ---
 
-
-
 # To Do
 
+
+## Code
+
+- Store all SVGs in Array to avoid requests
 
 ## UI
 
@@ -25,4 +27,6 @@ This is a concept that is already in use since a few years.
 ## Export
 
 - Define 4 Sizes
+- Make 4 sizes downloadable
+
 
