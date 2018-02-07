@@ -7,19 +7,24 @@ constructor(props){
         collapsed: this.props.collapsed
         }
     this.collapseBox = this.collapseBox.bind(this);        
+    this.saveCanvas = this.saveCanvas.bind(this);        
     }
 
     collapseBox(){
         this.setState({collapsed: !this.state.collapsed});
     }
 
+
     saveCanvas(){
-      var canvas = document.getElementById('theCanvas');
 
-          var saveButton = document.getElementById('exportButton');
+      console.log(this);
 
-          saveButton.href = canvas.toDataURL();
-          saveButton.download = "mypainting.png";
+      var c=document.getElementById("theCanvas");
+      var d=c.toDataURL("image/png");
+      var a  = document.createElement('a');
+      a.href = d;
+      a.download = 'a.png';
+      a.click();
 
     }
 
@@ -35,12 +40,13 @@ constructor(props){
           </div>
 
 
+
           {this.state.collapsed === false &&
 
           <div className="boxBody">
              <button id="exportButton" className="btn" onClick={this.saveCanvas}>
                     
-                Save cover as PNG
+                Save PNGs
             
             </button>
 
