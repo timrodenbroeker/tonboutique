@@ -528,20 +528,34 @@ option {
 .inputRangeSlider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 10px; /* Set a specific slider handle width */
-  height: 10px; /* Slider handle height */
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
   background: #111111; /* Green background */
-  border: 2px solid #111111;
   cursor: pointer; /* Cursor on hover */
   border-radius: 100%;
+  -webkit-transition: all 500ms ease;
+-moz-transition: all 500ms ease;
+-ms-transition: all 500ms ease;
+-o-transition: all 500ms ease;
+transition: all 500ms ease;
 }
 
+.inputRangeSlider::-webkit-slider-thumb:hover {
+  -moz-transform: scale(1.9);
+-webkit-transform: scale(1.9);
+-o-transform: scale(1.9);
+-ms-transform: scale(1.9);
+transform: scale(1.9);
+}
+
+
 .inputRangeSlider::-moz-range-thumb {
-  width: 15px; /* Set a specific slider handle width */
-  height: 15px; /* Slider handle height */
-  background: #f1f1f1; /* Green background */
+
+  appearance: none;
+  width: 12px; /* Set a specific slider handle width */
+  height: 12px; /* Slider handle height */
+  background: #111111; /* Green background */
   cursor: pointer; /* Cursor on hover */
-  border: 2px solid #111111;
   border-radius: 100%;
 }
 

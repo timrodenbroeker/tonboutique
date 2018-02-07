@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Graphics from "../../data/Graphics";
-
 
 class Canvas extends Component {
     constructor(props) {
@@ -14,9 +12,10 @@ class Canvas extends Component {
     }
 
     loadGraphic() {
-            
-
-                var svgGraphic = Graphics.graphics[this.props.svg];
+        fetch("svg/" + this.props.svg + ".svg")
+            .then(dataWrappedByPromise => dataWrappedByPromise.text())
+            .then(data => {
+                var svgGraphic = data;
 
                 var img = new Image();
 
@@ -35,7 +34,7 @@ class Canvas extends Component {
                         }
                     );
                 };
-
+            });
     }
 
     drawCanvas() {

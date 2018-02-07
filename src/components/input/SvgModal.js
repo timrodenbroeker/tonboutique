@@ -9,7 +9,7 @@ class SvgModal extends Component {
 	render() {
 		const allGraphics = this.graphics.map(graphic => (
 			<div className="thumbnail">
-				<img id={graphic} onClick={this.props.pickSvg} src={"../svg/" + graphic + ".svg"} />
+				<img id={graphic-1} onClick={this.props.pickSvg} src={"../svg/" + graphic + ".svg"} />
 			</div>
         ));
 
