@@ -100,7 +100,7 @@ class ControlBoxLeft extends Component {
                     <UiBoxExport 
                         collapsed={false}
                         name="Export" 
-                        onClick={this.test} 
+                        saveCanvas={this.props.saveCanvas}
                     />
 
 

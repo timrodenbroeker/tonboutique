@@ -135,6 +135,8 @@ class App extends Component {
         this.pickSvg = this.pickSvg.bind(this);
 
         this.toggleSvgModal = this.toggleSvgModal.bind(this);
+
+        this.saveCanvas = this.saveCanvas.bind(this);
     }
 
     nextGraphic() {
@@ -307,6 +309,18 @@ class App extends Component {
         window.location.href = image; // it will save locally
     }
 
+
+     saveCanvas(){
+
+          var c = document.getElementById("theCanvas");
+          var d = c.toDataURL("image/png");
+          var a = document.createElement('a');
+          a.href = d;
+          a.download = this.state.name + '_' + this.state.title + '.png';
+          a.click();
+    }
+
+
     render() {
         return (
             <div className="App">
@@ -365,6 +379,8 @@ class App extends Component {
                     views={this.views}
                     nextView={this.nextView}
                     prevView={this.prevView}
+
+                    saveCanvas={this.saveCanvas}
                 />
 
                 <Canvas

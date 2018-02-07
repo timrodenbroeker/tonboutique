@@ -6,8 +6,7 @@ constructor(props){
     this.state = {
         collapsed: this.props.collapsed
         }
-    this.collapseBox = this.collapseBox.bind(this);        
-    this.saveCanvas = this.saveCanvas.bind(this);        
+    this.collapseBox = this.collapseBox.bind(this);           
     }
 
     collapseBox(){
@@ -15,19 +14,7 @@ constructor(props){
     }
 
 
-    saveCanvas(){
-
-      console.log(this);
-
-      var c=document.getElementById("theCanvas");
-      var d=c.toDataURL("image/png");
-      var a  = document.createElement('a');
-      a.href = d;
-      a.download = 'a.png';
-      a.click();
-
-    }
-
+   
   render() {
     return (
     	<div className="group">
@@ -44,9 +31,9 @@ constructor(props){
           {this.state.collapsed === false &&
 
           <div className="boxBody">
-             <button id="exportButton" className="btn" onClick={this.saveCanvas}>
+             <button id="exportButton" className="btn" onClick={this.props.saveCanvas}>
                     
-                Save PNGs
+              Save as PNG
             
             </button>
 

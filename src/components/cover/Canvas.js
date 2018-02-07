@@ -14,8 +14,6 @@ class Canvas extends Component {
     }
 
     loadGraphic() {
-            
-
                 var svgGraphic = Graphics.graphics[this.props.svg];
 
                 var img = new Image();
