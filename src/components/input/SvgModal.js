@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Graphics from "../../data/Graphics";
 
 class SvgModal extends Component {
 	constructor(props) {
@@ -9,7 +10,7 @@ class SvgModal extends Component {
 	render() {
 		const allGraphics = this.graphics.map(graphic => (
 			<div className="thumbnail">
-				<img id={graphic-1} onClick={this.props.pickSvg} src={"../svg/" + graphic + ".svg"} />
+				<img id={graphic-1} onClick={this.props.pickSvg} src={"data:image/svg+xml;charset=utf-8," + Graphics.graphics[graphic-1]} />
 			</div>
         ));
 

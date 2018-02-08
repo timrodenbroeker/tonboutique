@@ -44,7 +44,7 @@ class App extends Component {
             ["#00BC5C", "#000000"]
         ];
 
-        this.fonts = ["Arial", "Times", "Franklin", "RobotoMono"];
+        this.fonts = ['Arial', "Libre Franklin"];
 
         this.graphics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
@@ -118,8 +118,6 @@ class App extends Component {
 
         this.changeViewRotationY = this.changeViewRotationY.bind(this);
         this.changeViewScale = this.changeViewScale.bind(this);
-
-        this.savePng = this.savePng.bind(this);
 
         this.nextGraphic = this.nextGraphic.bind(this);
         this.prevGraphic = this.prevGraphic.bind(this);
@@ -299,28 +297,16 @@ class App extends Component {
         });
     }
 
-    savePng() {
+    saveCanvas(){
+
         var c = document.getElementById("theCanvas");
-        var image = c
-            .toDataURL("image/png")
-            .replace("image/png", "image/octet-stream"); // here is the most important part because if you dont replace you will get a DOM 18 exception.
-
-        alert("a");
-        window.location.href = image; // it will save locally
-    }
-
-
-     saveCanvas(){
-
-          var c = document.getElementById("theCanvas");
-          var d = c.toDataURL("image/png");
-          var a = document.createElement('a');
-          a.href = d;
-          a.download = this.state.name + '_' + this.state.title + '.png';
-          a.click();
+        var d = c.toDataURL("image/png");
+        var a = document.createElement('a');
+        a.href = d;
+        a.download = this.state.name + '_' + this.state.title + '.png';
+        a.click();      
 
     }
-
 
     render() {
         return (

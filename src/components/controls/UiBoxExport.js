@@ -33,7 +33,7 @@ constructor(props){
           <div className="boxBody">
              <button id="exportButton" className="btn" onClick={this.props.saveCanvas}>
                     
-              Save as PNG
+              Export as PNG
             
             </button>
 

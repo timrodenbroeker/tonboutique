@@ -1,82 +1,9 @@
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf300.ttf") format("truetype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf400.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf500.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf600.ttf") format("truetype");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf700.ttf") format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf800.ttf") format("truetype");
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "Franklin";
-  src: url("fonts/ttf/lf900.ttf") format("truetype");
-  font-weight: 900;
-}
-
-
-@font-face {
-  font-family: "RobotoMono";
-  src: url("fonts/ttf/rm100.ttf") format("truetype");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "RobotoMono";
-  src: url("fonts/ttf/rm300.ttf") format("truetype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "RobotoMono";
-  src: url("fonts/ttf/rm400.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "RobotoMono";
-  src: url("fonts/ttf/rm500.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "RobotoMono";
-  src: url("fonts/ttf/rm700.ttf") format("truetype");
-  font-weight: 700;
-}
-
 .font-rm {
-  font-family: "RobotoMono";
+  font-family: "Roboto Mono";
 }
 
 .font-lf {
- font-family: "Franklin"; 
+ font-family: "Libre Franklin"; 
 }
 
 /* FontLoading */
@@ -123,7 +50,7 @@ html,
 body,
 * {
   box-sizing: border-box;
-  font-family: "Franklin", sans-serif;
+  font-family: "Libre Franklin", sans-serif;
 }
 
 body {

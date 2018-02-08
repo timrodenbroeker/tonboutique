@@ -50,6 +50,8 @@ class Canvas extends Component {
         ctx.fillStyle = this.props.fg;
         ctx.textBaseline = "top";
 
+        // Title 
+
         ctx.font =
             this.props.fontWeightTitle +
             " " +
@@ -63,6 +65,8 @@ class Canvas extends Component {
             this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
         );
 
+        // Artist
+
         ctx.font =
             this.props.fontWeight +
             " " +
@@ -75,6 +79,22 @@ class Canvas extends Component {
             0 + this.props.width * 0.025,
             this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
         );
+
+
+        // Subline
+
+        // tx.font =
+        //     this.props.fontWeight +
+        //     " " +
+        //     this.props.height * this.props.fontSize +
+        //     "px "+ this.props.fontFamily;
+
+        // ctx.textAlign = "start";
+        // ctx.fillText(
+        //     this.props.artist,
+        //     0 + this.props.width * 0.025,
+        //     this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
+        // );
 
         ctx.restore();
 
@@ -94,6 +114,10 @@ class Canvas extends Component {
         var img = new Image();
 
         img.src = this.state.img;
+
+
+        // console.log seems to prevent image glitch!
+        console.log(img);
 
         ctx.drawImage(
             img,
