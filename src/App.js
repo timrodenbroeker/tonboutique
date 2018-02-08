@@ -318,6 +318,7 @@ class App extends Component {
           a.href = d;
           a.download = this.state.name + '_' + this.state.title + '.png';
           a.click();
+
     }
 
 
