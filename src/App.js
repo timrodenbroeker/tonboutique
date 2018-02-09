@@ -90,7 +90,9 @@ class App extends Component {
 
             view: 1,
 
-            svgModalOpen: false
+            svgModalOpen: false,
+
+            canvasRenderingDone: false
         };
 
         this.changeName = this.changeName.bind(this);

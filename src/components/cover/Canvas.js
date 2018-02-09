@@ -117,7 +117,7 @@ class Canvas extends Component {
 
 
         // console.log seems to prevent image glitch!
-        console.log(img);
+        // console.log(img);
 
         ctx.drawImage(
             img,
