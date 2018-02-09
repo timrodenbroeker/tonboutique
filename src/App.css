@@ -355,36 +355,6 @@ svg {
   align-items: flex-end;
 }
 
-.modal {
-}
-
-.ModalColors {
-}
-
-.ModalColorsWrapper {
-  display: none;
-  top: 0;
-
-  left: 0;
-  position: fixed;
-  z-index: 1000;
-}
-
-.ModalColors {
-  display: flex;
-}
-
-.ModalColors .color {
-  font-weight: 600;
-  width: 120px;
-  height: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-
-  cursor: pointer;
-}
 
 .colorField {
   width: 30px;
@@ -398,9 +368,6 @@ svg {
   padding: 10px;
 }
 
-.ModalColors div:hover div {
-  color: white;
-}
 
 option {
 }
@@ -725,25 +692,25 @@ background: #eeeeee;
 }
 
 .modalWrapper {
-  width: 100%;
-  padding: 50px;
+  width: 75%;
+
   height: 100vh;
-  background: rgba(0,0,0,0.9);
+
   display: flex;
   justify-content: center;
   
   position: fixed;
   z-index: 100;
   top: 0;
-  left: 0;
+  right: 0;
   
 }
 
 .modal {
   position: relative;
-  padding: 15px;
+
   
-  width: 90%;
+  width: 100%;
 
   background: white;
   overflow-y: scroll;
