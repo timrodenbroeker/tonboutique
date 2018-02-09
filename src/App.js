@@ -48,7 +48,7 @@ class App extends Component {
 
         this.graphics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
-        this.views = [1, 2, 3];
+        this.views = [1, 2];
 
         this.state = {
             name: "Maxon",
@@ -76,7 +76,7 @@ class App extends Component {
             textPosition: "top",
             fontTranslateY: 0,
 
-            bg: this.colors[0][0],
+            bg: this.colors[0][1],
             fg: this.colors[0][this.colors[0].length - 1],
 
             ModalColorsCollapsed: true,
