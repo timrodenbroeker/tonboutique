@@ -22,7 +22,7 @@ constructor(props){
             <h3 
                   className={this.state.collapsed ? 'lighten' : 'active'} 
                     onClick={this.collapseBox} >
-                    {this.props.name}
+                    Actions
                 </h3>
           </div>
 
@@ -33,7 +33,7 @@ constructor(props){
           <div className="boxBody">
              <button id="exportButton" className="btn" onClick={this.props.saveCanvas}>
                     
-              Export as PNG
+             Export
             
             </button>
 

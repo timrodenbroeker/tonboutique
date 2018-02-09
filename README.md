@@ -12,16 +12,7 @@ This is a concept that is already in use since a few years.
 # To Do
 
 
-## Code
-
-- Store all SVGs in Array to avoid requests
-
 ## UI
-
-- Choose one of many color themes
-- extra color-selection for typo
-- subline
-- SVG - Overview (maybe automated from folder-scan?)
 
 
 ## Export
