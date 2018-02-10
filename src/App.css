@@ -126,12 +126,12 @@ h5 {
 h1 {
   margin: 0;
   line-height: 100%;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 14px;
 
   font-weight: 400;
   margin: 0 0 5px 0;
@@ -151,7 +151,7 @@ input,
 select,
 textarea {
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   width: 100%;
   background: transparent;
   font-weight: 400;
@@ -248,7 +248,7 @@ textarea:focus {
   /*border: 1px solid black;*/
   /*height: 60px;
   overflow: hidden;*/
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid black;
 }
 
 .group:last-of-type {
@@ -258,10 +258,10 @@ textarea:focus {
 
 .group h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   display: inline-block;
-  /*text-transform: uppercase;*/
-  border-bottom: 1px solid black;
+  text-transform: uppercase;
+
   font-weight: 400;
 }
 
@@ -394,7 +394,7 @@ option {
 .ModalBtnClose {
   position: absolute;
   padding: 15px;
-  font-size: calc(16px + 3vw);
+  font-size: calc(14px + 3vw);
   top: 0;
   right: 0;
 }
@@ -406,7 +406,7 @@ option {
 .ModalBtnTheme {
   position: absolute;
   padding: 15px;
-  font-size: calc(16px + 3vw);
+  font-size: calc(14px + 3vw);
   top: 0;
   left: 0;
 }
