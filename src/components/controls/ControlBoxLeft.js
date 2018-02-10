@@ -96,7 +96,7 @@ class ControlBoxLeft extends Component {
 
                     
                 </section>
-                <div id="credit">© Tim Rodenbröker 2018</div>
+
             </main>
         );
     }
