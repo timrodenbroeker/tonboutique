@@ -512,11 +512,11 @@ textarea {
 }
 
 .lighten {
-  color: #aaaaaa;
+
 }
 
 .lighten:hover {
-  opacity: 1;
+
 }
 
 .record {
@@ -583,9 +583,11 @@ textarea {
 
 .view2 .recordWrapper {
 
-  transform: rotateY(-15deg);
+/*  transform: rotateY(-15deg);
   -webkit-transform: rotateY(-15deg);
   -moz-transform: rotateY(-15deg);
+*/
+
 }
 
 .view2 .record .vinyl {

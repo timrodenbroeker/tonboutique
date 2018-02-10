@@ -29,6 +29,7 @@ class Canvas extends Component {
                             img: img.src
                         },
                         () => {
+                            console.log('new SVG loaded!');
                             this.drawCanvas();
                         }
                     );
@@ -98,16 +99,12 @@ class Canvas extends Component {
 
         ctx.restore();
 
-
-
         var svgX = ctx.canvas.width * 0.5 + (this.props.translateX*ctx.canvas.width*0.5);
         var svgY = ctx.canvas.height * 0.5 + (this.props.translateY*ctx.canvas.width*0.5);
 
         ctx.save();
 
         ctx.translate(svgX, svgY);
-
-        // console.log(this.props.translateX)
 
         ctx.rotate(Math.PI / 180 * this.props.svgRotation);
 
@@ -116,8 +113,18 @@ class Canvas extends Component {
         img.src = this.state.img;
 
 
-        // console.log seems to prevent image glitch!
+        // Wenn ich hier das console.log aktiviere, verringert sich 
+        // die Anzahl der Fehler bei der SVG darstellung
+
+        if (img.src.length > 100) {
+            console.log('all good!'); 
+        } else {
+            console.log('glitch!');
+        }
+
         // console.log(img);
+
+
 
         ctx.drawImage(
             img,

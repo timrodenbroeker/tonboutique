@@ -16,7 +16,7 @@ class ControlBoxLeft extends Component {
                 <section id="controlsLeft">
                     <UiBoxData
                         name="Data"
-                        collapsed={false}
+                        collapsed={true}
                         artist={this.props.name}
                         onChangeArtist={this.props.changeName}
                         title={this.props.title}
@@ -27,7 +27,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxTypography
                         name="Typography"
-                        collapsed={false}
+                        collapsed={true}
                         fontSize={this.props.fontSize}
                         changeFontSize={this.props.changeFontSize}
 
@@ -53,7 +53,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxGraphic
                         name="Graphic"
-                        collapsed={false}
+                        collapsed={true}
                         arr={this.props.arr}
                         svg={this.props.svg}
                         scale={this.props.scale}
@@ -78,7 +78,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxColors
                         name="Colors"
-                        collapsed={false}
+                        collapsed={true}
                         color={this.props.bg}
                         changeBg={this.props.changeBg}
                         changeFg={this.props.changeFg}
@@ -90,7 +90,7 @@ class ControlBoxLeft extends Component {
                     />
 
                     <UiBoxView 
-                        collapsed={false}
+                        collapsed={true}
                         view={this.props.view}
                         options={this.props.views}
                         nextView={this.props.nextView}
@@ -98,7 +98,7 @@ class ControlBoxLeft extends Component {
                     />
 
                     <UiBoxExport 
-                        collapsed={false}
+                        collapsed={true}
                         name="Export" 
                         saveCanvas={this.props.saveCanvas}
                     />
