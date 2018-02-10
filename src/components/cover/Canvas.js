@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Graphics from "../../data/Graphics";
 
-
 class Canvas extends Component {
     constructor(props) {
         super(props);
@@ -14,27 +13,31 @@ class Canvas extends Component {
     }
 
     loadGraphic() {
-                var svgGraphic = Graphics.graphics[this.props.svg];
 
-                var img = new Image();
+        //
+        // GET THE IMAGE
+        //
 
-                // Replace color
+        var svgGraphic = Graphics.graphics[this.props.svg];
 
-                img.src =
-                    "data:image/svg+xml;charset=utf-8," +
-                    svgGraphic.replace(/#121212/g, this.props.fg);
-                img.onload = () => {
-                    this.setState(
-                        {
-                            img: img.src
-                        },
-                        () => {
-                            console.log('new SVG loaded!');
-                            this.drawCanvas();
-                        }
-                    );
-                };
+        var img = new Image();
 
+        // Replace color
+
+        img.src =
+            "data:image/svg+xml;charset=utf-8," +
+            svgGraphic.replace(/#121212/g, this.props.fg);
+        img.onload = () => {
+            this.setState(
+                {
+                    img: img.src
+                },
+                () => {
+                    console.log("new SVG loaded!");
+                    this.drawCanvas();
+                }
+            );
+        };
     }
 
     drawCanvas() {
@@ -47,23 +50,25 @@ class Canvas extends Component {
         // Text
 
         ctx.save();
-        ctx.translate(0,0 - this.props.fontSize);
+        ctx.translate(0, 0 - this.props.fontSize);
         ctx.fillStyle = this.props.fg;
         ctx.textBaseline = "top";
 
-        // Title 
+        // Title
 
         ctx.font =
             this.props.fontWeightTitle +
             " " +
             this.props.height * this.props.fontSize +
-            "px "+ this.props.fontFamily;
+            "px " +
+            this.props.fontFamily;
 
         ctx.textAlign = "end";
         ctx.fillText(
             this.props.title,
             this.props.width - this.props.width * 0.025,
-            this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
+            this.props.width * 0.025 +
+                this.props.width * 0.025 * this.props.fontTranslateY
         );
 
         // Artist
@@ -72,35 +77,25 @@ class Canvas extends Component {
             this.props.fontWeight +
             " " +
             this.props.height * this.props.fontSize +
-            "px "+ this.props.fontFamily;
+            "px " +
+            this.props.fontFamily;
 
         ctx.textAlign = "start";
         ctx.fillText(
             this.props.artist,
             0 + this.props.width * 0.025,
-            this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
+            this.props.width * 0.025 +
+                this.props.width * 0.025 * this.props.fontTranslateY
         );
-
-
-        // Subline
-
-        // tx.font =
-        //     this.props.fontWeight +
-        //     " " +
-        //     this.props.height * this.props.fontSize +
-        //     "px "+ this.props.fontFamily;
-
-        // ctx.textAlign = "start";
-        // ctx.fillText(
-        //     this.props.artist,
-        //     0 + this.props.width * 0.025,
-        //     this.props.width * 0.025 + (this.props.width * 0.025 * this.props.fontTranslateY)
-        // );
 
         ctx.restore();
 
-        var svgX = ctx.canvas.width * 0.5 + (this.props.translateX*ctx.canvas.width*0.5);
-        var svgY = ctx.canvas.height * 0.5 + (this.props.translateY*ctx.canvas.width*0.5);
+        var svgX =
+            ctx.canvas.width * 0.5 +
+            this.props.translateX * ctx.canvas.width * 0.5;
+        var svgY =
+            ctx.canvas.height * 0.5 +
+            this.props.translateY * ctx.canvas.width * 0.5;
 
         ctx.save();
 
@@ -112,19 +107,9 @@ class Canvas extends Component {
 
         img.src = this.state.img;
 
-
-        // Wenn ich hier das console.log aktiviere, verringert sich 
-        // die Anzahl der Fehler bei der SVG darstellung
-
-        if (img.src.length > 100) {
-            console.log('all good!'); 
-        } else {
-            console.log('glitch!');
-        }
-
-        // console.log(img);
-
-
+        //
+        // DRAW THE IMAGE
+        //
 
         ctx.drawImage(
             img,
@@ -158,7 +143,7 @@ class Canvas extends Component {
 
     render() {
         return (
-            <section id="artboard" className={"view"+this.props.view}>
+            <section id="artboard" className={"view" + this.props.view}>
                 <div className="recordWrapper">
                     <div className="record" style={this.props.coverStyle}>
                         <div
