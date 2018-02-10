@@ -46,9 +46,9 @@ class App extends Component {
 
         this.fonts = [
             'Arial', 
-            "Libre Franklin", 
-            'Montserrat', 
             'Fjalla One',
+            'Libre Franklin', 
+            'Montserrat', 
             'Roboto Mono',
             'Space Mono',
             'Barlow Condensed',
@@ -64,7 +64,7 @@ class App extends Component {
             title: "Flash",
             subline: "Including a remix by Alexander Franz",
             scale: 0.8,
-            svg: this.graphics[0],
+            svg: this.graphics[3],
 
             width: 2000,
             height: 2000,
@@ -417,6 +417,8 @@ class App extends Component {
                     graphics={this.graphics}
                     pickSvg={this.pickSvg}
                 />
+
+                <div id="credit">© <a href="http://www.timrodenbroeker.de" target="_blank">Tim Rodenbröker</a> 2018</div>
             </div>
         );
     }

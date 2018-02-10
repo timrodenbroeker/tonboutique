@@ -1,6 +1,6 @@
 export default {
 	graphics : [	
-`<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 1600" fill="#121212">
+`version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 1600">
 
 	<path d="M1585.5,792c1,403.8-303.2,772.3-746.2,798.8c-429,25.7-791.6-313.5-823.1-727.7 C-17.5,418.5,324.7,53.6,730.1,18C1172.6-20.9,1567.8,321.4,1585.5,792z M313.7,638.7c7.2,3,12,5,19.6,8.2c-6,4.7-10.1,7-13,10.4
 			c-6,7.1-11.4,14.8-17.1,22.2c8.7,6.5,16.6,15.1,26.3,19c14.1,5.7,24.4,30.9,14.6,41c-11.5,11.8-23,23.4-35.9,36.5
@@ -27,8 +27,8 @@ export default {
 
 </svg>`,
 
-`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M1426.5,556.8c-0.3,2.3-0.6,4.6-1.2,9.5c-8.3-3-15.6-5.6-26.1-9.4c3.5,9.5,6.3,17.2,9,24.7c7.2-2.4,13-4.4,20.5-6.9
 		c0.6,6.7,1.1,11.5,1.7,18c0.6,0.5,3.3,2.6,7.2,5.7c0.6-3.1,1.1-5.4,1.8-9.1c2.6,3.6,4.7,6.7,7.4,10.4c-4.1,1.2-6.9,2.1-9.8,3
@@ -1929,7 +1929,7 @@ export default {
 </g>
 </svg>`,
 
-`<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 1600" fill="#121212">
+`version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1600 1600">
 <path d="M670.9,709.3c2.1-10.9,4.5-22.7,6.6-34.5c8.8-50.6-22.1-95.5-72.8-106.2c-51.6-10.9-101.3,23.6-116.7,81
 	c-8.5,31.6,25.6,84.1,67.6,92.2c33.7,6.4,69.6,1.3,104.6,1.3c1.7,2,3.4,4,5.1,5.9c-13.5,8-27.1,16-41.4,24.5
 	c9.7,45.9,2,75.7-24.5,90c-50,27.1-62.4,52.3-48.3,107.8c6.8,26.8,18.6,52.2,28.1,78.3c-3.4,2.7-6.8,5.3-10.2,8
@@ -2036,8 +2036,8 @@ export default {
 </svg>
 `,
 
-`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<g>
 		<path d="M1593.8,872.9c-41.3,245.8-162.1,441.8-377,573.7c-230.4,141.4-473.9,157-725.1,65.1c14.5-13.6,28.2-24.1,38.9-37.2
@@ -2233,8 +2233,8 @@ export default {
 </svg>
 `,
 
-`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M1517.1,502.2c-39.4-92.5-95.8-175.5-167.6-246.7c-71.7-71.2-155.2-127-248.1-166c-96.2-40.4-198.3-60.8-303.5-60.8
 		S590.5,49.1,494.4,89.5c-92.9,39-176.4,94.9-248.1,166c-71.8,71.2-128.2,154.2-167.6,246.7C37.8,598,17.1,699.8,17.1,804.7
@@ -2453,7 +2453,7 @@ export default {
 </g>
 </svg>`,
 
-`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="#121212"
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1600 1600">
 
 	<path d="M1312.4,1368.4c-23.7,19.6-46,41.7-71.5,58.4c-68.2,44.7-138.7,84.4-217.7,107c-79.9,22.9-160.4,28-242.8,25.3
@@ -2532,9 +2532,8 @@ export default {
 
 </svg>`, 
 
-`
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M498.5,121.2c-14.7,4.7-29.3,9.4-43.8,14c3.3-14.5,93.8-58.3,129-62c-2.3,2.1-4.5,4.1-7,6.4c7,3.3,12.3,5.9,19.1,9.1
 		c3.2-3.8,7.1-8.7,12.3-15c-6.1-1.3-9.5-2.1-12.9-2.9c7.7-14.3,21.6-11.1,34-11.9c-4.5,2.8-8.9,5.5-13.5,8.3
@@ -2837,9 +2836,8 @@ export default {
 
 `, 
 
-`
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M71.8,554.9c5.9-4.1,15.3-5.9,11-17.3c-2.5,0.7-5,1.4-9,2.5c2.7-10.1,16.7-15.2,9.5-27.1c11.6-1.5,14.3-4.6,13.1-19
 		c-0.5-6.9,1.1-10.7,7.4-13.5c2.2-1,3.7-4.2,5-6.7c2.7-5.2,5.2-10.5,7.6-15.9c1.3-3.1,2.7-6.3,2.9-9.6c0.3-5,10-19.6,14.8-21.2
@@ -3136,9 +3134,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M610.6,744.1c3.6-1,9.5-1.2,10.1-3.1c1.1-3.4,0.2-9.1-2.1-11.6c-7.6-7.8-15.7-15.5-17.7-20.3c-14.8-6.9-22.7-12.4-1.4-15.1
 		c-37.5-7.8-45.7-12.7-1.6-20.6c-64-1.7-75.8-5-10-35.4c-30,9.2-51.3,15.4-63.2,15c-16.7,1.4-23.9-3.8-15.2-18.2
@@ -4165,9 +4162,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M1007.5,1528.5c-14.4,5.1-28.1,12.6-44.2,11.9c-2.7-0.1-5.4,2.4-8.3,3.2c-6.8,1.9-13.7,3.8-20.6,5.3
 		c-10.9,2.3-21.7,5.2-32.8,6c-19.4,1.5-39,1.6-58.5,2.3c-8.4,0.3-16.7,0.8-25.1,1c-24.2,0.6-48.4,0-72.5,2
@@ -4674,9 +4670,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 	<g>
 	<path d="M768.6,505.7c-7.4,11.2-12.2,23.6-22.8,34.3c0,0-2.6-3.4-4.7-2.7c-8.3,1.9-14.5,10.1-15.8,19c2.1-0.7,5.1-0.3,7.2-1
 		c-0.3,2-0.6,4-1.8,5.8c-7.2,8.1-15-1.1-19.1-7.7c-2.5,3.7-5.9,6.2-9.3,8.8c3.8,1.5,6.7,2.9,10.5,4.5c-6.9,6.1-12,13.5-18,20.7
@@ -5449,9 +5444,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M436.5,684.8c-2.3,0.2-5.3,0.4-7.5,0.6c3.3-10.4,6.4-20.9,10.2-31.2c0.8-2.3,3.8-4.4,6.2-5.5c6.8-3.1,10.4-6.6,11.2-15.4
 		c0.6-6.5,7.9-12.7,12.8-18.6c10.8-12.9,24.5-24.2,32.4-38.7c10.2-18.9,26.6-30.3,41.6-43.8c8.2-7.4,15.1-16.2,23.6-23.1
@@ -5534,9 +5528,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M27.1,1142c14.4,2.5,23.7,21.5,22.8,31c-0.2,2.6-0.3,5.4,0.4,7.9c3.8,13.5,7.8,26.9,12,40.3c0.8,2.7,2,5.8,4,7.6
 		c4,3.7,7.7,11.7,14.1,5.8c1.8-1.7-0.7-11.7-4.1-14.7c-7.3-6.6-7.5-13.7-7.5-22.6c0-10-3.7-19.9-5.7-29.9
@@ -5600,9 +5593,8 @@ export default {
 
 `,
 
-`
-<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1600 1600" fill="#121212">
+`version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1600 1600">
 <g>
 	<path d="M1163.4,475.6c3.2-1.6,6.3-4,9.3-6.6c-1-0.4-2.1-0.7-3.1-1.1C1167.6,470.5,1164.1,473,1163.4,475.6z"/>
 	<path d="M1081.3,470.1c3.4,3.5,6.1,6.9,7.7,10.4c5.2-2.5,10.5-4.8,16-7c-5,3.6-5,11,0.6,19.6c2.9-6.2,5.4-11.2,7.5-16.4
@@ -6059,8 +6051,8 @@ export default {
 </svg>
 `,
 
-`<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 71.5 71" fill="#121212">
+`version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 71.5 71">
 
 	<g>
 		<path d="M45.6,30.9c0.2,0,0.3,0,0.5,0c0,0.4,0,0.8,0,1.3c0.4,0.1,0.9,0.2,1.4,0.3c0,0.2,0.1,0.4,0.2,0.7c0.4,0.1,0.8,0.1,1.2,0.2

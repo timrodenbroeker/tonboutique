@@ -3,21 +3,29 @@ import UiBoxData from "./UiBoxData";
 import UiBoxTypography from "./UiBoxTypography";
 import UiBoxGraphic from "./UiBoxGraphic";
 import UiBoxColors from "./UiBoxColors";
-import UiBoxExport from "./UiBoxExport";
+import UiBoxActions from "./UiBoxActions";
 import UiBoxView from "./UiBoxView";
-import UiBoxAbout from "./UiBoxAbout";
 
 class ControlBoxLeft extends Component {
-    test() {
-        alert("a");
+    constructor(props){
+        super(props);
+        this.state = {
+            collapseData : true,
+            collapseTypography : true,
+            collapseGraphic: true,
+            collapseColors : true,
+            collapseView : true,
+            collapseActions : true
+        }
     }
+
     render() {
         return (
             <main id="main">
                 <section id="controlsLeft">
                     <UiBoxData
                         name="Data"
-                        collapsed={true}
+                        collapsed={this.state.collapseData}
                         artist={this.props.name}
                         onChangeArtist={this.props.changeName}
                         title={this.props.title}
@@ -28,7 +36,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxTypography
                         name="Typography"
-                        collapsed={true}
+                        collapsed={this.state.collapseTypography}
                         fontSize={this.props.fontSize}
                         changeFontSize={this.props.changeFontSize}
                         fontWeight={this.props.fontWeight}
@@ -50,7 +58,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxGraphic
                         name="Graphic"
-                        collapsed={true}
+                        collapsed={this.state.collapseGraphic}
                         arr={this.props.arr}
                         svg={this.props.svg}
                         scale={this.props.scale}
@@ -70,7 +78,7 @@ class ControlBoxLeft extends Component {
 
                     <UiBoxColors
                         name="Colors"
-                        collapsed={true}
+                        collapsed={this.state.collapseColors}
                         color={this.props.bg}
                         changeBg={this.props.changeBg}
                         changeFg={this.props.changeFg}
@@ -81,22 +89,21 @@ class ControlBoxLeft extends Component {
                     />
 
                     <UiBoxView
-                        collapsed={true}
+                        collapsed={this.state.collapseView}
                         view={this.props.view}
                         options={this.props.views}
                         nextView={this.props.nextView}
                         prevView={this.props.prevView}
                     />
 
-                    <UiBoxExport
-                        collapsed={true}
-                        name="Export"
+                    <UiBoxActions
+                        collapsed={this.state.collapseActions}
+                        name="Actions"
                         saveCanvas={this.props.saveCanvas}
                     />
 
                     
                 </section>
-                <div id="credit">© Tim Rodenbröker 2018</div>
             </main>
         );
     }

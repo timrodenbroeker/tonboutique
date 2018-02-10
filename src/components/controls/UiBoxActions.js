@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class UiBoxSave extends Component {
+class UiBoxActions extends Component {
 constructor(props){
     super(props);
     this.state = {
@@ -47,4 +47,4 @@ constructor(props){
   }
 }
 
-export default UiBoxSave;
+export default UiBoxActions;

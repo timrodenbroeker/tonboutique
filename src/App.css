@@ -69,8 +69,7 @@ h5 {
 
 #controlsLeft {
   width: 25%;
-
-  padding: 0 15px 15px 15px;
+  padding: 0 15px 50px 15px;
   z-index: 100;
   
 
@@ -832,11 +831,20 @@ p {
 }
 
 #credit {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
   padding: 15px;
+  font-size: 11px;
 }
 
 #main {
   min-height: 100vh;
+}
+
+#credit a {
+  text-decoration: none;
+  color: black;
+
+
 }

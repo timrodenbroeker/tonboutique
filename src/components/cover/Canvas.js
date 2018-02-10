@@ -1,46 +1,29 @@
 import React, { Component } from "react";
 import Graphics from "../../data/Graphics";
+import ImageA from '../../data/1.jpg';
 
 class Canvas extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            img: 0
-        };
 
         this.drawCanvas = this.drawCanvas.bind(this);
-        this.loadGraphic = this.loadGraphic.bind(this);
     }
 
-    loadGraphic() {
 
-        //
-        // GET THE IMAGE
-        //
-
-        var svgGraphic = Graphics.graphics[this.props.svg];
+    drawCanvas() {
 
         var img = new Image();
 
-        // Replace color
+        var comp = this;
 
         img.src =
-            "data:image/svg+xml;charset=utf-8," +
-            svgGraphic.replace(/#121212/g, this.props.fg);
-        img.onload = () => {
-            this.setState(
-                {
-                    img: img.src
-                },
-                () => {
-                    console.log("new SVG loaded!");
-                    this.drawCanvas();
-                }
-            );
-        };
-    }
+            "data:image/svg+xml;charset=utf-8," 
+            + '<svg fill=' 
+            + '"' 
+            + comp.props.fg 
+            + '" ' 
+            + Graphics.graphics[comp.props.svg];
 
-    drawCanvas() {
         const ctx = this.refs.canvas.getContext("2d");
 
         ctx.fillStyle = this.props.bg;
@@ -103,13 +86,7 @@ class Canvas extends Component {
 
         ctx.rotate(Math.PI / 180 * this.props.svgRotation);
 
-        var img = new Image();
-
-        img.src = this.state.img;
-
-        //
-        // DRAW THE IMAGE
-        //
+        // Draw Img
 
         ctx.drawImage(
             img,
@@ -123,27 +100,32 @@ class Canvas extends Component {
     }
 
     componentDidMount() {
-        this.loadGraphic();
-        console.log("mount!");
+
+        // Diese Funktion wird erst gefeuert, wenn das HTML-Markup 
+        // aufgebaut ist, damit die Canvas bereits existiert, 
+        // wenn die drawCanvas()-Funktion ausgeführt wird
+
+        console.log('mount!');
+
+        this.drawCanvas();
+
     }
 
-    componentDidUpdate(prevProps) {
-        if (this.props.svg !== prevProps.svg) {
-            this.loadGraphic();
-            console.log("graphic loaded");
-        } else if (this.props.fg !== prevProps.fg) {
-            console.log("graphic loaded");
-            this.loadGraphic();
-        } else {
-            // Else draw canvas without loadGraphic for better performance
+    componentDidUpdate() {
 
-            this.drawCanvas();
-        }
+        // Bei jeder Änderung eines Props oder eines States wird dieser
+        // Funktion abgefeuert
+
+        console.log('update!');
+
+        this.drawCanvas();
+
     }
 
     render() {
         return (
             <section id="artboard" className={"view" + this.props.view}>
+
                 <div className="recordWrapper">
                     <div className="record" style={this.props.coverStyle}>
                         <div
@@ -158,7 +140,6 @@ class Canvas extends Component {
                             className="cover"
                             ref="canvas"
                             id="theCanvas"
-                            path={"svg/" + this.props.svg + ".svg"}
                             width={this.props.width}
                             height={this.props.height}
                             scale={this.props.scale}
