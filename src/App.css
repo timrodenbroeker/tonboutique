@@ -825,3 +825,18 @@ background: #eeeeee;
 .chevron {
   width: 7px;
 }
+
+p {
+  line-height: 130%;
+  margin: 0;
+}
+
+#credit {
+  position: absolute;
+  bottom: 0;
+  padding: 15px;
+}
+
+#main {
+  min-height: 100vh;
+}

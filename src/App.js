@@ -44,7 +44,16 @@ class App extends Component {
             ["#00BC5C", "#000000"]
         ];
 
-        this.fonts = ['Arial', "Libre Franklin"];
+        this.fonts = [
+            'Arial', 
+            "Libre Franklin", 
+            'Montserrat', 
+            'Fjalla One',
+            'Roboto Mono',
+            'Space Mono',
+            'Barlow Condensed',
+            'Barlow'
+            ];
 
         this.graphics = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
