@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ColorField from "../input/ColorField";
 import ColorSelect from "../input/ColorSelect";
 import Stepper from "../input/Stepper";
+import Chevron from "../input/Chevron";
 
 class UiBoxColors extends Component {
     constructor(props) {
@@ -35,6 +36,7 @@ class UiBoxColors extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
+                        <div className="boxBodyInner">
   
                      <Stepper
                             name="Theme"
@@ -59,7 +61,7 @@ class UiBoxColors extends Component {
                             target={this.props.fg}
                             changeColor={this.props.changeFg}
                         />
-                                
+                    </div>
                 </div>
                 )}
             </div>

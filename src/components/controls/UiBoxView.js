@@ -31,7 +31,7 @@ class UiBoxView extends Component {
 
              {this.state.collapsed === false &&
             <div className="boxBody">
-           
+           <div className="boxBodyInner">
            <Stepper 
                 name="View"
                 options={this.props.views}
@@ -39,6 +39,7 @@ class UiBoxView extends Component {
                 increment={this.props.nextView}
                 decrement={this.props.prevView}
             />
+            </div>
         
          </div>
          }

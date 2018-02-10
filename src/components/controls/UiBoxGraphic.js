@@ -30,6 +30,7 @@ class UiBoxGraphic extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
+                    <div className="boxBodyInner">
 
                     {/*
                         <Stepper
@@ -82,7 +83,7 @@ class UiBoxGraphic extends Component {
                             step={0.001}
                             onChange={this.props.changeTranslateY}
                         />
-
+                        </div>
                     </div>
                 )}
             </div>

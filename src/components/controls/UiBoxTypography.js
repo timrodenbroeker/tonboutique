@@ -29,6 +29,7 @@ class UiBoxTypography extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
+                    <div className="boxBodyInner">
                         <SelectInput
                             name="Family"
                             value={this.props.fontFamily}
@@ -97,6 +98,7 @@ class UiBoxTypography extends Component {
             />  
 
         */}
+        </div>
                     </div>
                 )}
             </div>

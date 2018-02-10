@@ -31,12 +31,14 @@ constructor(props){
           {this.state.collapsed === false &&
 
           <div className="boxBody">
+          <div className="boxBodyInner">
              <button id="exportButton" className="btn" onClick={this.props.saveCanvas}>
                     
              Export
             
             </button>
 
+         </div>
          </div>
 
        }

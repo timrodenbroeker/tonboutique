@@ -29,6 +29,7 @@ constructor(props){
           {this.state.collapsed === false &&
 
           <div className="boxBody">
+          <div className="boxBodyInner">
             <TextInput 
                 name="Artist" 
                 value={this.props.artist} 
@@ -46,6 +47,7 @@ constructor(props){
                 value={this.props.subline} 
                 onChange={this.props.onChangeSubline}
             />
+            </div>
 
          </div>
 
