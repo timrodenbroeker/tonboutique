@@ -4,12 +4,7 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Redirect,
-} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 
 
 
@@ -34,9 +29,9 @@ WebFont.load({
 
 ReactDOM.render(
 
-	<Router basename={'/directory-name'}>
-  <Route path='/' component={App} />
-</Router>
+<HashRouter basename={'/'}>
+  <App />
+</HashRouter>
 
 
 , document.getElementById('root'));
