@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./normalize.css";
 import "./App.css";
-import Canvas from "./components/cover/Canvas";
+import Artboard from "./components/cover/Artboard";
 import ControlBoxLeft from "./components/controls/ControlBoxLeft";
 import SvgModal from "./components/input/SvgModal";
 
@@ -381,7 +381,7 @@ class App extends Component {
                     saveCanvas={this.saveCanvas}
                 />
 
-                <Canvas
+                <Artboard
                     // COLORS
                     bg={this.state.bg}
                     fg={this.state.fg}

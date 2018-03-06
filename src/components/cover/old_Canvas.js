@@ -97,11 +97,7 @@ class Canvas extends Component {
             ctx.canvas.height * 0.5 +
             this.props.translateY * ctx.canvas.width * 0.5;
 
-        ctx.save();
-
-        ctx.translate(svgX, svgY);
-
-        ctx.rotate(Math.PI / 180 * this.props.svgRotation);
+      
 
         var img = new Image();
 
@@ -110,16 +106,24 @@ class Canvas extends Component {
         //
         // DRAW THE IMAGE
         //
+        img.onload = () => {
 
-        ctx.drawImage(
-            img,
-            0 - this.props.width * this.props.scale / 2,
-            0 - this.props.width * this.props.scale / 2,
-            this.props.width * this.props.scale,
-            this.props.width * this.props.scale
-        );
+        ctx.save();
 
-        ctx.restore();
+        ctx.translate(svgX, svgY);
+
+        ctx.rotate(Math.PI / 180 * this.props.svgRotation);
+
+            ctx.drawImage(
+                img,
+                0 - this.props.width * this.props.scale / 2,
+                0 - this.props.width * this.props.scale / 2,
+                this.props.width * this.props.scale,
+                this.props.width * this.props.scale
+            );
+            
+            ctx.restore();
+        }
     }
 
     componentDidMount() {
