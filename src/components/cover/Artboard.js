@@ -15,12 +15,8 @@ class Artboard extends Component {
 
   componentDidMount() {
 
-  // So referenziert man konva-Elemente
-  console.log(this.refs.theStage);
 
-
-
-
+        
   }
    
 
@@ -39,7 +35,7 @@ class Artboard extends Component {
                             className="vinyl"
                         />
 
-                         <Stage width={600} height={600} ref="theStage">
+                         <Stage width={600} height={600}>
                             <Layer>
                                 <Cover 
                                     width={600}
@@ -53,6 +49,7 @@ class Artboard extends Component {
                                     svgHeight={this.props.svgHeight}
                                     x={this.props.translateX}
                                     y={this.props.translateY}
+                                    ref="theC"
                                 />
                             </Layer>
                           </Stage>

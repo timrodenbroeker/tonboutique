@@ -66,11 +66,11 @@ class App extends Component {
             scale: 0.8,
             svg: this.graphics[0],
 
-            width: 2000,
-            height: 2000,
+            width: 600,
+            height: 600,
 
-            svgWidth: 444,
-            svgHeight: 444,
+            svgWidth: 600,
+            svgHeight: 600,
 
             svgRotation: 0,
             translateX: 0,
@@ -276,6 +276,7 @@ class App extends Component {
     }
 
     changeSvgRotation(event) {
+        console.log(event.target.value);
         this.setState({ svgRotation: event.target.value });
     }
 

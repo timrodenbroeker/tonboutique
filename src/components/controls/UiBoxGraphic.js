@@ -30,9 +30,8 @@ class UiBoxGraphic extends Component {
 
                 {this.state.collapsed === false && (
                     <div className="boxBody">
-                    <div className="boxBodyInner">
-
-                    {/*
+                        <div className="boxBodyInner">
+                            {/*
                         <Stepper
                             name="File"
                             options={this.props.graphics}
@@ -43,46 +42,46 @@ class UiBoxGraphic extends Component {
 
                     */}
 
-                    <ToggleButton 
-                        toggle={this.props.toggleSvgModal}
-                        name="File"
-                        text="Select"
-                    />
+                            <ToggleButton
+                                toggle={this.props.toggleSvgModal}
+                                name="File"
+                                text="Select"
+                            />
 
-                        <RangeSlider
-                            name="Size"
-                            value={this.props.scale}
-                            min="0"
-                            max="2"
-                            step={0.01}
-                            onChange={this.props.changeScale}
-                        />
+                            <RangeSlider
+                                name="Size"
+                                value={this.props.scale}
+                                min="0"
+                                max="2"
+                                step={0.01}
+                                onChange={this.props.changeScale}
+                            />
 
-                        <RangeSlider
-                            name="Rotate"
-                            value={this.props.svgRotation}
-                            min="0"
-                            max="360"
-                            onChange={this.props.changeSvgRotation}
-                        />
+                            <RangeSlider
+                                name="Rotate"
+                                value={this.props.svgRotation}
+                                min="0"
+                                max="360"
+                                onChange={this.props.changeSvgRotation}
+                            />
 
-                         <RangeSlider
-                            name="x"
-                            value={this.props.translateX}
-                            min={-1}
-                            max={1}
-                            step={0.001}
-                            onChange={this.props.changeTranslateX}
-                        />
+                            <RangeSlider
+                                name="x"
+                                value={this.props.translateX}
+                                min={-1}
+                                max={1}
+                                step={0.001}
+                                onChange={this.props.changeTranslateX}
+                            />
 
-                         <RangeSlider
-                            name="y"
-                            value={this.props.translateY}
-                            min={-1}
-                            max={1}
-                            step={0.001}
-                            onChange={this.props.changeTranslateY}
-                        />
+                            <RangeSlider
+                                name="y"
+                                value={this.props.translateY}
+                                min={-1}
+                                max={1}
+                                step={0.001}
+                                onChange={this.props.changeTranslateY}
+                            />
                         </div>
                     </div>
                 )}
